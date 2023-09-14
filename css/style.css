@@ -1,0 +1,14 @@
+body {
+    margin: 0px;
+}
+
+.gate-fence-configurator-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mark-the-box {
+    background-color: aqua;
+}

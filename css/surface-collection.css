@@ -1,0 +1,19 @@
+.surface-complete-div {
+    width: 90%;
+}
+
+.surface-collection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.box-coating {
+    height: 200px;
+    width: 200px;
+    border: 1px solid;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}

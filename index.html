@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/surface-collection.css">
+    <script src="scripts/mini_backend.js"></script>
+    <script src="scripts/script.js"></script>
+    <title>Gate-Fence-Configurator</title>
+</head>
+
+<body onload="init()">
+    <div class="gate-fence-configurator-body">
+        <h1>Gate Fence Configurator</h1>
+        <div class="surface-complete-div">
+            <h2>1. Oberfläche</h2>
+            <div class="surface-collection">
+                <div onclick="markTheBox('fz')" id="surface-1" class="box-coating">
+                    <p>
+                        Feuerverzinkt
+                    </p>
+                </div>
+                <div onclick="markTheBox('fz-m')" id="surface-2" class="box-coating">
+                    <p>
+                        Feuerverzinkt + Matt
+                    </p>
+                </div>
+                <div onclick="markTheBox('fz-g')" id="surface-3" class="box-coating">
+                    <p>
+                        Feuerverzinkt + Glänzend
+                    </p>
+                </div>
+                <div onclick="markTheBox('fz-h-fb')" id="surface-4" class="box-coating">
+                    <p>
+                        Feuerverzinkt + Hammerschlag Farbbeschichtet
+                    </p>
+                </div>
+                <div onclick="markTheBox('fz-db-fb')" id="surface-5" class="box-coating">
+                    <p>
+                        Feuerverzinkt + DB Farbbeschichtet
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

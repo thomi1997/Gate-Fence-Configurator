@@ -9,6 +9,26 @@ body {
     align-items: center;
 }
 
+.container-layout {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.configurator-menu {
+    width: 70.5%;
+}
+
+.box-coating {
+    height: 200px;
+    width: 200px;
+    border: 1px solid;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
 .mark-the-box {
     background-color: aqua;
 }

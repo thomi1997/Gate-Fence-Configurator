@@ -6,44 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/surface-collection.css">
+    <link rel="stylesheet" href="css/color-collection.css">
+    <link rel="stylesheet" href="css/opening-direction-collection.css">
+    <link rel="stylesheet" href="css/summary-content.css">
     <script src="scripts/mini_backend.js"></script>
     <script src="scripts/script.js"></script>
+
+    <script src="scripts/1-surface/surface.js"></script>
+    <script src="scripts/1-surface/surface-template.js"></script>
+
+    <script src="scripts/2-color/color.js"></script>
+    <script src="scripts/2-color/color-template.js"></script>
+
+    <script src="scripts/3-opening-direction/opening-direction.js"></script>
+    <script src="scripts/3-opening-direction/opening-direction-template.js"></script>
+
+    <script src="scripts/summary/summary.js"></script>
+    <script src="scripts/summary/summary-template.js"></script>
     <title>Gate-Fence-Configurator</title>
 </head>
 
 <body onload="init()">
     <div class="gate-fence-configurator-body">
         <h1>Gate Fence Configurator</h1>
-        <div class="surface-complete-div">
-            <h2>1. Oberfläche</h2>
-            <div class="surface-collection">
-                <div onclick="markTheBox('fz')" id="surface-1" class="box-coating">
-                    <p>
-                        Feuerverzinkt
-                    </p>
+        <div class="container-layout">
+            <div class="configurator-menu">
+                <div id="surface-box" class="surface-complete-div">
                 </div>
-                <div onclick="markTheBox('fz-m')" id="surface-2" class="box-coating">
-                    <p>
-                        Feuerverzinkt + Matt
-                    </p>
+                <div id="color-box" class="color-complete-div">
                 </div>
-                <div onclick="markTheBox('fz-g')" id="surface-3" class="box-coating">
-                    <p>
-                        Feuerverzinkt + Glänzend
-                    </p>
-                </div>
-                <div onclick="markTheBox('fz-h-fb')" id="surface-4" class="box-coating">
-                    <p>
-                        Feuerverzinkt + Hammerschlag Farbbeschichtet
-                    </p>
-                </div>
-                <div onclick="markTheBox('fz-db-fb')" id="surface-5" class="box-coating">
-                    <p>
-                        Feuerverzinkt + DB Farbbeschichtet
-                    </p>
+                <div id="opening-direction-box" class="opening-direction-complete-div">
                 </div>
             </div>
+            <div id="summary" class="summary-div">
+            </div>
         </div>
+        <button onclick="saveConfigurations()">Save</button>
     </div>
 </body>
 

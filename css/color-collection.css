@@ -1,0 +1,21 @@
+.color-complete-div {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.color-collection {
+
+}
+
+.color-in-the-box {
+    min-height: 120px;
+    width: 180px;
+    margin: 10px; 
+}
+
+.color-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+}

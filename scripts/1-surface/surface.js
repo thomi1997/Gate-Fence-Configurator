@@ -72,7 +72,7 @@ function surfaceGetText(i) {
 }
 
 
-function markTheBox(i) {
+function markTheSurfaceBox(i) {
     let surface1 = document.getElementById('surface-1');
     let surface2 = document.getElementById('surface-2');
     let surface3 = document.getElementById('surface-3');

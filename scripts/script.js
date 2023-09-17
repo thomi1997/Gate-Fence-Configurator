@@ -10,6 +10,7 @@ async function init() {
     renderSurface();
     renderColor();
     renderOpeningDirection();
+    renderMountingMethod();
 }
 
 

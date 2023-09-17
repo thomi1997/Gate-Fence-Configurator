@@ -19,3 +19,50 @@
     align-items: flex-start;
     margin-left: 10px;
 }
+
+/*overview*/
+.color-overview-complete-div {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.709);
+}
+
+.color-overview-collection {
+    height: 50vh;
+    width: 80%;
+    background-color: white;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.overview-head {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overview-color-list {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.color-box-overview {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    margin-bottom: 2%;
+}
+
+.close-color-overview-svg {
+    height: 50px;
+    width: auto;
+    cursor: pointer;
+}

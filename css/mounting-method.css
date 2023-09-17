@@ -1,0 +1,9 @@
+.mounting-method-complete-div {
+    margin-bottom: 2%;
+}
+
+.mounting-method-collection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

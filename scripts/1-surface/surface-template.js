@@ -18,7 +18,9 @@ function htmlSurface() {
                 </p>
             </div>
             <div onclick="markTheSurfaceBox('fz-h-fb')" id="surface-4" class="box-coating">
-                <p>Feuerverzinkt + Hammerschlag Farbbeschichtet</p>
+                <p>
+                    Feuerverzinkt + Hammerschlag Farbbeschichtet
+                </p>
             </div>
             <div onclick="markTheSurfaceBox('fz-db-fb')" id="surface-5" class="box-coating">
                 <p>

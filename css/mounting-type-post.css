@@ -1,0 +1,9 @@
+.mounting-type-post-complete-div {
+    margin-bottom: 2%;
+}
+
+.mounting-type-post-collection {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}

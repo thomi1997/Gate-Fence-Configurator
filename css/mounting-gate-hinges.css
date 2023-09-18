@@ -1,0 +1,9 @@
+.mounting-gate-hinges-complete-div {
+    margin-bottom: 2%;
+}
+
+.mounting-gate-hinges-collection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

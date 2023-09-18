@@ -11,6 +11,8 @@ async function init() {
     renderColor();
     renderOpeningDirection();
     renderMountingMethod();
+    renderMountingGateHinges();
+    renderMountingTypePost();
 }
 
 

@@ -13,6 +13,7 @@ async function init() {
     renderMountingMethod();
     renderMountingGateHinges();
     renderMountingTypePost();
+    renderExecution();
 }
 
 

@@ -1,0 +1,8 @@
+.ground-clearance-complete-div {
+ margin-bottom: 2%;
+}
+
+.ground-clearance-collection {
+    display: flex;
+    justify-content: flex-start;
+}

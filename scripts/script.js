@@ -14,6 +14,9 @@ async function init() {
     renderMountingGateHinges();
     renderMountingTypePost();
     renderExecution();
+    renderVariantMountingPlates();
+    renderGroundClearance();
+    renderGripSet();
 }
 
 

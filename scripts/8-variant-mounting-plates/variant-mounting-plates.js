@@ -1,7 +1,7 @@
 let currentVariantMountingPlates = [];
 
 
-function renderSurface() {
+function renderVariantMountingPlates() {
     let variantMountingPlatesDiv = document.getElementById('variant-mounting-plates-box');
     variantMountingPlatesDiv.innerHTML = htmlVariantMountingPlates();
 }

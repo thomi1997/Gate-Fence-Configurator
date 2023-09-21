@@ -5,7 +5,7 @@ function htmlGroundClearance() {
             <p>
                 Bodenabstand:
             </p>
-            <input id="ground-clearance-input" type="text" onblur="addGroundClearance()">
+            <input id="ground-clearance-input" type="number" onblur="addGroundClearance()">
             <p>
                 mm | Zulässiger Bereich: 50 - 200
             </p>

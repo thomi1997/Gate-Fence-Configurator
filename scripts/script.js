@@ -17,6 +17,8 @@ async function init() {
     renderVariantMountingPlates();
     renderGroundClearance();
     renderGripSet();
+    renderDimensions();
+    renderWingLayout();
 }
 
 

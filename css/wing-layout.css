@@ -1,0 +1,9 @@
+.wing-layout-complete-div{
+    margin-bottom: 2%;
+}
+
+.wing-layout-collection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

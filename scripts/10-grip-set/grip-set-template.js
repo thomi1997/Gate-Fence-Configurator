@@ -1,6 +1,6 @@
 function htmlGripSet() {
     return /*html*/`
-        <h2>(Variabe). Oberfläche</h2>
+        <h2>(Variabe). Griffgarnitur</h2>
         <div class="grip-set-collection">
             <div onclick="markTheSetGripBox('kn-alu')" id="grip-set-1" class="box-coating">
                 <p>

@@ -1,0 +1,14 @@
+.dimensions-complete-div {
+    margin-bottom: 2%;
+}
+
+.dimensions-collection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dimensions-section {
+    display: flex;
+    justify-content: flex-start;
+}

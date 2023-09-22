@@ -6,7 +6,7 @@ let allOffers = [];
 async function init() {
     await downloadFromServer();
     allOffers = JSON.parse(backend.getItem('allOffers')) || [];
-    renderSummary();
+    
     renderSurface();
     renderColor();
     renderOpeningDirection();
@@ -19,6 +19,10 @@ async function init() {
     renderGripSet();
     renderDimensions();
     renderWingLayout();
+    renderProductionDrawing();
+    renderNumberOfPosts();
+    renderOptionalNotes();
+    renderSummary();
 }
 
 

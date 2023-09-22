@@ -1,0 +1,13 @@
+.optional-notes-complete-div {
+    margin-bottom: 2%;
+}
+
+.optional-notes-collection {
+    display: flex;
+}
+
+.optional-notes-text-area {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}

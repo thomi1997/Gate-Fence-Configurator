@@ -1,4 +1,5 @@
 let currentSurface = [];
+let previouSurfaceId = 'surface-1';
 
 
 function renderSurface() {
@@ -53,15 +54,15 @@ function surfaceGetText(i) {
         let surface3clean = surface3AsText.trim();
         addSurface(surface3clean);
     }
-    
-    
+
+
     if (i == 'fz-h-fb') {
         let surface4 = document.getElementById('surface-4');
         let surface4AsText = surface4.textContent;
         let surface4clean = surface4AsText.trim();
         addSurface(surface4clean);
     }
-    
+
 
     if (i == 'fz-db-fb') {
         let surface5 = document.getElementById('surface-5');
@@ -72,56 +73,14 @@ function surfaceGetText(i) {
 }
 
 
-function markTheSurfaceBox(i) {
-    let surface1 = document.getElementById('surface-1');
-    let surface2 = document.getElementById('surface-2');
-    let surface3 = document.getElementById('surface-3');
-    let surface4 = document.getElementById('surface-4');
-    let surface5 = document.getElementById('surface-5');
-
-    if (i == 'fz') {
-        surface1.classList.add('mark-the-box');
-
-        surface2.classList.remove('mark-the-box');
-        surface3.classList.remove('mark-the-box');
-        surface4.classList.remove('mark-the-box');
-        surface5.classList.remove('mark-the-box');
+function markTheSurfaceBox(thisId) {
+    let currentSurfaceId = thisId.id;
+    document.getElementById(`${currentSurfaceId}`).classList.add('mark-the-box');
+    if (previouSurfaceId !== currentSurfaceId) {
+        console.log('aktuelle', currentSurfaceId);
+        console.log('vorherige', previouSurfaceId);
+        document.getElementById(`${previouSurfaceId}`).classList.remove('mark-the-box');
+        previouSurfaceId = currentSurfaceId;
     }
-
-    if (i == 'fz-m') {
-        surface2.classList.add('mark-the-box');
-
-        surface1.classList.remove('mark-the-box');
-        surface3.classList.remove('mark-the-box');
-        surface4.classList.remove('mark-the-box');
-        surface5.classList.remove('mark-the-box');
-    }
-
-    if (i == 'fz-g') {
-        surface3.classList.add('mark-the-box');
-
-        surface1.classList.remove('mark-the-box');
-        surface2.classList.remove('mark-the-box');
-        surface4.classList.remove('mark-the-box');
-        surface5.classList.remove('mark-the-box');
-    }
-
-    if (i == 'fz-h-fb') {
-        surface4.classList.add('mark-the-box');
-
-        surface1.classList.remove('mark-the-box');
-        surface2.classList.remove('mark-the-box');
-        surface3.classList.remove('mark-the-box');
-        surface5.classList.remove('mark-the-box');
-    }
-
-    if (i == 'fz-db-fb') {
-        surface5.classList.add('mark-the-box');
-
-        surface1.classList.remove('mark-the-box');
-        surface2.classList.remove('mark-the-box');
-        surface3.classList.remove('mark-the-box');
-        surface4.classList.remove('mark-the-box');
-    }
-    surfaceGetText(i);
+    //surfaceGetText(i);
 }

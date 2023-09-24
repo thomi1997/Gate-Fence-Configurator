@@ -8,79 +8,61 @@ function renderSurface() {
 }
 
 
-function addSurface(surfaceAsText) {
-    console.log(surfaceAsText);
-    if (currentSurface.length > 0) {
-        currentSurface.forEach(surface => {
-            deleteSurface(surface);
-        });
-    }
-
-    if (currentSurface.length == 0) {
-        let surface = surfaceAsText;
-        let priseSurface = '49,99';
-        let offerSurface = {
-            'surface': surface,
-            'prise-surface': priseSurface,
-        }
-        currentSurface.push(offerSurface);
-    }
-}
-
-
-function deleteSurface(surface) {
-    currentSurface.splice(surface, 1);
-}
-
-
-function surfaceGetText(i) {
-    if (i == 'fz') {
-        let surface1 = document.getElementById('surface-1');
-        let surface1AsText = surface1.textContent;
-        let surface1clean = surface1AsText.trim();
-        addSurface(surface1clean);
-    }
-
-    if (i == 'fz-m') {
-        let surface2 = document.getElementById('surface-2');
-        let surface2AsText = surface2.textContent;
-        let surface2clean = surface2AsText.trim();
-        addSurface(surface2clean);
-    }
-
-    if (i == 'fz-g') {
-        let surface3 = document.getElementById('surface-3');
-        let surface3AsText = surface3.textContent;
-        let surface3clean = surface3AsText.trim();
-        addSurface(surface3clean);
-    }
-
-
-    if (i == 'fz-h-fb') {
-        let surface4 = document.getElementById('surface-4');
-        let surface4AsText = surface4.textContent;
-        let surface4clean = surface4AsText.trim();
-        addSurface(surface4clean);
-    }
-
-
-    if (i == 'fz-db-fb') {
-        let surface5 = document.getElementById('surface-5');
-        let surface5AsText = surface5.textContent;
-        let surface5clean = surface5AsText.trim();
-        addSurface(surface5clean);
-    }
-}
-
-
 function markTheSurfaceBox(thisId) {
     let currentSurfaceId = thisId.id;
     document.getElementById(`${currentSurfaceId}`).classList.add('mark-the-box');
     if (previouSurfaceId !== currentSurfaceId) {
-        console.log('aktuelle', currentSurfaceId);
-        console.log('vorherige', previouSurfaceId);
         document.getElementById(`${previouSurfaceId}`).classList.remove('mark-the-box');
         previouSurfaceId = currentSurfaceId;
     }
-    //surfaceGetText(i);
+    surfaceGetText(currentSurfaceId);
+}
+
+
+function surfaceGetText(currentSurfaceId) {
+    let surfaceId = document.getElementById(`${currentSurfaceId}`);
+    let surfaceAsText = surfaceId.textContent;
+    let surfaceclean = surfaceAsText.trim();
+    addSurface(surfaceclean, currentSurfaceId);
+}
+
+
+function addSurface(surfaceAsText, currentSurfaceId) {
+    let surface = surfaceAsText;
+    if (currentSurface.length > 0) {
+        currentSurface = [];
+    }
+    if (currentSurface.length == 0) {
+        queryIdSurface(currentSurfaceId, surface);
+    }
+}
+
+
+function queryIdSurface(currentSurfaceId, surface) {
+    let priseSurface = '';
+    if (currentSurfaceId == 'surface-1') {
+        priseSurface = '49,99';
+    } else if (currentSurfaceId == 'surface-2') {
+        priseSurface = '43,76';
+    } else if (currentSurfaceId == 'surface-3') {
+        priseSurface = '12,43';
+    } else if (currentSurfaceId == 'surface-4') {
+        priseSurface = '67,49';
+    } else if (currentSurfaceId == 'surface-5') {
+        priseSurface = '53,76';
+    }
+    pushSurfaceContent(currentSurfaceId, priseSurface, surface);
+}
+
+
+function pushSurfaceContent(currentSurfaceId, priseSurface, surface) {
+    console.log('aktuelle id', currentSurfaceId);
+    console.log('aktueller preis', priseSurface);
+    console.log('aktueller text', surface);
+    let offerSurface = {
+        'id': currentSurfaceId,
+        'surface': surface,
+        'prise-surface': priseSurface,
+    }
+    currentSurface.push(offerSurface);
 }

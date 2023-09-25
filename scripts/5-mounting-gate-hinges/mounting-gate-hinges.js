@@ -1,4 +1,5 @@
 let currentMountingGateHinges = [];
+let previouMountingGateHingesId = 'mounting-gate-hinges-1'
 
 
 function renderMountingGateHinges() {
@@ -7,79 +8,57 @@ function renderMountingGateHinges() {
 }
 
 
-function addMountingGateHinges(mountingGateHingesAsText) {
-    console.log(mountingGateHingesAsText);
+function markTheMountingGateHingesBox(thisId) {
+    let currentMountingGateHingesId = thisId.id;
+    document.getElementById(`${currentMountingGateHingesId}`).classList.add('mark-the-box');
+    if (previouMountingGateHingesId !== currentMountingGateHingesId) {
+        document.getElementById(`${previouMountingGateHingesId}`).classList.remove('mark-the-box');
+        previouMountingGateHingesId = currentMountingGateHingesId;
+    }
+    mountingGateHingesGetText(currentMountingGateHingesId);
+}
+
+
+function mountingGateHingesGetText(currentMountingGateHingesId) {
+    let mountingGateHingesId = document.getElementById(`${currentMountingGateHingesId}`);
+    let mountingGateHingesAsText = mountingGateHingesId.textContent;
+    let mountingGateHingesclean = mountingGateHingesAsText.trim();
+    addMountingGateHinges(mountingGateHingesclean, currentMountingGateHingesId);
+}
+
+
+function addMountingGateHinges(mountingGateHingesAsText, currentMountingGateHingesId) {
+    let mountingGateHinges = mountingGateHingesAsText;
     if (currentMountingGateHinges.length > 0) {
-        currentMountingGateHinges.forEach(mountingGateHinges => {
-            deleteMountingGateHinges(mountingGateHinges);
-        });
+        currentMountingGateHinges = [];
     }
-
     if (currentMountingGateHinges.length == 0) {
-        let mountingGateHinges = mountingGateHingesAsText;
-        let prisemountingGateHinges = '49,99';
-        let offerMountingGateHinges = {
-            'mounting-gate-hinges': mountingGateHinges,
-            'prise-mounting-gate-hinges': prisemountingGateHinges,
-        }
-        currentMountingGateHinges.push(offerMountingGateHinges);
+        queryIdMountingGateHinges(currentMountingGateHingesId, mountingGateHinges);
     }
 }
 
 
-function deleteMountingGateHinges(mountingGateHinges) {
-    currentMountingGateHinges.splice(mountingGateHinges, 1);
+function queryIdMountingGateHinges(currentMountingGateHingesId, mountingGateHinges) {
+    let priseMountingGateHinges = '';
+    if (currentMountingGateHingesId == 'mounting-gate-hinges-1') {
+        priseMountingGateHinges = '0,00';
+    } else if (currentMountingGateHingesId == 'mounting-gate-hinges-2') {
+        priseMountingGateHinges = '0,00';
+    } else if (currentMountingGateHingesId == 'mounting-gate-hinges-3') {
+        priseMountingGateHinges = '0,00';
+    }
+    pushMountingGateHingesContent(currentMountingGateHingesId, priseMountingGateHinges, mountingGateHinges);
 }
 
 
-function mountingGateHingesGetText(i) {
-    if (i == 'r-3d') {
-        let mountingGateHinges1 = document.getElementById('r-3d-text');
-        let mountingGateHinges1AsText = mountingGateHinges1.textContent;
-        let mountingGateHinges1clean = mountingGateHinges1AsText.trim();
-        addMountingGateHinges(mountingGateHinges1clean);
+function pushMountingGateHingesContent(currentMountingGateHingesId, priseMountingGateHinges, mountingGateHinges) {
+    console.log('aktuelle id', currentMountingGateHingesId);
+    console.log('aktueller preis', priseMountingGateHinges);
+    console.log('aktueller text', mountingGateHinges);
+    let offerMountingGateHinges = {
+        'id': currentMountingGateHingesId,
+        'mounting-gate-hinges': mountingGateHinges,
+        'prise-mounting-gate-hinges': priseMountingGateHinges,
     }
-
-    if (i == 's-2d') {
-        let mountingGateHinges2 = document.getElementById('s-2d-text');
-        let mountingGateHinges2AsText = mountingGateHinges2.textContent;
-        let mountingGateHinges2clean = mountingGateHinges2AsText.trim();
-        addMountingGateHinges(mountingGateHinges2clean);
-    }
-
-    if (i == 'r-2d') {
-        let mountingGateHinges3 = document.getElementById('r-2d-text');
-        let mountingGateHinges3AsText = mountingGateHinges3.textContent;
-        let mountingGateHinges3clean = mountingGateHinges3AsText.trim();
-        addMountingGateHinges(mountingGateHinges3clean);
-    }
-}
-
-
-function markTheMountingGateHingesBox(i) {
-    let mountingGateHinges1 = document.getElementById('mounting-gate-hinges-1');
-    let mountingGateHinges2 = document.getElementById('mounting-gate-hinges-2');
-    let mountingGateHinges3 = document.getElementById('mounting-gate-hinges-3');
-
-    if (i == 'r-3d') {
-        mountingGateHinges1.classList.add('mark-the-box');
-
-        mountingGateHinges2.classList.remove('mark-the-box');
-        mountingGateHinges3.classList.remove('mark-the-box');
-    }
-
-    if (i == 's-2d') {
-        mountingGateHinges2.classList.add('mark-the-box');
-
-        mountingGateHinges1.classList.remove('mark-the-box');
-        mountingGateHinges3.classList.remove('mark-the-box');
-    }
-
-    if (i == 'r-2d') {
-        mountingGateHinges3.classList.add('mark-the-box');
-
-        mountingGateHinges2.classList.remove('mark-the-box');
-        mountingGateHinges1.classList.remove('mark-the-box');
-    }
-    mountingGateHingesGetText(i);
+    currentMountingGateHinges.push(offerMountingGateHinges);
 }

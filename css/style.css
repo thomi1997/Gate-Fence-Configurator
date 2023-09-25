@@ -1,9 +1,11 @@
 body {
     margin: 0px;
+    display: flex;
+    justify-content: center;
 }
 
 .gate-fence-configurator-body {
-    width: 100%;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;

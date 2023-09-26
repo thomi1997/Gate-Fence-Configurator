@@ -1,4 +1,5 @@
 let currentWingLayout = [];
+let previouWingLayoutId = 'wing-layout-1';
 
 
 function renderWingLayout() {
@@ -7,63 +8,42 @@ function renderWingLayout() {
 }
 
 
-function addWingLayout(wingLayoutAsText) {
-    console.log(wingLayoutAsText);
+function markTheWingLayoutBox(thisId) {
+    let currentWingLayoutId = thisId.id;
+    document.getElementById(`${currentWingLayoutId}`).classList.add('mark-the-box');
+    if (previouWingLayoutId !== currentWingLayoutId) {
+        document.getElementById(`${previouWingLayoutId}`).classList.remove('mark-the-box');
+        previouWingLayoutId = currentWingLayoutId;
+    }
+    wingLayoutGetText(currentWingLayoutId);
+}
+
+
+function wingLayoutGetText(currentWingLayoutId) {
+    let wingLayoutId = document.getElementById(`${currentWingLayoutId}`);
+    let wingLayoutAsText = wingLayoutId.textContent;
+    let wingLayoutclean = wingLayoutAsText.trim();
+    addWingLayout(wingLayoutclean, currentWingLayoutId);
+}
+
+
+function addWingLayout(wingLayoutAsText, currentWingLayoutId) {
+    let wingLayout = wingLayoutAsText;
     if (currentWingLayout.length > 0) {
-        currentWingLayout.forEach(wingLayout => {
-            deleteWingLayout(wingLayout);
-        });
+        currentWingLayout = [];
     }
-
     if (currentWingLayout.length == 0) {
-        let wingLayout = wingLayoutAsText;
-        let prisewingLayout = '49,99';
-        let offerwingLayout = {
-            'wing-layout': wingLayout,
-            'prise-wing-layout': prisewingLayout,
-        }
-        currentWingLayout.push(offerwingLayout);
+        pushWingLayoutContent(currentWingLayoutId, wingLayout);
     }
 }
 
 
-function deleteWingLayout(wingLayout) {
-    currentWingLayout.splice(wingLayout, 1);
-}
-
-
-function WingLayoutGetText(i) {
-    if (i == 'sy') {
-        let wingLayout1 = document.getElementById('wing-layout-1');
-        let wingLayout1AsText = wingLayout1.textContent;
-        let wingLayout1clean = wingLayout1AsText.trim();
-        addWingLayout(wingLayout1clean);
+function pushWingLayoutContent(currentWingLayoutId, wingLayout) {
+    console.log('aktuelle id', currentWingLayoutId);
+    console.log('aktueller text', wingLayout);
+    let offerWingLayout = {
+        'id': currentWingLayoutId,
+        'wing-layout': wingLayout
     }
-
-    if (i == 'asy') {
-        let wingLayout2 = document.getElementById('wing-layout-2');
-        let wingLayout2AsText = wingLayout2.textContent;
-        let wingLayout2clean = wingLayout2AsText.trim();
-        addWingLayout(wingLayout2clean);
-    }
-}
-
-
-function markTheWingLayoutBox(i) {
-    let wingLayout1 = document.getElementById('wing-layout-1');
-    let wingLayout2 = document.getElementById('wing-layout-2');
-
-    if (i == 'sy') {
-        wingLayout1.classList.add('mark-the-box');
-
-        wingLayout2.classList.remove('mark-the-box');
-    }
-
-    if (i == 'asy') {
-        wingLayout2.classList.add('mark-the-box');
-
-        wingLayout1.classList.remove('mark-the-box');
-    }
-
-    WingLayoutGetText(i);
+    currentWingLayout.push(offerWingLayout);
 }

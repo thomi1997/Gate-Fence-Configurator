@@ -1,4 +1,5 @@
 let currentMountingTypePost = [];
+let previouMountingTypePostId = 'mounting-type-post-1';
 let concretePost = false;
 let postScrewOn = false;
 
@@ -9,62 +10,55 @@ function renderMountingTypePost() {
 }
 
 
-function addMountingTypePost(mountingTypePostAsText) {
-    console.log(mountingTypePostAsText);
+function markTheMountingTypePostBox(thisId) {
+    let currentMountingTypePostId = thisId.id;
+    document.getElementById(`${currentMountingTypePostId}`).classList.add('mark-the-box');
+    if (previouMountingTypePostId !== currentMountingTypePostId) {
+        document.getElementById(`${previouMountingTypePostId}`).classList.remove('mark-the-box');
+        previouMountingTypePostId = currentMountingTypePostId;
+    }
+    mountingTypePostGetText(currentMountingTypePostId);
+}
+
+
+function mountingTypePostGetText(currentMountingTypePostId) {
+    let mountingTypePostId = document.getElementById(`${currentMountingTypePostId}`);
+    let mountingTypePostAsText = mountingTypePostId.textContent;
+    let mountingTypePostclean = mountingTypePostAsText.trim();
+    addMountingTypePost(mountingTypePostclean, currentMountingTypePostId);
+}
+
+
+function addMountingTypePost(mountingTypePostAsText, currentMountingTypePostId) {
+    let mountingTypePost = mountingTypePostAsText;
     if (currentMountingTypePost.length > 0) {
-        currentMountingTypePost.forEach(mountingTypePost => {
-            deleteMountingTypePost(mountingTypePost);
-        });
+        currentMountingTypePost = [];
     }
-
     if (currentMountingTypePost.length == 0) {
-        let mountingTypePost = mountingTypePostAsText;
-        let priseMountingTypePost = '49,99';
-        let offerMountingTypePost = {
-            'mounting-type-post': mountingTypePost,
-            'prise-mounting-type-post': priseMountingTypePost,
-        }
-        currentMountingTypePost.push(offerMountingTypePost);
+        queryIdMountingTypePost(currentMountingTypePostId, mountingTypePost);
     }
 }
 
 
-function deleteMountingTypePost(mountingTypePost) {
-    currentMountingTypePost.splice(mountingTypePost, 1);
+function queryIdMountingTypePost(currentMountingTypePostId, mountingTypePost) {
+    let priseMountingTypePost = '';
+    if (currentMountingTypePostId == 'mounting-type-post-1') {
+        priseMountingTypePost = '0,00';
+    } else if (currentMountingTypePostId == 'mounting-type-post-2') {
+        priseMountingTypePost = '0,00';
+    }
+    pushMountingTypePostContent(currentMountingTypePostId, priseMountingTypePost, mountingTypePost);
 }
 
 
-function mountingTypePostGetText(i) {
-    if (i == 'p-e') {
-        let mountingTypePost1 = document.getElementById('mounting-type-post-1');
-        let mountingTypePost1AsText = mountingTypePost1.textContent;
-        let mountingTypePost1clean = mountingTypePost1AsText.trim();
-        addMountingTypePost(mountingTypePost1clean);
+function pushMountingTypePostContent(currentMountingTypePostId, priseMountingTypePost, mountingTypePost) {
+    console.log('aktuelle id', currentMountingTypePostId);
+    console.log('aktueller preis', priseMountingTypePost);
+    console.log('aktueller text', mountingTypePost);
+    let offerMountingTypePost = {
+        'id': currentMountingTypePostId,
+        'mounting-type-post': mountingTypePost,
+        'prise-mounting-type-post': priseMountingTypePost,
     }
-
-    if (i == 'p-a') {
-        let mountingTypePost2 = document.getElementById('mounting-type-post-2');
-        let mountingTypePost2AsText = mountingTypePost2.textContent;
-        let mountingTypePost2clean = mountingTypePost2AsText.trim();
-        addMountingTypePost(mountingTypePost2clean);
-    }
-}
-
-
-function markTheMountingTypePost(i) {
-    let mountingTypePost1 = document.getElementById('mounting-type-post-1');
-    let mountingTypePost2 = document.getElementById('mounting-type-post-2');
-
-    if (i == 'p-e') {
-        mountingTypePost1.classList.add('mark-the-box');
-
-        mountingTypePost2.classList.remove('mark-the-box');
-    }
-
-    if (i == 'p-a') {
-        mountingTypePost2.classList.add('mark-the-box');
-
-        mountingTypePost1.classList.remove('mark-the-box');
-    }
-    mountingTypePostGetText(i);
+    currentMountingTypePost.push(offerMountingTypePost);
 }

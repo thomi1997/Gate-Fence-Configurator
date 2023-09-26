@@ -12,9 +12,7 @@ function addOptionalNotes() {
     let optionalNotesValue = optionalNotesInput.value;
     console.log('optional notes', optionalNotesValue);
     if (currentOptionalNotes.length > 0) {
-        currentOptionalNotes.forEach(optionalNotes => {
-            deleteOptionalNotes(optionalNotes);
-        });
+        currentOptionalNotes = [];
     }
 
     if (currentOptionalNotes.length == 0) {
@@ -24,9 +22,4 @@ function addOptionalNotes() {
         }
         currentOptionalNotes.push(offerOptionalNotes);
     }
-}
-
-
-function deleteOptionalNotes(optionalNotes) {
-    currentOptionalNotes.splice(optionalNotes, 1);
 }

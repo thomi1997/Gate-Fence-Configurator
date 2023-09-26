@@ -1,4 +1,5 @@
 let currentExecution = [];
+let previouExecutionId = 'execution-1';
 
 
 function renderExecution() {
@@ -7,62 +8,55 @@ function renderExecution() {
 }
 
 
-function addExecution(executionAsText) {
-    console.log(executionAsText);
+function markTheExecutionBox(thisId) {
+    let currentExecutionId = thisId.id;
+    document.getElementById(`${currentExecutionId}`).classList.add('mark-the-box');
+    if (previouExecutionId !== currentExecutionId) {
+        document.getElementById(`${previouExecutionId}`).classList.remove('mark-the-box');
+        previouExecutionId = currentExecutionId;
+    }
+    executionGetText(currentExecutionId);
+}
+
+
+function executionGetText(currentExecutionId) {
+    let executionId = document.getElementById(`${currentExecutionId}`);
+    let executionAsText = executionId.textContent;
+    let executionclean = executionAsText.trim();
+    addExecution(executionclean, currentExecutionId);
+}
+
+
+function addExecution(executionAsText, currentExecutionId) {
+    let execution = executionAsText;
     if (currentExecution.length > 0) {
-        currentExecution.forEach(execution => {
-            deleteExecution(execution);
-        });
+        currentExecution = [];
     }
-
     if (currentExecution.length == 0) {
-        let execution = executionAsText;
-        let priseExecution = '49,99';
-        let offerExecution = {
-            'execution': execution,
-            'prise-execution': priseExecution,
-        }
-        currentExecution.push(offerExecution);
+        queryIdExecution(currentExecutionId, execution);
     }
 }
 
 
-function deleteExecution(execution) {
-    currentExecution.splice(execution, 1);
+function queryIdExecution(currentExecutionId, execution) {
+    let priseExecution = '';
+    if (currentExecutionId == 'execution-1') {
+        priseExecution = '0,00';
+    } else if (currentExecutionId == 'execution-2') {
+        priseExecution = '0,00';
+    }
+    pushExecutionContent(currentExecutionId, priseExecution, execution);
 }
 
 
-function executionGetText(i) {
-    if (i == 'without') {
-        let execution1 = document.getElementById('execution-1');
-        let execution1AsText = execution1.textContent;
-        let execution1clean = execution1AsText.trim();
-        addExecution(execution1clean);
+function pushExecutionContent(currentExecutionId, priseExecution, execution) {
+    console.log('aktuelle id', currentExecutionId);
+    console.log('aktueller preis', priseExecution);
+    console.log('aktueller text', execution);
+    let offerExecution = {
+        'id': currentExecutionId,
+        'execution': execution,
+        'prise-execution': priseExecution,
     }
-
-    if (i == 'with') {
-        let execution2 = document.getElementById('execution-2');
-        let execution2AsText = execution2.textContent;
-        let execution2clean = execution2AsText.trim();
-        addExecution(execution2clean);
-    }
-}
-
-
-function markTheExecutionBox(i) {
-    let execution1 = document.getElementById('execution-1');
-    let execution2 = document.getElementById('execution-2');
-
-    if (i == 'without') {
-        execution1.classList.add('mark-the-box');
-
-        execution2.classList.remove('mark-the-box');
-    }
-
-    if (i == 'with') {
-        execution2.classList.add('mark-the-box');
-
-        execution1.classList.remove('mark-the-box');
-    }
-    executionGetText(i);
+    currentExecution.push(offerExecution);
 }

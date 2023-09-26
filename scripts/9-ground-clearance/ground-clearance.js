@@ -12,9 +12,7 @@ function addGroundClearance() {
     let groundClearanceValue = groundClearanceInput.value;
     console.log(groundClearanceValue);
     if (currentGroundClearance.length > 0) {
-        currentGroundClearance.forEach(groundClearance => {
-            deleteGroundClearance(groundClearance);
-        });
+        currentGroundClearance = [];
     }
 
     if (currentGroundClearance.length == 0) {
@@ -26,9 +24,4 @@ function addGroundClearance() {
         }
         currentGroundClearance.push(offerGroundClearance);
     }
-}
-
-
-function deleteGroundClearance(groundClearance) {
-    currentGroundClearance.splice(groundClearance, 1);
 }

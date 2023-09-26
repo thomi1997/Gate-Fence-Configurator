@@ -21,14 +21,18 @@ function markTheMountingGateHingesBox(thisId) {
 
 function mountingGateHingesGetText(currentMountingGateHingesId) {
     let mountingGateHingesId = document.getElementById(`${currentMountingGateHingesId}`);
-    let mountingGateHingesAsText = mountingGateHingesId.textContent;
-    let mountingGateHingesclean = mountingGateHingesAsText.trim();
-    addMountingGateHinges(mountingGateHingesclean, currentMountingGateHingesId);
+    let paragraphs = mountingGateHingesId.querySelectorAll("p");
+    paragraphs.forEach(paragraph => {
+        const trimmedText = paragraph.textContent.trim();
+        paragraph.textContent = trimmedText;
+        let allMountingGateHingesAsText = paragraph.textContent;
+        addMountingGateHinges(allMountingGateHingesAsText, currentMountingGateHingesId);
+      });
 }
 
 
-function addMountingGateHinges(mountingGateHingesAsText, currentMountingGateHingesId) {
-    let mountingGateHinges = mountingGateHingesAsText;
+function addMountingGateHinges(allMountingGateHingesAsText, currentMountingGateHingesId) {
+    let mountingGateHinges = allMountingGateHingesAsText;
     if (currentMountingGateHinges.length > 0) {
         currentMountingGateHinges = [];
     }

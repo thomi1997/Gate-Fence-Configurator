@@ -6,26 +6,37 @@ function renderColor() {
     let colorDiv = document.getElementById('color-box');
     colorDiv.innerHTML = htmlColor();
     generateColors();
+    renderAllRalColorsOverview();
+    firstColorMark();
     document.getElementById('color-overview').style = 'display: none';
+}
+
+
+function renderAllRalColorsOverview() {
+    let colorOverviewDiv = document.getElementById('color-overview');
+    colorOverviewDiv.innerHTML = htmlColorOverview();
+    renderAllColors();
+}
+
+
+function firstColorMark() {
+    document.getElementById('mark-color-collection').classList.add('mark-the-box');
+    let firstRGBColorBoxMark = document.getElementById('1');
+    let color =  'rgb(255, 0, 0)';
+    markTheRGBColorBox(firstRGBColorBoxMark, color);
+    document.getElementById('color-selected').style = `background-color: ${currentColor[0]['color']}`;
 }
 
 
 function openColorOverview() {
     let colorOverviewDiv = document.getElementById('color-overview');
     colorOverviewDiv.style = 'display: flex;'
-    renderAllRalColorsOverview(colorOverviewDiv);
-    renderAllColors();
 }
 
 
 function closeColorOverview() {
     document.getElementById('color-selected').style = `background-color: ${currentColor[0]['color']}`;
     document.getElementById('color-overview').style = 'display: none;'
-}
-
-
-function renderAllRalColorsOverview(colorOverviewDiv) {
-        colorOverviewDiv.innerHTML = htmlColorOverview();
 }
 
 

@@ -5,6 +5,8 @@ let previouExecutionId = 'execution-1';
 function renderExecution() {
     let executionDiv = document.getElementById('execution-box');
     executionDiv.innerHTML = htmlExecution();
+    let firstExecutionMark = document.getElementById('execution-1');
+    markTheExecutionBox(firstExecutionMark);
 }
 
 

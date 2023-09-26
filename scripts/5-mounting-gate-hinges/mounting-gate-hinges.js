@@ -5,6 +5,8 @@ let previouMountingGateHingesId = 'mounting-gate-hinges-1'
 function renderMountingGateHinges() {
     let mountingGateHingesDiv = document.getElementById('mounting-gate-hinges-box');
     mountingGateHingesDiv.innerHTML = htmlMountingGateHinges();
+    let firstMountingGateHingesMark = document.getElementById('mounting-gate-hinges-1');
+    markTheMountingGateHingesBox(firstMountingGateHingesMark);
 }
 
 

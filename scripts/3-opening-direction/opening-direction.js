@@ -5,6 +5,8 @@ let previouOpeningDirectionId = 'opening-direction-1';
 function renderOpeningDirection() {
     let openingDirectionDiv = document.getElementById('opening-direction-box');
     openingDirectionDiv.innerHTML = htmlOpeningDirection();
+    let firstOpeningDirectionMark = document.getElementById('opening-direction-1');
+    markTheOpeningDirectionBox(firstOpeningDirectionMark);
 }
 
 

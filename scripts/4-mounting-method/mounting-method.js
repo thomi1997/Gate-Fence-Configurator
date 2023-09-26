@@ -5,6 +5,8 @@ let previouMountingMethodId = 'mounting-method-1';
 function renderMountingMethod() {
     let mountingMethodDiv = document.getElementById('mounting-method-box');
     mountingMethodDiv.innerHTML = htmlMountingMethod();
+    let firstMountingMethodMark = document.getElementById('mounting-method-1');
+    markTheMountingMethodBox(firstMountingMethodMark);
 }
 
 

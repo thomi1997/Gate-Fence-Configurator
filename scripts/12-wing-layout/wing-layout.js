@@ -5,6 +5,8 @@ let previouWingLayoutId = 'wing-layout-1';
 function renderWingLayout() {
     let wingLayoutDiv = document.getElementById('wing-layout-box');
     wingLayoutDiv.innerHTML = htmlWingLayout();
+    let firstWingLayoutMark = document.getElementById('wing-layout-1');
+    markTheWingLayoutBox(firstWingLayoutMark);
 }
 
 

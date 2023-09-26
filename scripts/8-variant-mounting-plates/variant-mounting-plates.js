@@ -5,6 +5,8 @@ let previouVariantMountingPlatesId = 'variant-mounting-plates-1';
 function renderVariantMountingPlates() {
     let variantMountingPlatesDiv = document.getElementById('variant-mounting-plates-box');
     variantMountingPlatesDiv.innerHTML = htmlVariantMountingPlates();
+    let firstVariantMountingPlatesMark = document.getElementById('variant-mounting-plates-1');
+    markTheVariantMountingPlatesBox(firstVariantMountingPlatesMark);
 }
 
 

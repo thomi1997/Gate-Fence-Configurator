@@ -2,8 +2,8 @@ function htmlColor() {
     return /*html*/`
         <h2>2. Farbe der Pulverbeschichtung</h2>
         <div class="color-collection">
-            <div onclick="openColorOverview()" class="box-coating">
-                <div class="color-in-the-box" id="color-selected" style='background-color: ${colors[1]};'>
+            <div onclick="openColorOverview()" id="mark-color-collection" class="box-coating">
+                <div class="color-in-the-box" id="color-selected" >
                 </div>
                 <button onclick="openColorOverview()">Farbe auswählen</button>
             </div>

@@ -5,6 +5,8 @@ let previouGripSetId = 'grip-set-1';
 function renderGripSet() {
     let gripSetDiv = document.getElementById('grip-set-box');
     gripSetDiv.innerHTML = htmlGripSet();
+    let firstGripSetMark = document.getElementById('grip-set-1');
+    markTheGripSetBox(firstGripSetMark);
 }
 
 

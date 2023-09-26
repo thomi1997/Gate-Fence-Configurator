@@ -7,6 +7,8 @@ let postScrewOn = false;
 function renderMountingTypePost() {
     let mountingTypePostDiv = document.getElementById('mounting-type-post-box');
     mountingTypePostDiv.innerHTML = htmlMountingTypePost();
+    let firstMountingTypePostMark = document.getElementById('mounting-type-post-1');
+    markTheMountingTypePostBox(firstMountingTypePostMark);
 }
 
 

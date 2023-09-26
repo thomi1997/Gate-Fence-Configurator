@@ -5,6 +5,8 @@ let previouSurfaceId = 'surface-1';
 function renderSurface() {
     let surfaceDiv = document.getElementById('surface-box');
     surfaceDiv.innerHTML = htmlSurface();
+    let firstSurfaceMark = document.getElementById('surface-1');
+    markTheSurfaceBox(firstSurfaceMark);
 }
 
 

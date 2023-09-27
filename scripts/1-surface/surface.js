@@ -18,6 +18,23 @@ function markTheSurfaceBox(thisId) {
         previouSurfaceId = currentSurfaceId;
     }
     surfaceGetText(currentSurfaceId);
+    
+    if (currentSurfaceId == 'surface-4') {
+        changeColorSurface = false;
+        changeColorDB = false;
+        changeColorHammerBlowSurface = true;
+        renderColor();
+    } else if (currentSurfaceId == 'surface-5') {
+        changeColorSurface = false;
+        changeColorHammerBlowSurface = false;
+        changeColorDB = true;
+        renderColor();
+    } else {
+        changeColorHammerBlowSurface = false;
+        changeColorDB = false;
+        changeColorSurface = true;
+        renderColor();
+    }
 }
 
 

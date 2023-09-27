@@ -1,4 +1,6 @@
 const colors = [];
+const colorsHammerBlow = ['rgb(80, 16, 52)', 'rgb(104, 91, 40)', 'rgb(91, 103, 105)', 'rgb(90, 94, 92)'];
+const colorsDB = ['rgb(166, 167, 169)', 'rgb(107, 105, 101)', 'rgb(56, 58, 55)'];
 
 
 function generateColors(numColors) {

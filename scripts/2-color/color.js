@@ -1,13 +1,28 @@
 let currentColor = [];
 let previouColorId = '1';
+let changeColorSurface = true;
+let changeColorHammerBlowSurface = false;
+let changeColorDB = false;
 
 
 function renderColor() {
     let colorDiv = document.getElementById('color-box');
     colorDiv.innerHTML = htmlColor();
-    generateColors();
-    renderAllRalColorsOverview();
-    firstColorMark();
+    if (changeColorSurface) {
+        let colorButtonDiv = document.getElementById('change-color');
+        colorButtonDiv.innerHTML = htmlColorButton();
+        generateColors();
+        renderAllRalColorsOverview();
+        firstColorMark();
+    } else if(changeColorHammerBlowSurface) {
+        let colorDivH2 = document.getElementById('h2-color-collection');
+        colorDivH2.innerHTML = '2. Farbe des Hammerschlags';
+        renderHammerBlowColor();
+    } else if (changeColorDB) {
+        let colorDivH2 = document.getElementById('h2-color-collection');
+        colorDivH2.innerHTML = '2. DB-Farbe';
+        renderDBColor();
+    }
     document.getElementById('color-overview').style = 'display: none';
 }
 
@@ -45,6 +60,24 @@ function renderAllColors() {
         const color = colors[i];
         let colorListDiv = document.getElementById('rgb-color-id');
         colorListDiv.innerHTML += htmlAllColorsList(color, i);
+    }
+}
+
+
+function renderHammerBlowColor() {
+    for (let i = 0; i < colorsHammerBlow.length; i++) {
+        const colorHammerBlow = colorsHammerBlow[i];
+        let colorHammerBlowListDiv = document.getElementById('change-color');
+        colorHammerBlowListDiv.innerHTML += htmlHammerBlowColor(colorHammerBlow, i);
+    }
+}
+
+
+function renderDBColor() {
+    for (let i = 0; i < colorsDB.length; i++) {
+        const colorDB = colorsDB[i];
+        let colorDBListDiv = document.getElementById('change-color');
+        colorDBListDiv.innerHTML += htmlHammerBlowColor(colorDB, i);
     }
 }
 

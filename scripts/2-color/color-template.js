@@ -1,12 +1,7 @@
 function htmlColor() {
     return /*html*/`
-        <h2>2. Farbe der Pulverbeschichtung</h2>
-        <div class="color-collection">
-            <div onclick="openColorOverview()" id="mark-color-collection" class="box-coating">
-                <div class="color-in-the-box" id="color-selected" >
-                </div>
-                <button onclick="openColorOverview()">Farbe auswählen</button>
-            </div>
+        <h2 id="h2-color-collection">2. Farbe der Pulverbeschichtung</h2>
+        <div id="change-color" class="color-collection">
         </div>
     `;
 }
@@ -32,8 +27,39 @@ function htmlColorOverview() {
 }
 
 
+function htmlColorButton() {
+    return /*html*/`
+        <div onclick="openColorOverview()" id="mark-color-collection" class="box-coating">
+            <div class="color-in-the-box" id="color-selected" >
+            </div>
+            <button onclick="openColorOverview()">Farbe auswählen</button>
+        </div>
+    `;
+}
+
+
 function htmlAllColorsList(color, i) {
     return /*html*/`  
         <div onclick="markTheRGBColorBox(this, '${color}')" id="${1+i}" class="color-box-overview" style="background-color: ${color};"></div>
+    `;
+}
+
+
+function htmlHammerBlowColor(colorHammerBlow, i) {
+    return /*html*/`
+        <div onclick="markTheRGBColorBox(this)" id="${i}" class="box-coating">
+            <div class="color-in-the-box" style="background-color: ${colorHammerBlow};">
+            </div>
+        </div>
+    `;
+}
+
+
+function htmlDBColor(colorDB, i) {
+    return /*html*/`
+        <div onclick="markTheRGBColorBox(this)" id="${i}" class="box-coating">
+            <div class="color-in-the-box" style="background-color: ${colorDB};">
+            </div>
+        </div>
     `;
 }

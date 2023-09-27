@@ -4,7 +4,9 @@
 }
 
 .color-collection {
-
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .color-in-the-box {

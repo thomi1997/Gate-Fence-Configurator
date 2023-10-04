@@ -41,8 +41,8 @@ function addWingLayout(wingLayoutAsText, currentWingLayoutId) {
 
 
 function pushWingLayoutContent(currentWingLayoutId, wingLayout) {
-    console.log('aktuelle id', currentWingLayoutId);
-    console.log('aktueller text', wingLayout);
+    //console.log('aktuelle id', currentWingLayoutId);
+    //console.log('aktueller text', wingLayout);
     let offerWingLayout = {
         'id': currentWingLayoutId,
         'wing-layout': wingLayout

@@ -54,9 +54,9 @@ function queryIdMountingTypePost(currentMountingTypePostId, mountingTypePost) {
 
 
 function pushMountingTypePostContent(currentMountingTypePostId, priseMountingTypePost, mountingTypePost) {
-    console.log('aktuelle id', currentMountingTypePostId);
-    console.log('aktueller preis', priseMountingTypePost);
-    console.log('aktueller text', mountingTypePost);
+    //console.log('aktuelle id', currentMountingTypePostId);
+    //console.log('aktueller preis', priseMountingTypePost);
+    //console.log('aktueller text', mountingTypePost);
     let offerMountingTypePost = {
         'id': currentMountingTypePostId,
         'mounting-type-post': mountingTypePost,

@@ -60,9 +60,9 @@ function queryIdVariantMountingPlates(currentVariantMountingPlatesId, variantMou
 
 
 function pushVariantMountingPlatesContent(currentVariantMountingPlatesId, priseVariantMountingPlates, variantMountingPlates) {
-    console.log('aktuelle id', currentVariantMountingPlatesId);
-    console.log('aktueller preis', priseVariantMountingPlates);
-    console.log('aktueller text', variantMountingPlates);
+    //console.log('aktuelle id', currentVariantMountingPlatesId);
+    //console.log('aktueller preis', priseVariantMountingPlates);
+    //console.log('aktueller text', variantMountingPlates);
     let offerVariantMountingPlates = {
         'id': currentVariantMountingPlatesId,
         'variant-mounting-plates': variantMountingPlates,

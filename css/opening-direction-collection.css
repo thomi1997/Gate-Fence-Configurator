@@ -7,3 +7,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+.opening-direction-img-lower-level {
+    height: 200px;
+}
+
+.din-left-inside {
+    width: 200px;
+    object-fit: contain;
+}

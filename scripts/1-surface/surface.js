@@ -75,9 +75,9 @@ function queryIdSurface(currentSurfaceId, surface) {
 
 
 function pushSurfaceContent(currentSurfaceId, priseSurface, surface) {
-    console.log('aktuelle id', currentSurfaceId);
-    console.log('aktueller preis', priseSurface);
-    console.log('aktueller text', surface);
+    //console.log('aktuelle id', currentSurfaceId);
+    //console.log('aktueller preis', priseSurface);
+    //console.log('aktueller text', surface);
     let offerSurface = {
         'id': currentSurfaceId,
         'surface': surface,

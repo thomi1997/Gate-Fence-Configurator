@@ -10,7 +10,7 @@ function renderOptionalNotes() {
 function addOptionalNotes() {
     let optionalNotesInput = document.getElementById('optional-notes-input');
     let optionalNotesValue = optionalNotesInput.value;
-    console.log('optional notes', optionalNotesValue);
+    //console.log('optional notes', optionalNotesValue);
     if (currentOptionalNotes.length > 0) {
         currentOptionalNotes = [];
     }

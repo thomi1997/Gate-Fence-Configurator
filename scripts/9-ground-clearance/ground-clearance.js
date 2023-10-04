@@ -10,7 +10,7 @@ function renderGroundClearance() {
 function addGroundClearance() {
     let groundClearanceInput = document.getElementById('ground-clearance-input');
     let groundClearanceValue = groundClearanceInput.value;
-    console.log(groundClearanceValue);
+    //console.log(groundClearanceValue);
     if (currentGroundClearance.length > 0) {
         currentGroundClearance = [];
     }

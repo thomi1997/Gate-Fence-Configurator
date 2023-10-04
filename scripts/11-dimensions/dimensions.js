@@ -11,7 +11,7 @@ function renderDimensions() {
 function addDimensionsHeight() {
     let dimensionsInput1Height = document.getElementById('dimensions-1-input');
     let dimensionsValue1Height = dimensionsInput1Height.value;
-    console.log('hoehe', dimensionsValue1Height);
+    //console.log('hoehe', dimensionsValue1Height);
     
     if (currentDimensionsHeight.length > 0) {
         currentDimensionsHeight = [];
@@ -32,7 +32,7 @@ function addDimensionsHeight() {
 function addDimensionsWide() {
     let dimensionsInput2Wide = document.getElementById('dimensions-2-input');
     let dimensionsValue2Wide = dimensionsInput2Wide.value;
-    console.log('breite', dimensionsValue2Wide);
+    //console.log('breite', dimensionsValue2Wide);
 
     if (currentDimensionsWide.length > 0) {
         currentDimensionsWide = [];

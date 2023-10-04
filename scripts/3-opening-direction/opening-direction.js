@@ -23,9 +23,9 @@ function markTheOpeningDirectionBox(thisId) {
 
 function openingDirectionGetText(currentOpeningDirectionId) {
     let openingDirectionId = document.getElementById(`${currentOpeningDirectionId}`);
-    let openingDirectionAsText = openingDirectionId.textContent;
-    let openingDirectionclean = openingDirectionAsText.trim();
-    addOpeningDirection(openingDirectionclean, currentOpeningDirectionId);
+    let paragraphsOpeningDirection = openingDirectionId.querySelector(`#${currentOpeningDirectionId} p:nth-child(2)`);
+    let trimmedOpeningDirection = paragraphsOpeningDirection.textContent.trim();
+    addOpeningDirection(trimmedOpeningDirection, currentOpeningDirectionId);
 }
 
 
@@ -41,10 +41,10 @@ function addOpeningDirection(openingDirectionAsText, currentOpeningDirectionId) 
 
 
 function pushOpeningDirectionContent(currentOpeningDirectionId, openingDirection) {
-    console.log('aktuelle id', currentOpeningDirectionId);
-    console.log('aktueller text', openingDirection);
+    //console.log('aktuelle id', currentOpeningDirectionId);
+    //console.log('aktueller text', openingDirection);
     let priseOpeningDirection = '0,00';
-    console.log('aktueller preis', priseOpeningDirection);
+    //console.log('aktueller preis', priseOpeningDirection);
     let offerOpeningDirection = {
         'id': currentOpeningDirectionId,
         'opening-direction': openingDirection,

@@ -9,7 +9,7 @@ function renderProductionDrawing() {
 
 function addProductionDrawing() {
     const productionDrawingSelect = document.getElementById('production-drawing-select');
-    console.log('option value', productionDrawingSelect.value);
+    //console.log('option value', productionDrawingSelect.value);
 
     if (currentProductionDrawing.length > 0) {
         currentProductionDrawing.forEach(productionDrawing => {

@@ -60,9 +60,9 @@ function queryIdGripSet(currentGripSetId, gripSet) {
 
 
 function pushGripSetContent(currentGripSetId, priseGripSet, gripSet) {
-    console.log('aktuelle id', currentGripSetId);
-    console.log('aktueller preis', priseGripSet);
-    console.log('aktueller text', gripSet);
+    //console.log('aktuelle id', currentGripSetId);
+    //console.log('aktueller preis', priseGripSet);
+    //console.log('aktueller text', gripSet);
     let offerGripSet = {
         'id': currentGripSetId,
         'grip-set': gripSet,

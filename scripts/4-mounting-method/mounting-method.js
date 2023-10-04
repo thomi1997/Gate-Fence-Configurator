@@ -62,9 +62,9 @@ function queryIdMountingMethod(currentMountingMethodId, mountingMethod) {
 
 
 function pushMountingMethodContent(currentMountingMethodId, priseMountingMethod, mountingMethod) {
-    console.log('aktuelle id', currentMountingMethodId);
-    console.log('aktueller preis', priseMountingMethod);
-    console.log('aktueller text', mountingMethod);
+    //console.log('aktuelle id', currentMountingMethodId);
+    //console.log('aktueller preis', priseMountingMethod);
+    //console.log('aktueller text', mountingMethod);
     let offerMountingMethod = {
         'id': currentMountingMethodId,
         'mounting-method': mountingMethod,

@@ -23,13 +23,9 @@ function markTheMountingGateHingesBox(thisId) {
 
 function mountingGateHingesGetText(currentMountingGateHingesId) {
     let mountingGateHingesId = document.getElementById(`${currentMountingGateHingesId}`);
-    let paragraphs = mountingGateHingesId.querySelectorAll("p");
-    paragraphs.forEach(paragraph => {
-        const trimmedText = paragraph.textContent.trim();
-        paragraph.textContent = trimmedText;
-        let allMountingGateHingesAsText = paragraph.textContent;
-        addMountingGateHinges(allMountingGateHingesAsText, currentMountingGateHingesId);
-      });
+    let paragraphsmountingGateHinges = mountingGateHingesId.querySelector(`#${currentMountingGateHingesId} p:nth-child(2)`);
+    let trimmedMountingGateHinges = paragraphsmountingGateHinges.textContent.trim();
+    addMountingGateHinges(trimmedMountingGateHinges, currentMountingGateHingesId);
 }
 
 

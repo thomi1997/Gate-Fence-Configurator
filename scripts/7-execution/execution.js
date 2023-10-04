@@ -52,9 +52,9 @@ function queryIdExecution(currentExecutionId, execution) {
 
 
 function pushExecutionContent(currentExecutionId, priseExecution, execution) {
-    console.log('aktuelle id', currentExecutionId);
-    console.log('aktueller preis', priseExecution);
-    console.log('aktueller text', execution);
+    //console.log('aktuelle id', currentExecutionId);
+    //console.log('aktueller preis', priseExecution);
+    //console.log('aktueller text', execution);
     let offerExecution = {
         'id': currentExecutionId,
         'execution': execution,

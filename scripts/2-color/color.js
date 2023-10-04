@@ -99,8 +99,8 @@ function markTheRGBColorBox(thisColorId, color) {
 
 
 function pushColor(currentColorId, color) {
-    console.log('aktuelle id', currentColorId);
-    console.log('aktuelle farbe', color);
+    //console.log('aktuelle id', currentColorId);
+    //console.log('aktuelle farbe', color);
     let offerColor = {
         'id': currentColorId,
         'color': color,

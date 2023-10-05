@@ -54,9 +54,9 @@ function queryIdMountingGateHinges(currentMountingGateHingesId, mountingGateHing
 
 
 function pushMountingGateHingesContent(currentMountingGateHingesId, priseMountingGateHinges, mountingGateHinges) {
-    console.log('aktuelle id', currentMountingGateHingesId);
-    console.log('aktueller preis', priseMountingGateHinges);
-    console.log('aktueller text', mountingGateHinges);
+    //console.log('aktuelle id', currentMountingGateHingesId);
+    //console.log('aktueller preis', priseMountingGateHinges);
+    //console.log('aktueller text', mountingGateHinges);
     let offerMountingGateHinges = {
         'id': currentMountingGateHingesId,
         'mounting-gate-hinges': mountingGateHinges,

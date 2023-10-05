@@ -2,11 +2,53 @@ let currentMountingMethod = [];
 let previouMountingMethodId = 'mounting-method-1';
 
 
+let mountingMethodImgPathsLeft = [
+    'img/mounting-method-img/key-lock-left/0-mounting-method-left.png',
+    'img/mounting-method-img/key-lock-left/1-mounting-method-left.png',
+    'img/mounting-method-img/key-lock-left/2-mounting-method-left.png',
+    'img/mounting-method-img/key-lock-left/3-mounting-method-left.png',
+    'img/mounting-method-img/key-lock-left/4-mounting-method-left.png',
+    'img/mounting-method-img/key-lock-left/5-mounting-method-left.png',
+    'img/mounting-method-img/key-lock-left/6-mounting-method-left.png',
+]
+
+
+let mountingMethodImgPathsRight = [
+    'img/mounting-method-img/key-lock-right/0-mounting-method-right.png',
+    'img/mounting-method-img/key-lock-right/1-mounting-method-right.png',
+    'img/mounting-method-img/key-lock-right/2-mounting-method-right.png',
+    'img/mounting-method-img/key-lock-right/3-mounting-method-right.png',
+    'img/mounting-method-img/key-lock-right/4-mounting-method-right.png',
+    'img/mounting-method-img/key-lock-right/5-mounting-method-right.png',
+    'img/mounting-method-img/key-lock-right/6-mounting-method-right.png',
+]
+
+
 function renderMountingMethod() {
     let mountingMethodDiv = document.getElementById('mounting-method-box');
-    mountingMethodDiv.innerHTML = htmlMountingMethod();
+    if (keyLockLeft) {
+        renderKeyLockLeft(mountingMethodDiv);
+    } else if (keyLockRight) {
+        renderKeyLockRight(mountingMethodDiv);
+    }
     let firstMountingMethodMark = document.getElementById('mounting-method-1');
     markTheMountingMethodBox(firstMountingMethodMark);
+}
+
+
+function renderKeyLockLeft(mountingMethodDiv) {
+    for (let i = 0; i < mountingMethodImgPathsLeft.length; i++) {
+        let keyLockLeftPath = mountingMethodImgPathsLeft;
+        mountingMethodDiv.innerHTML = htmlMountingMethod(keyLockLeftPath);
+    }
+}
+
+
+function renderKeyLockRight(mountingMethodDiv) {
+    for (let i = 0; i < mountingMethodImgPathsRight.length; i++) {
+        let keyLockRightPath = mountingMethodImgPathsRight;
+        mountingMethodDiv.innerHTML = htmlMountingMethod(keyLockRightPath);
+    }
 }
 
 

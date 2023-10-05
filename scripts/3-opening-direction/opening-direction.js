@@ -1,5 +1,7 @@
 let currentOpeningDirection = [];
 let previouOpeningDirectionId = 'opening-direction-1';
+let keyLockLeft = false;
+let keyLockRight = false;
 
 
 function renderOpeningDirection() {
@@ -18,12 +20,34 @@ function markTheOpeningDirectionBox(thisId) {
         previouOpeningDirectionId = currentOpeningDirectionId;
     }
     openingDirectionGetText(currentOpeningDirectionId);
+    keyLockQuery(currentOpeningDirectionId);
+}
+
+
+function keyLockQuery(currentOpeningDirectionId) {
+    let queryLeft = currentOpeningDirectionId == 'opening-direction-1' || currentOpeningDirectionId == 'opening-direction-4';
+    let queryRight = currentOpeningDirectionId == 'opening-direction-2' || currentOpeningDirectionId == 'opening-direction-3';
+        if (queryLeft) {
+            keyLockLeft = true;
+            keyLockRight = false;
+            renderMountingMethod();
+            //console.log('opening direction', currentOpeningDirectionId);
+            //console.log('keylock left', keyLockLeft);
+            //console.log('keylock right', keyLockRight);
+        } else if (queryRight) {
+            keyLockLeft = false;
+            keyLockRight = true;
+            renderMountingMethod();
+            //console.log('opening direction-2', currentOpeningDirectionId);
+            //console.log('keylock left', keyLockLeft);
+            //console.log('keylock right', keyLockRight);
+        }
 }
 
 
 function openingDirectionGetText(currentOpeningDirectionId) {
     let openingDirectionId = document.getElementById(`${currentOpeningDirectionId}`);
-    let paragraphsOpeningDirection = openingDirectionId.querySelector(`#${currentOpeningDirectionId} p:nth-child(2)`);
+    let paragraphsOpeningDirection = openingDirectionId.querySelector(`#${currentOpeningDirectionId} p:nth-child(3)`);
     let trimmedOpeningDirection = paragraphsOpeningDirection.textContent.trim();
     addOpeningDirection(trimmedOpeningDirection, currentOpeningDirectionId);
 }

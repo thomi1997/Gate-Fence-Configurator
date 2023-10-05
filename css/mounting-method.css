@@ -7,3 +7,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+.mounting-method-img {
+    width: 200px;
+    object-fit: contain;
+}

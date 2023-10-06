@@ -10,7 +10,7 @@ let mountingMethodImgPathsLeft = [
     'img/mounting-method-img/key-lock-left/4-mounting-method-left.png',
     'img/mounting-method-img/key-lock-left/5-mounting-method-left.png',
     'img/mounting-method-img/key-lock-left/6-mounting-method-left.png',
-]
+];
 
 
 let mountingMethodImgPathsRight = [
@@ -21,7 +21,7 @@ let mountingMethodImgPathsRight = [
     'img/mounting-method-img/key-lock-right/4-mounting-method-right.png',
     'img/mounting-method-img/key-lock-right/5-mounting-method-right.png',
     'img/mounting-method-img/key-lock-right/6-mounting-method-right.png',
-]
+];
 
 
 function renderMountingMethod() {
@@ -60,6 +60,7 @@ function markTheMountingMethodBox(thisId) {
         previouMountingMethodId = currentMountingMethodId;
     }
     mountingMethodGetText(currentMountingMethodId);
+    renderMountingGateHinges();
 }
 
 
@@ -73,10 +74,10 @@ function mountingMethodGetText(currentMountingMethodId) {
 
 function addMountingMethod(mountingMethodAsText, currentMountingMethodId) {
     let mountingMethod = mountingMethodAsText;
-    if (currentSurface.length > 0) {
-        currentSurface = [];
+    if (currentMountingMethod.length > 0) {
+        currentMountingMethod = [];
     }
-    if (currentSurface.length == 0) {
+    if (currentMountingMethod.length == 0) {
         queryIdMountingMethod(currentMountingMethodId, mountingMethod);
     }
 }

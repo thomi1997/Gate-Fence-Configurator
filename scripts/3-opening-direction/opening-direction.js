@@ -1,7 +1,13 @@
 let currentOpeningDirection = [];
 let previouOpeningDirectionId = 'opening-direction-1';
+
 let keyLockLeft = false;
 let keyLockRight = false;
+
+let insideLeft = false;
+let insideRight = false;
+let outsideLeft = false;
+let outsideRight = false;
 
 
 function renderOpeningDirection() {
@@ -25,23 +31,45 @@ function markTheOpeningDirectionBox(thisId) {
 
 
 function keyLockQuery(currentOpeningDirectionId) {
-    let queryLeft = currentOpeningDirectionId == 'opening-direction-1' || currentOpeningDirectionId == 'opening-direction-4';
-    let queryRight = currentOpeningDirectionId == 'opening-direction-2' || currentOpeningDirectionId == 'opening-direction-3';
-        if (queryLeft) {
-            keyLockLeft = true;
-            keyLockRight = false;
-            renderMountingMethod();
-            //console.log('opening direction', currentOpeningDirectionId);
-            //console.log('keylock left', keyLockLeft);
-            //console.log('keylock right', keyLockRight);
-        } else if (queryRight) {
-            keyLockLeft = false;
-            keyLockRight = true;
-            renderMountingMethod();
-            //console.log('opening direction-2', currentOpeningDirectionId);
-            //console.log('keylock left', keyLockLeft);
-            //console.log('keylock right', keyLockRight);
+    let queryLeft = currentOpeningDirectionId == 'opening-direction-1' || currentOpeningDirectionId == 'opening-direction-4'; // innen
+    let queryRight = currentOpeningDirectionId == 'opening-direction-2' || currentOpeningDirectionId == 'opening-direction-3'; // außen
+    let queryOutsideRight = currentOpeningDirectionId == 'opening-direction-3';
+    let queryOutsideLeft = currentOpeningDirectionId == 'opening-direction-4';
+    if (queryLeft) {
+        insideRight = true;
+        insideLeft = false;
+        outsideLeft = false;
+        outsideRight = false;
+
+        keyLockLeft = true;
+        keyLockRight = false;
+        if (queryOutsideLeft) {
+            outsideLeft = true;
+            outsideRight = false;
+            insideRight = false;
+            insideLeft = false;
         }
+    } else if (queryRight) {
+        insideLeft = true;
+        insideRight = false;
+        outsideLeft = false;
+        outsideRight = false;
+
+        keyLockLeft = false;
+        keyLockRight = true;
+        if (queryOutsideRight) {
+            outsideRight = true;
+            outsideLeft = false;
+            insideLeft = false;
+            insideRight = false;
+        }
+    }
+    console.log('inside right', insideRight);
+    console.log('outside left', outsideLeft);
+    console.log('outside right', outsideRight);
+    console.log('inside left', insideLeft);
+    renderMountingMethod();
+    renderMountingGateHinges();
 }
 
 

@@ -1,6 +1,6 @@
-function htmlDimensions() {
+function htmlDimensions(dimensionsNumber) {
     return /*html*/`
-        <h2>(Variable). Maße</h2>
+        <h2>${dimensionsNumber}. Maße</h2>
         <div class="dimensions-collection">
             <div class="dimensions-section">
                 <p style="width: 200px;">

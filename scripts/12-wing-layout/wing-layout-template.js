@@ -1,6 +1,6 @@
-function htmlWingLayout() {
+function htmlWingLayout(wingLayoutNumber) {
     return /*html*/`
-        <h2>(variable). Flügelaufteilung</h2>
+        <h2>${wingLayoutNumber}. Flügelaufteilung</h2>
         <div class="wing-layout-collection">
             <div onclick="markTheWingLayoutBox(this)" id="wing-layout-1" class="box-coating">
                 <p>

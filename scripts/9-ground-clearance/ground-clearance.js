@@ -3,7 +3,12 @@ let currentGroundClearance = [];
 
 function renderGroundClearance() {
     let groundClearanceDiv = document.getElementById('ground-clearance-box');
-    groundClearanceDiv.innerHTML = htmlGroundClearance();
+    if (postScrewOn) {
+        groundClearanceDiv.classList.remove('d-none');
+        groundClearanceDiv.innerHTML = htmlGroundClearance();
+    } else if (postConcrete) {
+        groundClearanceDiv.classList.add('d-none');
+    }
 }
 
 

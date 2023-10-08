@@ -1,7 +1,7 @@
 function htmlVariantMountingPlates() {
     return /*html*/`
         <h2>
-            (Variable). Variante der Montageplatten
+            7. Variante der Montageplatten
         </h2>
         <div class="variant-mounting-plates-collection">
             <div onclick="markTheVariantMountingPlatesBox(this)" id="variant-mounting-plates-1" class="box-coating">

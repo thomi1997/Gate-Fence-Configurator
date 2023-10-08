@@ -35,41 +35,64 @@ function keyLockQuery(currentOpeningDirectionId) {
     let queryRight = currentOpeningDirectionId == 'opening-direction-2' || currentOpeningDirectionId == 'opening-direction-3'; // außen
     let queryOutsideRight = currentOpeningDirectionId == 'opening-direction-3';
     let queryOutsideLeft = currentOpeningDirectionId == 'opening-direction-4';
+    queryAllSides(queryLeft, queryRight, queryOutsideRight, queryOutsideLeft);
+}
+
+
+function queryAllSides(queryLeft, queryRight, queryOutsideRight, queryOutsideLeft) {
     if (queryLeft) {
-        insideRight = true;
-        insideLeft = false;
-        outsideLeft = false;
-        outsideRight = false;
-
-        keyLockLeft = true;
-        keyLockRight = false;
-        if (queryOutsideLeft) {
-            outsideLeft = true;
-            outsideRight = false;
-            insideRight = false;
-            insideLeft = false;
-        }
+        queryInsideRight();
+        queryOutSideLeft(queryOutsideLeft);
     } else if (queryRight) {
-        insideLeft = true;
-        insideRight = false;
-        outsideLeft = false;
-        outsideRight = false;
-
-        keyLockLeft = false;
-        keyLockRight = true;
-        if (queryOutsideRight) {
-            outsideRight = true;
-            outsideLeft = false;
-            insideLeft = false;
-            insideRight = false;
-        }
+        queryInsideLeft();
+        queryOutSideRight(queryOutsideRight);
     }
-    console.log('inside right', insideRight);
-    console.log('outside left', outsideLeft);
-    console.log('outside right', outsideRight);
-    console.log('inside left', insideLeft);
+    //console.log('inside right', insideRight);
+    //console.log('outside left', outsideLeft);
+    //console.log('outside right', outsideRight);
+    //console.log('inside left', insideLeft);
     renderMountingMethod();
     renderMountingGateHinges();
+}
+
+
+function queryInsideRight() {
+    insideRight = true;
+    insideLeft = false;
+    outsideLeft = false;
+    outsideRight = false;
+    keyLockLeft = true;
+    keyLockRight = false;
+}
+
+
+function queryOutSideLeft(queryOutsideLeft) {
+    if (queryOutsideLeft) {
+        outsideLeft = true;
+        outsideRight = false;
+        insideRight = false;
+        insideLeft = false;
+    }
+}
+
+
+function queryInsideLeft() {
+    insideLeft = true;
+    insideRight = false;
+    outsideLeft = false;
+    outsideRight = false;
+    keyLockLeft = false;
+    keyLockRight = true;
+}
+
+
+function queryOutSideRight(queryOutsideRight) {
+    if (queryOutsideRight) {
+        outsideRight = true;
+        outsideLeft = false;
+        insideLeft = false;
+        insideRight = false;
+    }
 }
 
 

@@ -1,12 +1,24 @@
 let currentExecution = [];
 let previouExecutionId = 'execution-1';
-
+let withMotor = false;
+let withoutMotor = false;
 
 function renderExecution() {
     let executionDiv = document.getElementById('execution-box');
-    executionDiv.innerHTML = htmlExecution();
+    queryExecutionNumber(executionDiv);
     let firstExecutionMark = document.getElementById('execution-1');
     markTheExecutionBox(firstExecutionMark);
+}
+
+
+function queryExecutionNumber(executionDiv) {
+    if (postConcrete) {
+        let executionNumber = 7;
+        executionDiv.innerHTML = htmlExecution(executionNumber);
+    } else if (postScrewOn) {
+        executionNumber = 9;
+        executionDiv.innerHTML = htmlExecution(executionNumber);
+    }
 }
 
 
@@ -18,6 +30,17 @@ function markTheExecutionBox(thisId) {
         previouExecutionId = currentExecutionId;
     }
     executionGetText(currentExecutionId);
+    if (currentExecutionId == 'execution-1') {
+        withoutMotor = true;
+        withMotor = false;
+        renderGripSet();
+        renderDimensions();
+    } else if (currentExecutionId == 'execution-2') {
+        withMotor = true;
+        withoutMotor = false;
+        renderGripSet();
+        renderDimensions();
+    }
 }
 
 

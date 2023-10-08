@@ -1,6 +1,6 @@
 let currentMountingTypePost = [];
 let previouMountingTypePostId = 'mounting-type-post-1';
-let concretePost = false;
+let postConcrete = false;
 let postScrewOn = false;
 
 
@@ -20,6 +20,7 @@ function markTheMountingTypePostBox(thisId) {
         previouMountingTypePostId = currentMountingTypePostId;
     }
     mountingTypePostGetText(currentMountingTypePostId);
+    queryMountingTypePost(currentMountingTypePostId);
 }
 
 
@@ -63,4 +64,23 @@ function pushMountingTypePostContent(currentMountingTypePostId, priseMountingTyp
         'prise-mounting-type-post': priseMountingTypePost,
     }
     currentMountingTypePost.push(offerMountingTypePost);
+}
+
+
+function queryMountingTypePost(currentMountingTypePostId) {
+    if (currentMountingTypePostId == 'mounting-type-post-1') {
+        postConcrete = true;
+        postScrewOn = false;
+        renderVariantMountingPlates();
+        renderGroundClearance();
+        renderExecution();
+        renderDimensions();
+    } else if (currentMountingTypePostId == 'mounting-type-post-2') {
+        postScrewOn = true;
+        postConcrete = false;
+        renderVariantMountingPlates();
+        renderGroundClearance();
+        renderExecution();
+        renderDimensions();
+    }
 }

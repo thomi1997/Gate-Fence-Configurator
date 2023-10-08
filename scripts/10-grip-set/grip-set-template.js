@@ -1,6 +1,6 @@
-function htmlGripSet() {
+function htmlGripSet(gripSetNumber) {
     return /*html*/`
-        <h2>(Variabe). Griffgarnitur</h2>
+        <h2>${gripSetNumber}. Griffgarnitur</h2>
         <div class="grip-set-collection">
             <div onclick="markTheGripSetBox(this)" id="grip-set-1" class="box-coating">
                 <p>

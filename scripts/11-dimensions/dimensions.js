@@ -4,7 +4,44 @@ let currentDimensionsWide = [];
 
 function renderDimensions() {
     let dimensionsDiv = document.getElementById('dimensions-box');
-    dimensionsDiv.innerHTML = htmlDimensions();
+    queryDimensionsNumber(dimensionsDiv);
+}
+
+
+function queryDimensionsNumber(dimensionsDiv) {
+    let dimensionsNumber = 9;
+    if (postScrewOn) {
+        queryDimensionsPostScrewOn(dimensionsDiv, dimensionsNumber);
+    } else if (postConcrete) {
+        queryDimensionsPostConcrete(dimensionsDiv, dimensionsNumber);
+    }
+}
+
+
+function queryDimensionsPostScrewOn(dimensionsDiv, dimensionsNumber) {
+    if (withoutMotor) {
+        dimensionsNumber = 11;
+        renderWingLayout();
+    } else if (withMotor) {
+        dimensionsNumber = 10;
+        renderWingLayout();
+    }
+    renderHtmlDimensions(dimensionsDiv, dimensionsNumber);
+}
+
+
+function queryDimensionsPostConcrete(dimensionsDiv, dimensionsNumber) {
+    if (withMotor) {
+        dimensionsNumber = 8;
+        renderWingLayout();
+    }
+    renderWingLayout();
+    renderHtmlDimensions(dimensionsDiv, dimensionsNumber);
+}
+
+
+function renderHtmlDimensions(dimensionsDiv, dimensionsNumber) {
+    dimensionsDiv.innerHTML = htmlDimensions(dimensionsNumber);
 }
 
 

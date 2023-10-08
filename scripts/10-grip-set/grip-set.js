@@ -4,7 +4,26 @@ let previouGripSetId = 'grip-set-1';
 
 function renderGripSet() {
     let gripSetDiv = document.getElementById('grip-set-box');
-    gripSetDiv.innerHTML = htmlGripSet();
+    if (withoutMotor) {
+        queryGripSetNumber(gripSetDiv);
+    } else if (withMotor) {
+        gripSetDiv.classList.add('d-none');
+    }
+}
+
+
+function queryGripSetNumber(gripSetDiv) {
+    let gripSetNumber = 8;
+    if (postScrewOn) {
+        gripSetNumber = 10;
+    }
+    showGripSet(gripSetDiv, gripSetNumber);
+}
+
+
+function showGripSet(gripSetDiv, gripSetNumber) {
+    gripSetDiv.classList.remove('d-none');
+    gripSetDiv.innerHTML = htmlGripSet(gripSetNumber);
     let firstGripSetMark = document.getElementById('grip-set-1');
     markTheGripSetBox(firstGripSetMark);
 }

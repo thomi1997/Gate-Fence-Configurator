@@ -19,6 +19,7 @@ async function init() {
     renderGripSet();
     renderDimensions();
     renderWingLayout();
+    renderwideWings();
     renderProductionDrawing();
     renderNumberOfPosts();
     renderOptionalNotes();

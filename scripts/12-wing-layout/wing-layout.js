@@ -1,5 +1,8 @@
 let currentWingLayout = [];
 let previouWingLayoutId = 'wing-layout-1';
+let wingLayoutNumber = 10;
+let symmetrical = false;
+let asymmetric = false;
 
 
 function renderWingLayout() {
@@ -11,16 +14,19 @@ function renderWingLayout() {
 
 
 function queryWingLayoutNumber(wingLayoutDiv) {
-    let wingLayoutNumber = 10;
+    
     if (postScrewOn) {
         if (withoutMotor) {
             wingLayoutNumber = 12;
+            renderwideWings();
         } else if (withMotor) {
             wingLayoutNumber = 11;
+            renderwideWings();
         }
     } else if (postConcrete) {
         if (withMotor) {
             wingLayoutNumber = 9;
+            renderwideWings();
         }
     }
     renderHtmlWingLayout(wingLayoutDiv, wingLayoutNumber);
@@ -40,6 +46,15 @@ function markTheWingLayoutBox(thisId) {
         previouWingLayoutId = currentWingLayoutId;
     }
     wingLayoutGetText(currentWingLayoutId);
+    if (currentWingLayoutId == 'wing-layout-1') {
+        symmetrical = true;
+        asymmetric = false;
+        renderwideWings();
+    } else if (currentWingLayoutId == 'wing-layout-2') {
+        asymmetric = true;
+        symmetrical = false;
+        renderwideWings();
+    }
 }
 
 

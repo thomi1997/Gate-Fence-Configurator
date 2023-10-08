@@ -6,51 +6,86 @@ function renderMountingGateHinges() {
     let mountingGateHingesDiv = document.getElementById('mounting-gate-hinges-box');
     mountingGateHingesDiv.innerHTML = '';
     let currentId = currentMountingMethod[0]['id'];
-    //let mountingGateHingesTextTop = document.getElementById('mounting-gate-hinges-text-top');
-    //let mountingGateHingesTextBottom = document.getElementById('mounting-gate-hinges-text-bottom');
-    if (insideRight) {
-        if (currentId == 'mounting-method-1' || currentId == 'mounting-method-2' || currentId == 'mounting-method-5') {
-            mountingGateHingesDiv.innerHTML = htmlMountingGateHinges(mountingGateHingesImgPathsInsideRight[0]);
-        }
-
-        if (currentId == 'mounting-method-3' || currentId == 'mounting-method-6') {
-            mountingGateHingesDiv.innerHTML = htmlMountingGateHinges(mountingGateHingesImgPathsInsideRight[1]);
-        }
-
-        if (currentId == 'mounting-method-4' || currentId == 'mounting-method-7') {
-            mountingGateHingesDiv.innerHTML = htmlMountingGateHingesDouble(mountingGateHingesImgPathsInsideRight[2], mountingGateHingesImgPathsOutSideLeft[1]);
-        }
-    } else if (insideLeft) {
-        if (currentId == 'mounting-method-1' || currentId == 'mounting-method-3' || currentId == 'mounting-method-6') {
-            mountingGateHingesDiv.innerHTML = htmlMountingGateHinges(mountingGateHingesImgPathsInsideLeft[0]);
-        }
-
-        if (currentId == 'mounting-method-2' || currentId == 'mounting-method-5') {
-            mountingGateHingesDiv.innerHTML = htmlMountingGateHinges(mountingGateHingesImgPathsInsideLeft[1]);
-        }
-
-        if (currentId == 'mounting-method-4' || currentId == 'mounting-method-7') {
-            mountingGateHingesDiv.innerHTML = htmlMountingGateHingesDouble(mountingGateHingesImgPathsInsideLeft[2], mountingGateHingesImgPathsOutSideRight[1]);
-        }
-    } else if (outsideRight) {
-        if (currentId == 'mounting-method-1' || currentId == 'mounting-method-3' || currentId == 'mounting-method-6') {
-            mountingGateHingesDiv.innerHTML = htmlMountingGateHinges(mountingGateHingesImgPathsOutSideRight[0]);
-        }
-
-        if (currentId == 'mounting-method-2' || currentId == 'mounting-method-5' || currentId == 'mounting-method-4' || currentId == 'mounting-method-7') {
-            mountingGateHingesDiv.innerHTML = htmlMountingGateHinges(mountingGateHingesImgPathsOutSideRight[1]);
-        }
-    } else if (outsideLeft) {
-        if (currentId == 'mounting-method-1' || currentId == 'mounting-method-2' || currentId == 'mounting-method-5') {
-            mountingGateHingesDiv.innerHTML = htmlMountingGateHinges(mountingGateHingesImgPathsOutSideLeft[0]);
-        }
-
-        if (currentId == 'mounting-method-3' || currentId == 'mounting-method-4' || currentId == 'mounting-method-6' || currentId == 'mounting-method-7') {
-            mountingGateHingesDiv.innerHTML = htmlMountingGateHinges(mountingGateHingesImgPathsOutSideLeft[1]);
-        }
-    }
+    let pillarInsideRightAndOutSideLeft = currentId == 'mounting-method-1' || currentId == 'mounting-method-2' || currentId == 'mounting-method-5';
+    let postInsideRight = currentId == 'mounting-method-3' || currentId == 'mounting-method-6';
+    let pillarOutsideRightInsideLeft = currentId == 'mounting-method-1' || currentId == 'mounting-method-3' || currentId == 'mounting-method-6';
+    let postInsideLeft = currentId == 'mounting-method-2' || currentId == 'mounting-method-5';
+    let postOutSideRight = currentId == 'mounting-method-2' || currentId == 'mounting-method-5' || currentId == 'mounting-method-4' || currentId == 'mounting-method-7';
+    let postOutSideLeft = currentId == 'mounting-method-3' || currentId == 'mounting-method-4' || currentId == 'mounting-method-6' || currentId == 'mounting-method-7';
+    let postBothInside = currentId == 'mounting-method-4' || currentId == 'mounting-method-7';
+    queryWhichDirection(mountingGateHingesDiv, pillarInsideRightAndOutSideLeft, postInsideRight, pillarOutsideRightInsideLeft, postInsideLeft, postOutSideRight, postOutSideLeft, postBothInside);
+    
     let firstMountingGateHingesMark = document.getElementById('mounting-gate-hinges-1');
     markTheMountingGateHingesBox(firstMountingGateHingesMark);
+}
+
+
+function queryWhichDirection(mountingGateHingesDiv, pillarInsideRightAndOutSideLeft, postInsideRight, pillarOutsideRightInsideLeft, postInsideLeft, postOutSideRight, postOutSideLeft, postBothInside) {
+    if (insideRight) {
+        renderInsideRight(mountingGateHingesDiv, pillarInsideRightAndOutSideLeft, postInsideRight, postBothInside);
+    } else if (insideLeft) {
+        renderInsideLeft(mountingGateHingesDiv, pillarOutsideRightInsideLeft, postInsideLeft, postBothInside);
+    } else if (outsideRight) {
+        renderOutSideRight(mountingGateHingesDiv, pillarOutsideRightInsideLeft, postOutSideRight);
+    } else if (outsideLeft) {
+        renderOutSideLeft(mountingGateHingesDiv, pillarInsideRightAndOutSideLeft, postOutSideLeft);
+    }
+}
+
+
+function renderInsideRight(mountingGateHingesDiv, pillarInsideRightAndOutSideLeft, postInsideRight, postBothInside) {
+    if (pillarInsideRightAndOutSideLeft) {
+        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsInsideRight[0], content2DBack[0], content2DBack[1]);
+    }
+    if (postInsideRight) {
+        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsInsideRight[1], content2DBack[0], content2DBack[1]);
+    }
+    if (postBothInside) {
+        renderMountingGateHingesRightImgs(mountingGateHingesDiv, content3DBack[0], mountingGateHingesImgPathsInsideRight[2], content3DBack[1], content2DLateral[0], mountingGateHingesImgPathsOutSideLeft[1], content2DLateral[1]);
+    }
+}
+
+
+function renderInsideLeft(mountingGateHingesDiv, pillarOutsideRightInsideLeft, postInsideLeft, postBothInside) {
+    if (pillarOutsideRightInsideLeft) {
+        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsInsideLeft[0], content2DBack[0], content2DBack[1]);
+    }
+    if (postInsideLeft) {
+        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsInsideLeft[1], content2DBack[0], content2DBack[1]);
+    }
+    if (postBothInside) {
+        renderMountingGateHingesRightImgs(mountingGateHingesDiv, content3DBack[0], mountingGateHingesImgPathsInsideLeft[2], content3DBack[1], content2DLateral[0],  mountingGateHingesImgPathsOutSideRight[1], content2DLateral[1]);
+    }
+}
+
+
+function renderOutSideRight(mountingGateHingesDiv, pillarOutsideRightInsideLeft, postOutSideRight) {
+    if (pillarOutsideRightInsideLeft) {
+        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsOutSideRight[0], content2DLateral[0], content2DLateral[1]);
+    }
+    if (postOutSideRight) {
+        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsOutSideRight[1], content2DLateral[0], content2DLateral[1]);
+    }
+}
+
+
+function renderOutSideLeft(mountingGateHingesDiv, pillarInsideRightAndOutSideLeft, postOutSideLeft) {
+    if (pillarInsideRightAndOutSideLeft) {
+        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsOutSideLeft[0], content2DLateral[0], content2DLateral[1]);
+    }
+    if (postOutSideLeft) {
+        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsOutSideLeft[1], content2DLateral[0], content2DLateral[1]);
+    }
+}
+
+
+function renderMountingGateHingesRightImg(mountingGateHingesDiv, imgPath, contentTop, contentBottom) {
+    mountingGateHingesDiv.innerHTML = htmlMountingGateHinges(imgPath, contentTop, contentBottom);
+}
+
+
+function renderMountingGateHingesRightImgs(mountingGateHingesDiv, contentTop1, imgPath1, contentBottom1, contentTop2, imgPath2, contentBottom2) {
+    mountingGateHingesDiv.innerHTML = htmlMountingGateHingesDouble(contentTop1, imgPath1, contentBottom1, contentTop2, imgPath2, contentBottom2);
 }
 
 

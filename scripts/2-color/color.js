@@ -51,7 +51,7 @@ function renderAllRalColorsOverview() {
 function firstColorMark() {
     document.getElementById('mark-color-collection').classList.add('mark-the-box');
     let firstRGBColorBoxMark = document.getElementById('1');
-    let color = 'rgb(255, 0, 0)';
+    let color = greenBeige;
     markTheRGBColorBox(firstRGBColorBoxMark, color);
     document.getElementById('color-selected').style = `background-color: ${currentColor[0]['color']}`;
 }
@@ -124,6 +124,7 @@ function pushColor(currentColorId, color) {
         'prise-color': '222,99',
     }
     currentColor.push(offerColor);
+    renderColorConfigurationen();
     changeAllImgsColor();
 }
 

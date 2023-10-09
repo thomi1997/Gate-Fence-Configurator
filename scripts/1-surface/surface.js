@@ -18,6 +18,11 @@ function markTheSurfaceBox(thisId) {
         previouSurfaceId = currentSurfaceId;
     }
     surfaceGetText(currentSurfaceId);
+    queryWichColorCoating(currentSurfaceId);
+}
+
+
+function queryWichColorCoating(currentSurfaceId) {
     if (currentSurfaceId == 'surface-4') {
         changeColorSurface = false;
         changeColorDB = false;
@@ -83,4 +88,5 @@ function pushSurfaceContent(currentSurfaceId, priseSurface, surface) {
         'prise-surface': priseSurface,
     }
     currentSurface.push(offerSurface);
+    renderSurfaceConfiguration();
 }

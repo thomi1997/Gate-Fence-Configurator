@@ -71,6 +71,7 @@ function pushMountingTypePostContent(currentMountingTypePostId, priseMountingTyp
         'prise-mounting-type-post': priseMountingTypePost,
     }
     currentMountingTypePost.push(offerMountingTypePost);
+    renderMountingTypePostConfiguration();
 }
 
 

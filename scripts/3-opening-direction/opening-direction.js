@@ -127,4 +127,5 @@ function pushOpeningDirectionContent(currentOpeningDirectionId, openingDirection
         'prise-opening-direction': priseOpeningDirection
     }
     currentOpeningDirection.push(offerOpeningDirection);
+    renderOpeningDirectionConfigurationen();
 }

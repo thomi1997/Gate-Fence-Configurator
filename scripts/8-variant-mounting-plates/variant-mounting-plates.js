@@ -74,4 +74,5 @@ function pushVariantMountingPlatesContent(currentVariantMountingPlatesId, priseV
         'prise-variant-mounting-plates': priseVariantMountingPlates,
     }
     currentVariantMountingPlates.push(offerVariantMountingPlates);
+    renderVariantMountingPlatesConfiguration();
 }

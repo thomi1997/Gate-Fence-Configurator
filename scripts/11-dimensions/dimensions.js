@@ -73,6 +73,7 @@ function addDimensionsHeight() {
             'prise-dimensions-height': priseDimensionsHeight,
         }
         currentDimensionsHeight.push(offerDimensionsHeight);
+        renderDimensionsConfiguration();
     }
 }
 
@@ -94,5 +95,6 @@ function addDimensionsWide() {
             'prise-dimensions-wide': priseDimensionsWide,
         }
         currentDimensionsWide.push(offerDimensionsWide);
+        renderDimensionsConfiguration();
     }
 }

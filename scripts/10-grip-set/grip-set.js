@@ -90,4 +90,5 @@ function pushGripSetContent(currentGripSetId, priseGripSet, gripSet) {
         'prise-grip-set': priseGripSet,
     }
     currentGripSet.push(offerGripSet);
+    renderGripSetConfiguration();
 }

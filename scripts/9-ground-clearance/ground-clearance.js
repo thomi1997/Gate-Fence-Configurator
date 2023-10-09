@@ -22,11 +22,12 @@ function addGroundClearance() {
 
     if (currentGroundClearance.length == 0) {
         let groundClearance = groundClearanceValue;
-        let priseGroundClearance = '49,99';
+        let priseGroundClearance = '0,00';
         let offerGroundClearance = {
             'ground-clearance': groundClearance,
             'prise-ground-clearance': priseGroundClearance,
         }
         currentGroundClearance.push(offerGroundClearance);
+        renderGroundClearanceConfiguration();
     }
 }

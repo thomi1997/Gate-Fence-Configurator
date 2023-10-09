@@ -4,3 +4,18 @@
     border: 1px solid;
     margin-top: 76px;
 }
+
+
+.configuration-column {
+
+}
+
+.collection-prise {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-color-box {
+    height: 22px;
+    width: 50px;
+}

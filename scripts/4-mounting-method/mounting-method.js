@@ -122,4 +122,5 @@ function pushMountingMethodContent(currentMountingMethodId, priseMountingMethod,
         'prise-mounting-method': priseMountingMethod,
     }
     currentMountingMethod.push(offerMountingMethod);
+    renderMountingMethodConfiguration();
 }

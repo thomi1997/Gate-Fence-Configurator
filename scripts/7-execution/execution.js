@@ -88,4 +88,5 @@ function pushExecutionContent(currentExecutionId, priseExecution, execution) {
         'prise-execution': priseExecution,
     }
     currentExecution.push(offerExecution);
+    renderExecutionConfiguration();
 }

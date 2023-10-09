@@ -142,4 +142,5 @@ function pushMountingGateHingesContent(currentMountingGateHingesId, priseMountin
         'prise-mounting-gate-hinges': priseMountingGateHinges,
     }
     currentMountingGateHinges.push(offerMountingGateHinges);
+    renderMountingMethodHingesConfiguration();
 }

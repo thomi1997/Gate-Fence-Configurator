@@ -16,6 +16,8 @@ function queryGripSetNumber(gripSetDiv) {
     let gripSetNumber = 8;
     if (postScrewOn) {
         gripSetNumber = 10;
+    } else if (pillarsOnly) {
+        gripSetNumber = gripSetNumber -1;
     }
     showGripSet(gripSetDiv, gripSetNumber);
 }

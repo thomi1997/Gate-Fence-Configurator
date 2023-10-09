@@ -9,6 +9,13 @@ function renderMountingTypePost() {
     mountingTypePostDiv.innerHTML = htmlMountingTypePost();
     let firstMountingTypePostMark = document.getElementById('mounting-type-post-1');
     markTheMountingTypePostBox(firstMountingTypePostMark);
+    if (pillarsOnly) {
+        mountingTypePostDiv.classList.add('d-none');
+        renderExecution();
+    } else if (!pillarsOnly) {
+        mountingTypePostDiv.classList.remove('d-none');
+        renderDimensions();
+    }
 }
 
 

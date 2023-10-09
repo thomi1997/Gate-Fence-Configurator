@@ -1,5 +1,6 @@
 let currentMountingMethod = [];
 let previouMountingMethodId = 'mounting-method-1';
+let pillarsOnly = false;
 
 
 let mountingMethodImgPathsLeft = [
@@ -61,6 +62,13 @@ function markTheMountingMethodBox(thisId) {
     }
     mountingMethodGetText(currentMountingMethodId);
     renderMountingGateHinges();
+    if (currentMountingMethodId == 'mounting-method-1') {
+        pillarsOnly = true;
+        renderMountingTypePost();
+    } else {
+        pillarsOnly = false;
+        renderMountingTypePost();
+    }
 }
 
 

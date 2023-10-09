@@ -19,6 +19,10 @@ function queryExecutionNumber(executionDiv) {
         executionNumber = 9;
         executionDiv.innerHTML = htmlExecution(executionNumber);
     }
+    if (pillarsOnly) {
+        executionNumber = 6;
+        executionDiv.innerHTML = htmlExecution(executionNumber);
+    }
 }
 
 

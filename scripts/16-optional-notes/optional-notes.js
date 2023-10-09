@@ -3,7 +3,13 @@ let currentOptionalNotes = [];
 
 function renderOptionalNotes() {
     let optionalNotesDiv = document.getElementById('optional-notes-box');
-    optionalNotesDiv.innerHTML = htmlOptionalNotes();
+    let optionalNotesNumber = wingLayoutNumber;
+    if (asymmetric) {
+        optionalNotesNumber = optionalNotesNumber +4;
+    } else if (symmetrical) {
+        optionalNotesNumber = optionalNotesNumber +3;
+    }
+    optionalNotesDiv.innerHTML = htmlOptionalNotes(optionalNotesNumber);
 }
 
 

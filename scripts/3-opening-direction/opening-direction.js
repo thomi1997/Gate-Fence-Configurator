@@ -27,6 +27,7 @@ function markTheOpeningDirectionBox(thisId) {
     }
     openingDirectionGetText(currentOpeningDirectionId);
     keyLockQuery(currentOpeningDirectionId);
+    renderMountingTypePost();
 }
 
 

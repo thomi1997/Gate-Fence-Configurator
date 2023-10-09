@@ -2,8 +2,14 @@ let currentProductionDrawing = [];
 
 
 function renderProductionDrawing() {
+    let productionDrawingNumber = wingLayoutNumber;
+    if (asymmetric) {
+        productionDrawingNumber = productionDrawingNumber +2;
+    } else if (symmetrical) {
+        productionDrawingNumber = productionDrawingNumber +1;
+    }
     let productionDrawingDiv = document.getElementById('production-drawing-box');
-    productionDrawingDiv.innerHTML = htmlProductionDrawing();
+    productionDrawingDiv.innerHTML = htmlProductionDrawing(productionDrawingNumber);
 }
 
 

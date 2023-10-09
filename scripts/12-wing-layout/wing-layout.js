@@ -14,7 +14,6 @@ function renderWingLayout() {
 
 
 function queryWingLayoutNumber(wingLayoutDiv) {
-    
     if (postScrewOn) {
         if (withoutMotor) {
             wingLayoutNumber = 12;
@@ -26,6 +25,15 @@ function queryWingLayoutNumber(wingLayoutDiv) {
     } else if (postConcrete) {
         if (withMotor) {
             wingLayoutNumber = 9;
+            if (pillarsOnly) {
+                wingLayoutNumber = 8;
+            }
+            renderwideWings();
+        } else if (withoutMotor) {
+            wingLayoutNumber = 10;
+            if (pillarsOnly) {
+                wingLayoutNumber = 9;
+            }
             renderwideWings();
         }
     }

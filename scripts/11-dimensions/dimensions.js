@@ -33,6 +33,17 @@ function queryDimensionsPostScrewOn(dimensionsDiv, dimensionsNumber) {
 function queryDimensionsPostConcrete(dimensionsDiv, dimensionsNumber) {
     if (withMotor) {
         dimensionsNumber = 8;
+        if (pillarsOnly) {
+            dimensionsNumber = 7;
+        }
+        renderWingLayout();
+    } else if (withoutMotor) {
+        dimensionsNumber = 8;
+        if (pillarsOnly) {
+            dimensionsNumber = 8;
+        } else if (!pillarsOnly) {
+            dimensionsNumber = 9;
+        }
         renderWingLayout();
     }
     renderWingLayout();

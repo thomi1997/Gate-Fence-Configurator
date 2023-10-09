@@ -7,8 +7,14 @@ function renderwideWings() {
         wideWingsDiv.classList.remove('d-none');
         let wideWingsNumber = wingLayoutNumber + 1;
         wideWingsDiv.innerHTML = htmlWideWings(wideWingsNumber);
+        renderProductionDrawing();
+        renderNumberOfPosts();
+        renderOptionalNotes();
     } else if (symmetrical) {
         wideWingsDiv.classList.add('d-none');
+        renderProductionDrawing();
+        renderNumberOfPosts();
+        renderOptionalNotes();
     }
 }
 

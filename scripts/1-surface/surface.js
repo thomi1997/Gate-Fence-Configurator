@@ -18,7 +18,6 @@ function markTheSurfaceBox(thisId) {
         previouSurfaceId = currentSurfaceId;
     }
     surfaceGetText(currentSurfaceId);
-    
     if (currentSurfaceId == 'surface-4') {
         changeColorSurface = false;
         changeColorDB = false;

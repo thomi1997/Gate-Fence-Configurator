@@ -9,21 +9,35 @@ function renderColor() {
     let colorDiv = document.getElementById('color-box');
     colorDiv.innerHTML = htmlColor();
     if (changeColorSurface) {
-        let colorButtonDiv = document.getElementById('change-color');
-        colorButtonDiv.innerHTML = htmlColorButton();
-        generateColors();
-        renderAllRalColorsOverview();
-        firstColorMark();
-    } else if(changeColorHammerBlowSurface) {
-        let colorDivH2 = document.getElementById('h2-color-collection');
-        colorDivH2.innerHTML = '2. Farbe des Hammerschlags';
-        renderHammerBlowColor();
+        queryRenderColors();
+    } else if (changeColorHammerBlowSurface) {
+        queryRenderHammerBlowColors();
     } else if (changeColorDB) {
-        let colorDivH2 = document.getElementById('h2-color-collection');
-        colorDivH2.innerHTML = '2. DB-Farbe';
-        renderDBColor();
+        queryRenderDBColor();
     }
     document.getElementById('color-overview').style = 'display: none';
+}
+
+
+function queryRenderColors() {
+    let colorButtonDiv = document.getElementById('change-color');
+    colorButtonDiv.innerHTML = htmlColorButton();
+    renderAllRalColorsOverview();
+    firstColorMark();
+}
+
+
+function queryRenderHammerBlowColors() {
+    let colorDivH2 = document.getElementById('h2-color-collection');
+    colorDivH2.innerHTML = '2. Farbe des Hammerschlags';
+    renderHammerBlowColor();
+}
+
+
+function queryRenderDBColor() {
+    let colorDivH2 = document.getElementById('h2-color-collection');
+    colorDivH2.innerHTML = '2. DB-Farbe';
+    renderDBColor();
 }
 
 
@@ -37,7 +51,7 @@ function renderAllRalColorsOverview() {
 function firstColorMark() {
     document.getElementById('mark-color-collection').classList.add('mark-the-box');
     let firstRGBColorBoxMark = document.getElementById('1');
-    let color =  'rgb(255, 0, 0)';
+    let color = 'rgb(255, 0, 0)';
     markTheRGBColorBox(firstRGBColorBoxMark, color);
     document.getElementById('color-selected').style = `background-color: ${currentColor[0]['color']}`;
 }
@@ -86,13 +100,16 @@ function markTheRGBColorBox(thisColorId, color) {
     let currentColorId = thisColorId.id;
     document.getElementById(`${currentColorId}`).classList.add('mark-the-color-box');
     if (previouColorId !== currentColorId) {
+        if (previouColorId == 0) {
+            previouColorId = currentColorId;
+        }
         document.getElementById(`${previouColorId}`).classList.remove('mark-the-color-box');
         previouColorId = currentColorId;
     }
     if (currentColor.length > 0) {
         currentColor = [];
     }
-    if (currentColor.length == 0) { 
+    if (currentColor.length == 0) {
         pushColor(currentColorId, color);
     }
 }
@@ -107,4 +124,9 @@ function pushColor(currentColorId, color) {
         'prise-color': '222,99',
     }
     currentColor.push(offerColor);
+    changeAllImgsColor();
+}
+
+function changeAllImgsColor() {
+    renderOpeningDirection();
 }

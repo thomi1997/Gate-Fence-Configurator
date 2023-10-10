@@ -25,12 +25,18 @@ function addProductionDrawing() {
 
     if (currentProductionDrawing.length == 0) {
         let productionDrawing = productionDrawingSelect.value;
-        let priseProductionDrawing = '99,99';
+        let priceProductionDrawing = '0.00';
+        let productionDrawingText = 'Nein';
+        if (productionDrawing == 'true') {
+            priceProductionDrawing = 99.99;
+            productionDrawingText = 'Ja';
+        }
         let offerProductionDrawing = {
-            'production-drawing': productionDrawing,
-            'prise-production-drawing': priseProductionDrawing,
+            'production-drawing': productionDrawingText,
+            'prise-production-drawing': priceProductionDrawing,
         }
         currentProductionDrawing.push(offerProductionDrawing);
+        renderProductionDrawingConfiguration();
     }
 
     function deleteProductionDrawing(productionDrawing) {

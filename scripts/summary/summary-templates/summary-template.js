@@ -23,6 +23,14 @@ function htmlSummary() {
             </div>
             <div id="dimensions-configuration-box">
             </div>
+            <div id="wing-layout-configuration-box">
+            </div>
+            <div id="wide-wings-configuration-box">
+            </div>
+            <div id="production-drawing-configuration-box">
+            </div>
+            <div id="number-of-posts-configuration-box">
+            </div>
         </div>
     `;
 }

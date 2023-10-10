@@ -3,7 +3,7 @@ function htmlNumberOfPosts(numberOfPostsNumber) {
         <h2>${numberOfPostsNumber}. Anzahl der Pfosten</h2>
         <div class="number-of-posts-collection">
             <p>
-                Anzahl der Pfosten: Variable
+                Anzahl der Pfosten: ${currentMountingMethod[0]['how-much-posts']}
             </p>
         </div>
     `;

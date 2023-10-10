@@ -93,14 +93,18 @@ function addMountingMethod(mountingMethodAsText, currentMountingMethodId) {
 
 function queryIdMountingMethod(currentMountingMethodId, mountingMethod) {
     let priseMountingMethod = '';
+    let howMuchPosts = '0';
     if (currentMountingMethodId == 'mounting-method-1') {
         priseMountingMethod = '0,00';
     } else if (currentMountingMethodId == 'mounting-method-2') {
         priseMountingMethod = '198,48';
+        howMuchPosts = '1';
     } else if (currentMountingMethodId == 'mounting-method-3') {
         priseMountingMethod = '198,48';
+        howMuchPosts = '1';
     } else if (currentMountingMethodId == 'mounting-method-4') {
         priseMountingMethod = '396,96';
+        howMuchPosts = '2';
     } else if (currentMountingMethodId == 'mounting-method-5') {
         priseMountingMethod = '0,00';
     } else if (currentMountingMethodId == 'mounting-method-6') {
@@ -108,11 +112,11 @@ function queryIdMountingMethod(currentMountingMethodId, mountingMethod) {
     } else if (currentMountingMethodId == 'mounting-method-7') {
         priseMountingMethod = '0,00';
     }
-    pushMountingMethodContent(currentMountingMethodId, priseMountingMethod, mountingMethod);
+    pushMountingMethodContent(currentMountingMethodId, priseMountingMethod, mountingMethod, howMuchPosts);
 }
 
 
-function pushMountingMethodContent(currentMountingMethodId, priseMountingMethod, mountingMethod) {
+function pushMountingMethodContent(currentMountingMethodId, priseMountingMethod, mountingMethod, howMuchPosts) {
     //console.log('aktuelle id', currentMountingMethodId);
     //console.log('aktueller preis', priseMountingMethod);
     //console.log('aktueller text', mountingMethod);
@@ -120,7 +124,9 @@ function pushMountingMethodContent(currentMountingMethodId, priseMountingMethod,
         'id': currentMountingMethodId,
         'mounting-method': mountingMethod,
         'prise-mounting-method': priseMountingMethod,
+        'how-much-posts': howMuchPosts
     }
     currentMountingMethod.push(offerMountingMethod);
     renderMountingMethodConfiguration();
+    renderNumberOfPostsConfiguration();
 }

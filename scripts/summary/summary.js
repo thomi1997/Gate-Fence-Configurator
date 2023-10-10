@@ -76,5 +76,37 @@ function renderDimensionsConfiguration() {
     //console.log('dimensions height', currentDimensionsHeight);
     //console.log('dimensions wide', currentDimensionsWide);
     let dimensionsBox = document.getElementById('dimensions-configuration-box');
-    dimensionsBox.innerHTML = htmlDimensionsBoxConfiguration();
+    let priseDimensionsHeight = currentDimensions[0]['dimensions-height'][0]['prise-dimensions-height'];
+    let priseDimensionsWide = currentDimensions[0]['dimensions-wide'][0]['prise-dimensions-wide'];
+    let priseDimensions = priseDimensionsHeight + priseDimensionsWide;
+    let priseEuro = `${priseDimensions}`.replace(".", ",");
+    //console.log('dimensions prise', priseEuro);
+    dimensionsBox.innerHTML = htmlDimensionsBoxConfiguration(priseEuro);
+}
+
+
+function renderWingLayoutConfiguration() {
+    //console.log('Wing Layout', currentWingLayout);
+    let wingLayoutBox = document.getElementById('wing-layout-configuration-box');
+    wingLayoutBox.innerHTML = htmlWingLayoutBoxConfiguration();
+}
+
+
+function renderWideWingsConfiguration() {
+    //console.log('Wide wings', currentWideWings);
+    let wideWingsBox = document.getElementById('wide-wings-configuration-box');
+    wideWingsBox.innerHTML = htmlWideWingsBoxConfiguration();
+}
+
+
+function renderProductionDrawingConfiguration() {
+    //console.log('production drawing', currentProductionDrawing);
+    let productionDrawingBox = document.getElementById('production-drawing-configuration-box');
+    productionDrawingBox.innerHTML = htmlProductionDrawingBoxConfiguration();
+}
+
+
+function renderNumberOfPostsConfiguration() {
+    let numberOfPostsBox = document.getElementById('number-of-posts-configuration-box');
+    numberOfPostsBox.innerHTML = htmlNumberOfPostsBoxConfiguration();
 }

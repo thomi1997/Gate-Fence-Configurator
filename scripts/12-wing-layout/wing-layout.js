@@ -90,7 +90,9 @@ function pushWingLayoutContent(currentWingLayoutId, wingLayout) {
     //console.log('aktueller text', wingLayout);
     let offerWingLayout = {
         'id': currentWingLayoutId,
+        'prise-wing-layout': '0,00',
         'wing-layout': wingLayout
     }
     currentWingLayout.push(offerWingLayout);
+    renderWingLayoutConfiguration();
 }

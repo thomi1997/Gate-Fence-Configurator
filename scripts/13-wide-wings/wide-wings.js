@@ -30,11 +30,12 @@ function addWideWings() {
 
     if (currentWideWings.length == 0) {
         let wideWings = wideWingsValue;
-        let priseWideWings = '49,99';
+        let priseWideWings = '0,00';
         let offerWideWings = {
             'wide-wings': wideWings,
             'prise-wide-wings': priseWideWings,
         }
         currentWideWings.push(offerWideWings);
+        renderWideWingsConfiguration();
     }
 }

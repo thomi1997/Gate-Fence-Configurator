@@ -1,6 +1,8 @@
+let currentDimensions = [];
 let currentDimensionsHeight = [];
 let currentDimensionsWide = [];
-
+let pushHeight = false;
+let pushWide = false;
 
 function renderDimensions() {
     let dimensionsDiv = document.getElementById('dimensions-box');
@@ -59,21 +61,15 @@ function renderHtmlDimensions(dimensionsDiv, dimensionsNumber) {
 function addDimensionsHeight() {
     let dimensionsInput1Height = document.getElementById('dimensions-1-input');
     let dimensionsValue1Height = dimensionsInput1Height.value;
-    //console.log('hoehe', dimensionsValue1Height);
-    
-    if (currentDimensionsHeight.length > 0) {
-        currentDimensionsHeight = [];
-    }
 
-    if (currentDimensionsHeight.length == 0) {
-        let dimensionsHeight = dimensionsValue1Height;
-        let priseDimensionsHeight = '49,99';
-        let offerDimensionsHeight = {
-            'dimensions-height': dimensionsHeight,
-            'prise-dimensions-height': priseDimensionsHeight,
-        }
-        currentDimensionsHeight.push(offerDimensionsHeight);
-        renderDimensionsConfiguration();
+
+    if (dimensionsValue1Height.length > 0) {
+        console.log('Das Input-Feld hoehe ist nicht leer: ' + dimensionsValue1Height);
+        pushDimensionsHeight(dimensionsValue1Height);
+    } else {
+        console.log('Das Input-Feld ist leer.');
+        pushHeight = false;
+        console.log('pushHeight leer', pushHeight);
     }
 }
 
@@ -81,20 +77,69 @@ function addDimensionsHeight() {
 function addDimensionsWide() {
     let dimensionsInput2Wide = document.getElementById('dimensions-2-input');
     let dimensionsValue2Wide = dimensionsInput2Wide.value;
-    //console.log('breite', dimensionsValue2Wide);
 
+    if (dimensionsValue2Wide.length > 0) {
+        console.log('Das Input-Feld weite ist nicht leer: ' + dimensionsValue2Wide);
+        pushDimensionsWide(dimensionsValue2Wide);
+    } else {
+        console.log('Das Input-Feld ist leer.');
+        pushWide = false;
+        console.log('pushWide leer', pushWide);
+    }
+}
+
+
+function pushDimensionsHeight(dimensionsValue1Height) {
+    if (currentDimensionsHeight.length > 0) {
+        currentDimensionsHeight = [];
+    }
+
+    if (currentDimensionsHeight.length == 0) {
+        let dimensionsHeight = dimensionsValue1Height;
+        let priseDimensionsHeight = 2999.99;
+        let offerDimensionsHeight = {
+            'dimensions-height': dimensionsHeight,
+            'prise-dimensions-height': priseDimensionsHeight,
+        }
+        currentDimensionsHeight.push(offerDimensionsHeight);
+        pushHeight = true;
+        console.log('pushHeight', pushHeight);
+        pushDimensions();
+    }
+}
+
+
+function pushDimensionsWide(dimensionsValue2Wide) {
     if (currentDimensionsWide.length > 0) {
         currentDimensionsWide = [];
     }
 
     if (currentDimensionsWide.length == 0) {
         let dimensionsWide = dimensionsValue2Wide;
-        let priseDimensionsWide = '49,99';
+        let priseDimensionsWide = 4999.99;
         let offerDimensionsWide = {
             'dimensions-wide': dimensionsWide,
             'prise-dimensions-wide': priseDimensionsWide,
         }
         currentDimensionsWide.push(offerDimensionsWide);
+        pushWide = true;
+        console.log('pushwide', pushWide);
+        pushDimensions();
+    }
+}
+
+
+function pushDimensions() {
+    if (pushHeight && pushWide) {
+        if (currentDimensions.length > 0) {
+            currentDimensions = [];
+        }
+        console.log('beide sind true');
+        let offerDimensions = {
+            'dimensions-height': currentDimensionsHeight,
+            'dimensions-wide': currentDimensionsWide,
+        }
+        currentDimensions.push(offerDimensions);
         renderDimensionsConfiguration();
     }
 }

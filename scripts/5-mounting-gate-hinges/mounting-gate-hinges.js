@@ -38,7 +38,7 @@ function renderInsideRight(mountingGateHingesDiv, pillarInsideRightAndOutSideLef
         renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsInsideRight[0], content2DBack[0], content2DBack[1]);
     }
     if (postInsideRight) {
-        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsInsideRight[1], content2DBack[0], content2DBack[1]);
+        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsInsideRight[1], content2DLateral[0], content2DLateral[1]);
     }
     if (postBothInside) {
         renderMountingGateHingesRightImgs(mountingGateHingesDiv, content3DBack[0], mountingGateHingesImgPathsInsideRight[2], content3DBack[1], content2DLateral[0], mountingGateHingesImgPathsOutSideLeft[1], content2DLateral[1]);
@@ -51,7 +51,7 @@ function renderInsideLeft(mountingGateHingesDiv, pillarOutsideRightInsideLeft, p
         renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsInsideLeft[0], content2DBack[0], content2DBack[1]);
     }
     if (postInsideLeft) {
-        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsInsideLeft[1], content2DBack[0], content2DBack[1]);
+        renderMountingGateHingesRightImg(mountingGateHingesDiv, mountingGateHingesImgPathsInsideLeft[1], content2DLateral[0], content2DLateral[1]);
     }
     if (postBothInside) {
         renderMountingGateHingesRightImgs(mountingGateHingesDiv, content3DBack[0], mountingGateHingesImgPathsInsideLeft[2], content3DBack[1], content2DLateral[0],  mountingGateHingesImgPathsOutSideRight[1], content2DLateral[1]);

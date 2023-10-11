@@ -7,3 +7,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+.grip-set-img {
+    width: 200px;
+    object-fit: contain;
+}

@@ -2,6 +2,16 @@ let currentVariantMountingPlates = [];
 let previouVariantMountingPlatesId = 'variant-mounting-plates-1';
 
 
+let variantMountingPlatesImgs = [
+    'img/variant-mounting-plates-img/0-150-150-mittig.png',
+    'img/variant-mounting-plates-img/1-150-150-versetzt.png',
+    'img/variant-mounting-plates-img/2-250-150-mittig.png',
+    'img/variant-mounting-plates-img/3-250-150-versetzt.png',
+    'img/variant-mounting-plates-img/4-250-250-mittig.png',
+    'img/variant-mounting-plates-img/5-250-250-versetzt.png'
+];
+
+
 function renderVariantMountingPlates() {
     let variantMountingPlatesDiv = document.getElementById('variant-mounting-plates-box');
     if (postScrewOn) {

@@ -3,25 +3,45 @@ let previouExecutionId = 'execution-1';
 let withMotor = false;
 let withoutMotor = false;
 
+
+let executionImgs = [
+    'img/execution-img/0-execution-with-motor.png',
+    'img/execution-img/1-execution-without-motor-grip-left.png',
+    'img/execution-img/2-execution-without-motor-grip-right.png'
+];
+
+
 function renderExecution() {
     let executionDiv = document.getElementById('execution-box');
-    queryExecutionNumber(executionDiv);
+    queryExecutionWichImg(executionDiv);
+    
     let firstExecutionMark = document.getElementById('execution-1');
     markTheExecutionBox(firstExecutionMark);
 }
 
 
-function queryExecutionNumber(executionDiv) {
+function queryExecutionWichImg(executionDiv) {
+    let currentExecutionImgPath = executionImgs;
+    if (keyLockLeft) {
+        currentExecutionImgPath = executionImgs[1];
+    } else if (keyLockRight) {
+        currentExecutionImgPath = executionImgs[2];
+    }
+    queryExecutionNumber(executionDiv, currentExecutionImgPath);
+}
+
+
+function queryExecutionNumber(executionDiv, currentExecutionImgPath) {
     if (postConcrete) {
         let executionNumber = 7;
-        executionDiv.innerHTML = htmlExecution(executionNumber);
+        executionDiv.innerHTML = htmlExecution(executionNumber, currentExecutionImgPath);
     } else if (postScrewOn) {
         executionNumber = 9;
-        executionDiv.innerHTML = htmlExecution(executionNumber);
+        executionDiv.innerHTML = htmlExecution(executionNumber, currentExecutionImgPath);
     }
     if (pillarsOnly) {
         executionNumber = 6;
-        executionDiv.innerHTML = htmlExecution(executionNumber);
+        executionDiv.innerHTML = htmlExecution(executionNumber, currentExecutionImgPath);
     }
 }
 

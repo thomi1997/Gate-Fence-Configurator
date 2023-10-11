@@ -2,6 +2,16 @@ let currentGripSet = [];
 let previouGripSetId = 'grip-set-1';
 
 
+let gripSetImgs = [
+    'img/grip-set-img/0-knob-set-alu.png',
+    'img/grip-set-img/1-presser-set-alu.png',
+    'img/grip-set-img/2-presser-knob-set-alu.png',
+    'img/grip-set-img/3-knob-set-stainless-steel.png',
+    'img/grip-set-img/4-presser-set-stainless-steel.png',
+    'img/grip-set-img/5-presser-knob-set-stainless-steel.png',
+];
+
+
 function renderGripSet() {
     let gripSetDiv = document.getElementById('grip-set-box');
     if (withoutMotor) {

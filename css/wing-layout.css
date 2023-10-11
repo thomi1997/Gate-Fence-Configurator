@@ -7,3 +7,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+.wing-layout-img {
+    width: 200px;
+    object-fit: contain;
+}

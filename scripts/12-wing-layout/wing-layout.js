@@ -5,15 +5,47 @@ let symmetrical = false;
 let asymmetric = false;
 
 
+let wingLayoutImgsSymmetrical = [
+    'img/wing-layout-img/0-symmetrical-key-right-.png',
+    'img/wing-layout-img/1-symmetrical-key-left-.png'
+];
+
+
+let wingLayoutImgsAsymmetric = [
+    'img/wing-layout-img/2-asymmetric-key-right-.png',
+    'img/wing-layout-img/3-asymmetric-key-left-.png'
+];
+
+
 function renderWingLayout() {
     let wingLayoutDiv = document.getElementById('wing-layout-box');
-    queryWingLayoutNumber(wingLayoutDiv);
+    queryWingLayoutWichImg(wingLayoutDiv);
+    
     let firstWingLayoutMark = document.getElementById('wing-layout-1');
     markTheWingLayoutBox(firstWingLayoutMark);
 }
 
 
-function queryWingLayoutNumber(wingLayoutDiv) {
+function queryWingLayoutWichImg(wingLayoutDiv) {
+    let asymmetricKeyRight = wingLayoutImgsAsymmetric[0];
+    let asymmetricKeyLeft = wingLayoutImgsAsymmetric[1];
+    let symmetricalKeyRight = wingLayoutImgsSymmetrical[0];
+    let symmetricalKeyLeft = wingLayoutImgsSymmetrical[1];
+    let currentAsymmetric;
+    let currentSymmetrical;
+    if (keyLockLeft) {
+        currentAsymmetric = asymmetricKeyLeft;
+        currentSymmetrical = symmetricalKeyLeft;
+    } else if (keyLockRight) {
+        currentAsymmetric = asymmetricKeyRight;
+        currentSymmetrical = symmetricalKeyRight;
+    }
+    //console.log(currentAsymmetric);
+    queryWingLayoutNumber(wingLayoutDiv, currentAsymmetric, currentSymmetrical);
+}
+
+
+function queryWingLayoutNumber(wingLayoutDiv, currentAsymmetric, currentSymmetrical) {
     if (postScrewOn) {
         if (withoutMotor) {
             wingLayoutNumber = 12;
@@ -37,12 +69,12 @@ function queryWingLayoutNumber(wingLayoutDiv) {
             renderwideWings();
         }
     }
-    renderHtmlWingLayout(wingLayoutDiv, wingLayoutNumber);
+    renderHtmlWingLayout(wingLayoutDiv, wingLayoutNumber, currentAsymmetric, currentSymmetrical);
 }
 
 
-function renderHtmlWingLayout(wingLayoutDiv, wingLayoutNumber) {
-    wingLayoutDiv.innerHTML = htmlWingLayout(wingLayoutNumber);
+function renderHtmlWingLayout(wingLayoutDiv, wingLayoutNumber, currentAsymmetric, currentSymmetrical) {
+    wingLayoutDiv.innerHTML = htmlWingLayout(wingLayoutNumber, currentAsymmetric, currentSymmetrical);
 }
 
 

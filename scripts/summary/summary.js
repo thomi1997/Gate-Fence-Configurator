@@ -11,10 +11,11 @@ function renderConfiguration() {
 }
 
 
-function renderSurfaceConfiguration() {
+function renderSurfaceConfiguration(currentSurfaceId, priseSurface) {
     //console.log('surface', currentSurface);
     let surfaceBox = document.getElementById('surface-configuration-box');
     surfaceBox.innerHTML = htmlSurfaceConfiguration();
+    calculationsSum(currentSurfaceId, priseSurface);
 }
 
 
@@ -48,6 +49,13 @@ function renderMountingTypePostConfiguration() {
     //console.log('mounting type post', currentMountingTypePost);
     let mountingTypePostBox = document.getElementById('mounting-type-post-configuration-box');
     mountingTypePostBox.innerHTML = htmlMountingTypePostBoxConfiguration();
+    if (!pillarsOnly) {
+        mountingTypePostBox.classList.remove('d-none');
+        //console.log('pillars only false', pillarsOnly);
+    } else if (pillarsOnly) {
+        mountingTypePostBox.classList.add('d-none');
+        //console.log('pillars only true', pillarsOnly);
+    }
 }
 
 
@@ -116,4 +124,10 @@ function renderProductionDrawingConfiguration() {
 function renderNumberOfPostsConfiguration() {
     let numberOfPostsBox = document.getElementById('number-of-posts-configuration-box');
     numberOfPostsBox.innerHTML = htmlNumberOfPostsBoxConfiguration();
+}
+
+
+function renderEndSum() {
+    let endSumBox = document.getElementById('end-sum');
+    endSumBox.innerHTML = htmlEndSum();
 }

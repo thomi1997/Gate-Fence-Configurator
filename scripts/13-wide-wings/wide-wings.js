@@ -4,6 +4,7 @@ let currentWideWings = [];
 function renderwideWings() {
     let wideWingsDiv = document.getElementById('wide-wings-box');
     if (asymmetric) {
+        document.getElementById('wide-wings-configuration-box').classList.remove('d-none');
         wideWingsDiv.classList.remove('d-none');
         let wideWingsNumber = wingLayoutNumber + 1;
         wideWingsDiv.innerHTML = htmlWideWings(wideWingsNumber);
@@ -11,6 +12,8 @@ function renderwideWings() {
         renderNumberOfPosts();
         renderOptionalNotes();
     } else if (symmetrical) {
+        currentWideWings = [];
+        document.getElementById('wide-wings-configuration-box').classList.add('d-none');
         wideWingsDiv.classList.add('d-none');
         renderProductionDrawing();
         renderNumberOfPosts();

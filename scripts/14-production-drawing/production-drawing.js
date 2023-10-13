@@ -10,6 +10,7 @@ function renderProductionDrawing() {
     }
     let productionDrawingDiv = document.getElementById('production-drawing-box');
     productionDrawingDiv.innerHTML = htmlProductionDrawing(productionDrawingNumber);
+    addProductionDrawing();
 }
 
 

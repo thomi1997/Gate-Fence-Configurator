@@ -64,10 +64,12 @@ function addDimensionsHeight() {
 
 
     if (dimensionsValue1Height.length > 0) {
+        document.getElementById('dimensions-configuration-box').classList.remove('d-none');
         console.log('Das Input-Feld hoehe ist nicht leer: ' + dimensionsValue1Height);
         pushDimensionsHeight(dimensionsValue1Height);
     } else {
         console.log('Das Input-Feld ist leer.');
+        document.getElementById('dimensions-configuration-box').classList.add('d-none');
         pushHeight = false;
         console.log('pushHeight leer', pushHeight);
     }
@@ -79,10 +81,12 @@ function addDimensionsWide() {
     let dimensionsValue2Wide = dimensionsInput2Wide.value;
 
     if (dimensionsValue2Wide.length > 0) {
+        document.getElementById('dimensions-configuration-box').classList.remove('d-none');
         console.log('Das Input-Feld weite ist nicht leer: ' + dimensionsValue2Wide);
         pushDimensionsWide(dimensionsValue2Wide);
     } else {
         console.log('Das Input-Feld ist leer.');
+        document.getElementById('dimensions-configuration-box').classList.add('d-none');
         pushWide = false;
         console.log('pushWide leer', pushWide);
     }

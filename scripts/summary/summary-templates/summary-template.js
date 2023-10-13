@@ -10,7 +10,7 @@ function htmlSummary() {
                     Grundpreis
                 </p>
                 <p>
-                    ${basePrise} €
+                    2300,00 €
                 </p>
                 </div>
                 <hr>
@@ -22,16 +22,7 @@ function htmlSummary() {
             </div>
             <div id="configuration">
             </div>
-            <div class="end-price-div">
-                <div class="collection-prise">
-                    <p>
-                        Summe
-                    </p>
-                    <p>
-                        ${endSum} €
-                    </p>
-                </div>
-                <p>inkl. MwSt., zzgl. Versandkosten</p>
+            <div id="end-sum">
             </div>
         </div>
     `;

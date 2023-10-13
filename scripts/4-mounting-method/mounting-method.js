@@ -95,22 +95,22 @@ function queryIdMountingMethod(currentMountingMethodId, mountingMethod) {
     let priseMountingMethod = '';
     let howMuchPosts = '0';
     if (currentMountingMethodId == 'mounting-method-1') {
-        priseMountingMethod = '0,00';
+        priseMountingMethod = '0.00';
     } else if (currentMountingMethodId == 'mounting-method-2') {
-        priseMountingMethod = '198,48';
+        priseMountingMethod = '198.48';
         howMuchPosts = '1';
     } else if (currentMountingMethodId == 'mounting-method-3') {
-        priseMountingMethod = '198,48';
+        priseMountingMethod = '198.48';
         howMuchPosts = '1';
     } else if (currentMountingMethodId == 'mounting-method-4') {
-        priseMountingMethod = '396,96';
+        priseMountingMethod = '396.96';
         howMuchPosts = '2';
     } else if (currentMountingMethodId == 'mounting-method-5') {
-        priseMountingMethod = '0,00';
+        priseMountingMethod = '0.00';
     } else if (currentMountingMethodId == 'mounting-method-6') {
-        priseMountingMethod = '0,00';
+        priseMountingMethod = '0.00';
     } else if (currentMountingMethodId == 'mounting-method-7') {
-        priseMountingMethod = '0,00';
+        priseMountingMethod = '0.00';
     }
     pushMountingMethodContent(currentMountingMethodId, priseMountingMethod, mountingMethod, howMuchPosts);
 }
@@ -127,7 +127,6 @@ function pushMountingMethodContent(currentMountingMethodId, priseMountingMethod,
         'how-much-posts': howMuchPosts
     }
     currentMountingMethod.push(offerMountingMethod);
-    calculationsSum(priseMountingMethod, currentMountingMethodId);
     renderMountingMethodConfiguration();
     renderNumberOfPostsConfiguration();
 }

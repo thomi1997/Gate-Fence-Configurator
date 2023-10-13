@@ -16,11 +16,14 @@ function renderVariantMountingPlates() {
     let variantMountingPlatesDiv = document.getElementById('variant-mounting-plates-box');
     if (postScrewOn) {
         variantMountingPlatesDiv.classList.remove('d-none');
+        document.getElementById('variant-mounting-plates-configuration-box').classList.remove('d-none')
         variantMountingPlatesDiv.innerHTML = htmlVariantMountingPlates();
         let firstVariantMountingPlatesMark = document.getElementById('variant-mounting-plates-1');
         markTheVariantMountingPlatesBox(firstVariantMountingPlatesMark);
+        renderVariantMountingPlatesConfiguration();
     } else if (postConcrete) {
         variantMountingPlatesDiv.classList.add('d-none');
+        document.getElementById('variant-mounting-plates-configuration-box').classList.add('d-none');
     }
 }
 

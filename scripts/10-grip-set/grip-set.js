@@ -15,9 +15,11 @@ let gripSetImgs = [
 function renderGripSet() {
     let gripSetDiv = document.getElementById('grip-set-box');
     if (withoutMotor) {
+        document.getElementById('grip-set-configuration-box').classList.remove('d-none');
         queryGripSetNumber(gripSetDiv);
     } else if (withMotor) {
         gripSetDiv.classList.add('d-none');
+        document.getElementById('grip-set-configuration-box').classList.add('d-none');
     }
 }
 

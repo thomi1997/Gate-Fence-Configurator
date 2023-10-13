@@ -4,6 +4,8 @@ let changeColorSurface = true;
 let changeColorHammerBlowSurface = false;
 let changeColorDB = false;
 
+let colorOnLoad = false;
+
 
 function renderColor() {
     let colorDiv = document.getElementById('color-box');
@@ -118,10 +120,11 @@ function markTheRGBColorBox(thisColorId, color) {
 function pushColor(currentColorId, color) {
     //console.log('aktuelle id', currentColorId);
     //console.log('aktuelle farbe', color);
+    colorOnLoad = true;
     let offerColor = {
         'id': currentColorId,
         'color': color,
-        'prise-color': '222,99',
+        'prise-color': '222.99',
     }
     currentColor.push(offerColor);
     renderColorConfigurationen();

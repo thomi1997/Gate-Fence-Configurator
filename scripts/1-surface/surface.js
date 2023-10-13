@@ -1,5 +1,6 @@
 let currentSurface = [];
 let previouSurfaceId = 'surface-1';
+let surfaceOnLoad = false;
 
 
 function renderSurface() {
@@ -82,6 +83,7 @@ function pushSurfaceContent(currentSurfaceId, priseSurface, surface) {
     //console.log('aktuelle id', currentSurfaceId);
     //console.log('aktueller preis', priseSurface);
     //console.log('aktueller text', surface);
+    surfaceOnLoad = true;
     let offerSurface = {
         'id': currentSurfaceId,
         'surface': surface,
@@ -89,6 +91,5 @@ function pushSurfaceContent(currentSurfaceId, priseSurface, surface) {
     }
     //console.log(previouSurfaceId);
     currentSurface.push(offerSurface);
-    calculationsSum(priseSurface, currentSurfaceId);
-    renderSurfaceConfiguration();
+    renderSurfaceConfiguration(currentSurfaceId, priseSurface);
 }

@@ -1,6 +1,13 @@
 function renderSummary() {
     let summaryContainer = document.getElementById('summary');
     summaryContainer.innerHTML = htmlSummary();
+    renderConfiguration();
+}
+
+
+function renderConfiguration() {
+    let configurationContainer = document.getElementById('configuration');
+    configurationContainer.innerHTML = htmlConfiguration();
 }
 
 

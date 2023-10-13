@@ -1,6 +1,39 @@
 setURL('https://thomas-ketler.de/gate-fence-configurator/smallest_backend_ever-master');
 
 let allOffers = [];
+let basePrise = 2300.00;
+let lastSurfaceId;
+let endSum;
+
+
+// Event-Listener hinzufügen, um zu verfolgen, wenn der Benutzer scrollt
+window.addEventListener('scroll', function () {
+    // Den aktuellen Scroll-Abstand ermitteln
+    let scrollPosition = window.scrollY;
+    let divElement = document.getElementById('optional-notes-input'); // oder andere Methoden zur Auswahl
+
+    // Die Y-Position in Pixeln ermitteln
+    let yPosition = divElement.getBoundingClientRect().top;
+    let ganzeZahlPosition = parseInt(yPosition);
+
+
+
+    //console.log('scroll position', scrollPosition);
+    //console.log('optional notes pos', ganzeZahlPosition);
+    if (scrollPosition > 120) {
+        document.getElementById('summary').classList.add('position-fixed');
+    } else {
+        document.getElementById('summary').classList.remove('position-fixed');
+    }
+
+    if (ganzeZahlPosition < 400) {
+        //document.getElementById('summary').classList.remove('position-fixed');
+        document.getElementById('summary').classList.add('position-fixed-bottom');
+    } else if (ganzeZahlPosition > 800) {
+        document.getElementById('summary').classList.remove('position-fixed-bottom');
+        //document.getElementById('summary').classList.add('position-fixed');
+    }
+});
 
 
 async function init() {
@@ -23,6 +56,19 @@ async function init() {
     renderProductionDrawing();
     renderNumberOfPosts();
     renderOptionalNotes();
+}
+
+
+function calculationsSum(prise, id) {
+    let priseAsString = prise;
+    let currentPrise = parseFloat(priseAsString);
+    let endResultAsString = currentPrise + basePrise;
+    let endResult = endResultAsString.toString();
+    let endResultEu = endResult.replace(/\./, ',');
+    endSum = endResultEu;
+    lastSurfaceId = id;
+    renderSummary();
+    console.log('end sum', lastSurfaceId);
 }
 
 

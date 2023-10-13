@@ -10,7 +10,7 @@ let mountingMethodImgPathsLeft = [
     'img/mounting-method-img/key-lock-left/3-mounting-method-left.png',
     'img/mounting-method-img/key-lock-left/4-mounting-method-left.png',
     'img/mounting-method-img/key-lock-left/5-mounting-method-left.png',
-    'img/mounting-method-img/key-lock-left/6-mounting-method-left.png',
+    'img/mounting-method-img/key-lock-left/6-mounting-method-left.png'
 ];
 
 
@@ -21,7 +21,7 @@ let mountingMethodImgPathsRight = [
     'img/mounting-method-img/key-lock-right/3-mounting-method-right.png',
     'img/mounting-method-img/key-lock-right/4-mounting-method-right.png',
     'img/mounting-method-img/key-lock-right/5-mounting-method-right.png',
-    'img/mounting-method-img/key-lock-right/6-mounting-method-right.png',
+    'img/mounting-method-img/key-lock-right/6-mounting-method-right.png'
 ];
 
 
@@ -127,6 +127,7 @@ function pushMountingMethodContent(currentMountingMethodId, priseMountingMethod,
         'how-much-posts': howMuchPosts
     }
     currentMountingMethod.push(offerMountingMethod);
+    calculationsSum(priseMountingMethod, currentMountingMethodId);
     renderMountingMethodConfiguration();
     renderNumberOfPostsConfiguration();
 }

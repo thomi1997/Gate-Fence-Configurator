@@ -64,15 +64,15 @@ function addSurface(surfaceAsText, currentSurfaceId) {
 function queryIdSurface(currentSurfaceId, surface) {
     let priseSurface = '';
     if (currentSurfaceId == 'surface-1') {
-        priseSurface = '49,99';
+        priseSurface = '49.99';
     } else if (currentSurfaceId == 'surface-2') {
-        priseSurface = '43,76';
+        priseSurface = '43.76';
     } else if (currentSurfaceId == 'surface-3') {
-        priseSurface = '12,43';
+        priseSurface = '12.43';
     } else if (currentSurfaceId == 'surface-4') {
-        priseSurface = '67,49';
+        priseSurface = '67.49';
     } else if (currentSurfaceId == 'surface-5') {
-        priseSurface = '53,76';
+        priseSurface = '53.76';
     }
     pushSurfaceContent(currentSurfaceId, priseSurface, surface);
 }
@@ -87,6 +87,8 @@ function pushSurfaceContent(currentSurfaceId, priseSurface, surface) {
         'surface': surface,
         'prise-surface': priseSurface,
     }
+    //console.log(previouSurfaceId);
     currentSurface.push(offerSurface);
+    calculationsSum(priseSurface, currentSurfaceId);
     renderSurfaceConfiguration();
 }

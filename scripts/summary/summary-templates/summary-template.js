@@ -1,35 +1,37 @@
 function htmlSummary() {
     return /*html*/`
         <div class="summary-content">
-            <div id="surface-configuration-box">
+            <div class="base-price-div">
+                <h2>
+                    Ihre Konfiguration
+                </h2>
+                <div class="collection-prise">
+                <p>
+                    Grundpreis
+                </p>
+                <p>
+                    ${basePrise} €
+                </p>
+                </div>
+                <hr>
             </div>
-            <div id="color-configuration-box">
+            <div>
+                <button class="summary-btn-open-configuration">
+                    Konfiguration anzeigen
+                </button>
             </div>
-            <div id="opening-direction-configuration-box">
+            <div id="configuration">
             </div>
-            <div id="mounting-method-configuration-box">
-            </div>
-            <div id="mounting-method-hinges-configuration-box">
-            </div>
-            <div id="mounting-type-post-configuration-box">
-            </div>
-            <div id="execution-configuration-box">
-            </div>
-            <div id="variant-mounting-plates-configuration-box">
-            </div>
-            <div id="ground-clearance-configuration-box">
-            </div>
-            <div id="grip-set-configuration-box">
-            </div>
-            <div id="dimensions-configuration-box">
-            </div>
-            <div id="wing-layout-configuration-box">
-            </div>
-            <div id="wide-wings-configuration-box">
-            </div>
-            <div id="production-drawing-configuration-box">
-            </div>
-            <div id="number-of-posts-configuration-box">
+            <div class="end-price-div">
+                <div class="collection-prise">
+                    <p>
+                        Summe
+                    </p>
+                    <p>
+                        ${endSum} €
+                    </p>
+                </div>
+                <p>inkl. MwSt., zzgl. Versandkosten</p>
             </div>
         </div>
     `;

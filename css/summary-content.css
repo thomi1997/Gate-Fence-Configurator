@@ -1,13 +1,22 @@
 .summary-div {
-    width: 23.5%;
-    height: auto;
+    width: 26.5%;
     border: 1px solid;
+    position: absolute;
     margin-top: 76px;
+    right: auto;
+    left: 72%;
 }
 
+.summary-content {
+
+}
+
+.base-price-div {
+    /*border-bottom: 2px solid;*/
+}
 
 .configuration-column {
-
+    
 }
 
 .collection-prise {
@@ -15,7 +24,26 @@
     justify-content: space-between;
 }
 
+.summary-btn-open-configuration {
+    width: 100%;
+}
+
+.end-price-div {
+
+}
+
 .summary-color-box {
     height: 22px;
     width: 50px;
+}
+
+.position-fixed {
+    position: fixed;
+    top: 0%;
+}
+
+.position-fixed-bottom {
+    position: relative;
+    left: 0%;
+    margin-top: 250%;
 }

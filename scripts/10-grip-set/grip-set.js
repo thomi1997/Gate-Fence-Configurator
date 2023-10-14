@@ -1,5 +1,7 @@
 let currentGripSet = [];
 let previouGripSetId = 'grip-set-1';
+let previouGripSetPrice = '49,99';
+let priseGripSetAlreadyExecuted = false;
 
 
 let gripSetImgs = [
@@ -103,4 +105,25 @@ function pushGripSetContent(currentGripSetId, priseGripSet, gripSet) {
     }
     currentGripSet.push(offerGripSet);
     renderGripSetConfiguration();
+    calculationGripSet(priseGripSet);
+}
+
+
+function calculationGripSet(priseGripSet) {
+    let priseGripSetNotSame = parseFloat(priseGripSet.replace(",", ""));
+    let totalPrise = parseFloat(currentTotalPrise[0].replace(",", ""));
+    let currentPreviouGripSetPrice = parseFloat(previouGripSetPrice.replace(",", ""));
+    queryGripSetWhatCalculate(priseGripSet, priseGripSetNotSame, totalPrise, currentPreviouGripSetPrice);
+}
+
+
+function queryGripSetWhatCalculate(priseGripSet, priseGripSetNotSame, totalPrise, currentPreviouGripSetPrice) {
+    if (previouGripSetPrice !== priseGripSet) {
+        calculateNotSameBox(priseGripSetNotSame, totalPrise, currentPreviouGripSetPrice);
+        previouGripSetPrice = priseGripSet;
+    } else if (previouGripSetPrice == priseGripSet && !priseGripSetAlreadyExecuted) {
+        priseGripSetAlreadyExecuted = true;
+        calculateTheFirstBox(totalPrise, currentPreviouGripSetPrice);
+    }
+    renderEndSum();
 }

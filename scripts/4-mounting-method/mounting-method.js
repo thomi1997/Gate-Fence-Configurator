@@ -1,6 +1,8 @@
 let currentMountingMethod = [];
 let previouMountingMethodId = 'mounting-method-1';
 let pillarsOnly = false;
+let previouMountingMethodPrice = '0,00';
+let priseMountingMethodAlreadyExecuted = false;
 
 
 let mountingMethodImgPathsLeft = [
@@ -95,22 +97,22 @@ function queryIdMountingMethod(currentMountingMethodId, mountingMethod) {
     let priseMountingMethod = '';
     let howMuchPosts = '0';
     if (currentMountingMethodId == 'mounting-method-1') {
-        priseMountingMethod = '0.00';
+        priseMountingMethod = '0,00';
     } else if (currentMountingMethodId == 'mounting-method-2') {
-        priseMountingMethod = '198.48';
+        priseMountingMethod = '198,48';
         howMuchPosts = '1';
     } else if (currentMountingMethodId == 'mounting-method-3') {
-        priseMountingMethod = '198.48';
+        priseMountingMethod = '198,48';
         howMuchPosts = '1';
     } else if (currentMountingMethodId == 'mounting-method-4') {
-        priseMountingMethod = '396.96';
+        priseMountingMethod = '396,96';
         howMuchPosts = '2';
     } else if (currentMountingMethodId == 'mounting-method-5') {
-        priseMountingMethod = '0.00';
+        priseMountingMethod = '0,00';
     } else if (currentMountingMethodId == 'mounting-method-6') {
-        priseMountingMethod = '0.00';
+        priseMountingMethod = '0,00';
     } else if (currentMountingMethodId == 'mounting-method-7') {
-        priseMountingMethod = '0.00';
+        priseMountingMethod = '0,00';
     }
     pushMountingMethodContent(currentMountingMethodId, priseMountingMethod, mountingMethod, howMuchPosts);
 }
@@ -129,4 +131,25 @@ function pushMountingMethodContent(currentMountingMethodId, priseMountingMethod,
     currentMountingMethod.push(offerMountingMethod);
     renderMountingMethodConfiguration();
     renderNumberOfPostsConfiguration();
+    calculationMountingMethod(priseMountingMethod);
+}
+
+
+function calculationMountingMethod(priseMountingMethod) {
+    let priseMountingMethodNotSame = parseFloat(priseMountingMethod.replace(",", ""));
+    let totalPrise = parseFloat(currentTotalPrise[0].replace(",", ""));
+    let currentPreviouMountingMethodPrice = parseFloat(previouMountingMethodPrice.replace(",", ""));
+    queryMountingMethodWhatCalculate(priseMountingMethod, priseMountingMethodNotSame, totalPrise, currentPreviouMountingMethodPrice);
+}
+
+
+function queryMountingMethodWhatCalculate(priseMountingMethod, priseMountingMethodNotSame, totalPrise, currentPreviouMountingMethodPrice) {
+    if (previouMountingMethodPrice !== priseMountingMethod) {
+        calculateNotSameBox(priseMountingMethodNotSame, totalPrise, currentPreviouMountingMethodPrice);
+        previouMountingMethodPrice = priseMountingMethod;
+    } else if (previouMountingMethodPrice == priseMountingMethod && !priseMountingMethodAlreadyExecuted) {
+        priseMountingMethodAlreadyExecuted = true;
+        calculateTheFirstBox(totalPrise, currentPreviouMountingMethodPrice);
+    }
+    renderEndSum();
 }

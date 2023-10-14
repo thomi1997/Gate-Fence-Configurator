@@ -1,10 +1,12 @@
 let currentColor = [];
 let previouColorId = '1';
+let previouColorPrice = '222,99';
 let changeColorSurface = true;
 let changeColorHammerBlowSurface = false;
 let changeColorDB = false;
 
 let colorOnLoad = false;
+let priseColorAlreadyExecuted = false;
 
 
 function renderColor() {
@@ -121,16 +123,38 @@ function pushColor(currentColorId, color) {
     //console.log('aktuelle id', currentColorId);
     //console.log('aktuelle farbe', color);
     colorOnLoad = true;
+    let priseColor = '222,99'
     let offerColor = {
         'id': currentColorId,
         'color': color,
-        'prise-color': '222.99',
+        'prise-color': priseColor,
     }
     currentColor.push(offerColor);
     renderColorConfigurationen();
+    calculationColor(priseColor);
     changeAllImgsColor();
 }
 
 function changeAllImgsColor() {
     renderOpeningDirection();
+}
+
+
+function calculationColor(priseColor) {
+    let priseColorNotSame = parseFloat(priseColor.replace(",", ""));
+    let totalPrise = parseFloat(currentTotalPrise[0].replace(",", ""));
+    let currentPreviouColorPrice = parseFloat(previouColorPrice.replace(",", ""));
+    queryColorWhatCalculate(priseColor, priseColorNotSame, totalPrise, currentPreviouColorPrice);
+}
+
+
+function queryColorWhatCalculate(priseColor, priseColorNotSame, totalPrise, currentPreviouColorPrice) {
+    if (previouColorPrice !== priseColor) {
+        calculateNotSameBox(priseColorNotSame, totalPrise, currentPreviouColorPrice);
+        previouColorPrice = priseColor;
+    } else if (previouColorPrice == priseColor && !priseColorAlreadyExecuted) {
+        priseColorAlreadyExecuted = true;
+        calculateTheFirstBox(totalPrise, currentPreviouColorPrice);
+    }
+    renderEndSum();
 }

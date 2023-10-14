@@ -1,6 +1,8 @@
 setURL('https://thomas-ketler.de/gate-fence-configurator/smallest_backend_ever-master');
 
 let allOffers = [];
+let currentTotalPrise = ['2300,00'];
+//let basePrise = '2300.00';
 
 // Event-Listener hinzufügen, um zu verfolgen, wenn der Benutzer scrollt
 window.addEventListener('scroll', function () {
@@ -99,18 +101,3 @@ function addOffer() {
 async function saveConfigurations() {
     backend.setItem('allOffers', JSON.stringify(allOffers));
 }
-
-
-/*document.addEventListener("DOMContentLoaded", function () {
-    // Hier können Sie den Code platzieren, der ausgeführt werden soll, wenn die Seite vollständig geladen ist
-    console.log("Die gesamte Seite wurde geladen.");
-    // Hier können Sie Ihre gewünschte Funktion aufrufen
-    meineFunktionNachLaden();
-});
-
-// Beispiel-Funktion, die nach dem Laden der Seite aufgerufen werden soll
-function meineFunktionNachLaden() {
-    console.log("Diese Funktion wird aufgerufen, nachdem die Seite geladen wurde.");
-    calculationsSum();
-    // Hier können Sie weitere Aktionen ausführen, die nach dem Laden der Seite erfolgen sollen
-}*/

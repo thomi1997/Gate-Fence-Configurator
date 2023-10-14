@@ -2,7 +2,6 @@
     width: 26.5%;
     border: 1px solid;
     position: absolute;
-    margin-top: 76px;
     right: auto;
     left: 72%;
 }
@@ -45,5 +44,5 @@
 .position-fixed-bottom {
     position: relative;
     left: 0%;
-    margin-top: 250%;
+    top: 0%;
 }

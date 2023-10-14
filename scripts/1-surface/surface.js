@@ -1,6 +1,7 @@
 let currentSurface = [];
 let previouSurfaceId = 'surface-1';
-let surfaceOnLoad = false;
+let previouSurfacePrice = '49,99';
+let priseSurfaceAlreadyExecuted = false;
 
 
 function renderSurface() {
@@ -65,15 +66,15 @@ function addSurface(surfaceAsText, currentSurfaceId) {
 function queryIdSurface(currentSurfaceId, surface) {
     let priseSurface = '';
     if (currentSurfaceId == 'surface-1') {
-        priseSurface = '49.99';
+        priseSurface = '49,99';
     } else if (currentSurfaceId == 'surface-2') {
-        priseSurface = '43.76';
+        priseSurface = '43,76';
     } else if (currentSurfaceId == 'surface-3') {
-        priseSurface = '12.43';
+        priseSurface = '12,43';
     } else if (currentSurfaceId == 'surface-4') {
-        priseSurface = '67.49';
+        priseSurface = '67,49';
     } else if (currentSurfaceId == 'surface-5') {
-        priseSurface = '53.76';
+        priseSurface = '53,76';
     }
     pushSurfaceContent(currentSurfaceId, priseSurface, surface);
 }
@@ -91,5 +92,26 @@ function pushSurfaceContent(currentSurfaceId, priseSurface, surface) {
     }
     //console.log(previouSurfaceId);
     currentSurface.push(offerSurface);
-    renderSurfaceConfiguration(currentSurfaceId, priseSurface);
+    renderSurfaceConfiguration();
+    calculationSuface(priseSurface);
+}
+
+
+function calculationSuface(priseSurface) {
+    let priseSurfaceNotSame = parseFloat(priseSurface.replace(",", ""));
+    let totalPrise = parseFloat(currentTotalPrise[0].replace(",", ""));
+    let currentPreviouSurfacePrice = parseFloat(previouSurfacePrice.replace(",", ""));
+    querySurfaceWhatCalculate(priseSurface, priseSurfaceNotSame, totalPrise, currentPreviouSurfacePrice);
+}
+
+
+function querySurfaceWhatCalculate(priseSurface, priseSurfaceNotSame, totalPrise, currentPreviouSurfacePrice) {
+    if (previouSurfacePrice !== priseSurface) {
+        calculateNotSameBox(priseSurfaceNotSame, totalPrise, currentPreviouSurfacePrice);
+        previouSurfacePrice = priseSurface;
+    } else if (previouSurfacePrice == priseSurface && !priseSurfaceAlreadyExecuted) {
+        priseSurfaceAlreadyExecuted = true;
+        calculateTheFirstBox(totalPrise, currentPreviouSurfacePrice);
+    }
+    renderEndSum();
 }

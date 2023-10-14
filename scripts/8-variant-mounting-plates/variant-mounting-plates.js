@@ -1,5 +1,7 @@
 let currentVariantMountingPlates = [];
 let previouVariantMountingPlatesId = 'variant-mounting-plates-1';
+let previouVariantMountingPlatesPrice = '49,99';
+let priseVariantMountingPlatesAlreadyExecuted = false;
 
 
 let variantMountingPlatesImgs = [
@@ -88,4 +90,25 @@ function pushVariantMountingPlatesContent(currentVariantMountingPlatesId, priseV
     }
     currentVariantMountingPlates.push(offerVariantMountingPlates);
     renderVariantMountingPlatesConfiguration();
+    calculationVariantMountingPlates(priseVariantMountingPlates);
+}
+
+
+function calculationVariantMountingPlates(priseVariantMountingPlates) {
+    let priseVariantMountingPlatesNotSame = parseFloat(priseVariantMountingPlates.replace(",", ""));
+    let totalPrise = parseFloat(currentTotalPrise[0].replace(",", ""));
+    let currentPreviouVariantMountingPlatesPrice = parseFloat(previouVariantMountingPlatesPrice.replace(",", ""));
+    queryVariantMountingPlatesWhatCalculate(priseVariantMountingPlates, priseVariantMountingPlatesNotSame, totalPrise, currentPreviouVariantMountingPlatesPrice);
+}
+
+
+function queryVariantMountingPlatesWhatCalculate(priseVariantMountingPlates, priseVariantMountingPlatesNotSame, totalPrise, currentPreviouVariantMountingPlatesPrice) {
+    if (previouVariantMountingPlatesPrice !== priseVariantMountingPlates) {
+        calculateNotSameBox(priseVariantMountingPlatesNotSame, totalPrise, currentPreviouVariantMountingPlatesPrice);
+        previouVariantMountingPlatesPrice = priseVariantMountingPlates;
+    } else if (previouVariantMountingPlatesPrice == priseVariantMountingPlates && !priseVariantMountingPlatesAlreadyExecuted) {
+        priseVariantMountingPlatesAlreadyExecuted = true;
+        calculateTheFirstBox(totalPrise, currentPreviouVariantMountingPlatesPrice);
+    }
+    renderEndSum();
 }

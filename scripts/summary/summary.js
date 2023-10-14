@@ -11,11 +11,10 @@ function renderConfiguration() {
 }
 
 
-function renderSurfaceConfiguration(currentSurfaceId, priseSurface) {
+function renderSurfaceConfiguration() {
     //console.log('surface', currentSurface);
     let surfaceBox = document.getElementById('surface-configuration-box');
     surfaceBox.innerHTML = htmlSurfaceConfiguration();
-    calculationsSum(currentSurfaceId, priseSurface);
 }
 
 

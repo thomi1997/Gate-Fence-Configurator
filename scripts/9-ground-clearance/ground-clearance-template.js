@@ -1,6 +1,10 @@
 function htmlGroundClearance() {
     return /*html*/`
-        <h2>8. Bodenabstand</h2>
+        <div class="collection-titel">
+            <h2>
+                8. Bodenabstand
+            </h2>
+        </div>
         <div class="ground-clearance-collection">
             <p>
                 Bodenabstand:

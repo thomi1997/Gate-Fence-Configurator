@@ -1,13 +1,17 @@
 function htmlMountingGateHinges(imgPath, contentTop, contentBottom) {
     return /*html*/`
-        <h2>5. Montage der Torbänder</h2>
+        <div class="collection-titel">
+            <h2>
+                5. Montage der Torbänder
+            </h2>
+        </div>
         <div class="mounting-gate-hinges-collection">
             <div onclick="markTheMountingGateHingesBox(this)" id="mounting-gate-hinges-1" class="box-coating">
                 <p>
                     ${contentTop}
                 </p>
                 <div class="img-lower-level" style="background-color:${currentColor[0]['color']};">
-                    <img class="mounting-gate-hinges-img" src="${imgPath}" alt="mounting-gate-hinges-png">
+                    <img class="collection-imgs" src="${imgPath}" alt="mounting-gate-hinges-png">
                 </div>
                 <p>
                     ${contentBottom}
@@ -20,14 +24,18 @@ function htmlMountingGateHinges(imgPath, contentTop, contentBottom) {
 
 function htmlMountingGateHingesDouble(contentTop1, imgPath1, contentBottom1, contentTop2, imgPath2, contentBottom2) {
     return /*html*/`
-        <h2>5. Montage der Torbänder</h2>
+        <div class="collection-titel">
+            <h2>
+                5. Montage der Torbänder
+            </h2>
+        </div>
         <div class="mounting-gate-hinges-collection">
             <div onclick="markTheMountingGateHingesBox(this)" id="mounting-gate-hinges-1" class="box-coating">
                 <p>
                     ${contentTop1}
                 </p>
                 <div class="img-lower-level" style="background-color:${currentColor[0]['color']};">
-                    <img class="mounting-gate-hinges-img" src="${imgPath1}" alt="mounting-gate-hinges-png">
+                    <img class="collection-imgs" src="${imgPath1}" alt="mounting-gate-hinges-png">
                 </div>
                 <p>
                     ${contentBottom1}
@@ -38,7 +46,7 @@ function htmlMountingGateHingesDouble(contentTop1, imgPath1, contentBottom1, con
                     ${contentTop2}
                 </p>
                 <div class="img-lower-level" style="background-color:${currentColor[0]['color']};">
-                    <img class="mounting-gate-hinges-img" src="${imgPath2}" alt="mounting-gate-hinges-png">
+                    <img class="collection-imgs" src="${imgPath2}" alt="mounting-gate-hinges-png">
                 </div>
                 <p>
                     ${contentBottom2}

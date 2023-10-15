@@ -1,6 +1,10 @@
 function htmlProductionDrawing(productionDrawingNumber) {
     return /*html*/`
-        <h2>${productionDrawingNumber}. Produktionszeichnung</h2>
+        <div class="collection-titel">
+            <h2>
+                ${productionDrawingNumber}. Produktionszeichnung
+            </h2>
+        </div>
         <div class="production-drawing-collection">
             <select onclick="addProductionDrawing()" id="production-drawing-select">
                 <option disabled>bitte wählen</option>

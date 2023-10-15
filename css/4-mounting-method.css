@@ -1,0 +1,5 @@
+.mounting-method-collection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

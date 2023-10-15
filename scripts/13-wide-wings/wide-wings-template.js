@@ -1,6 +1,10 @@
 function htmlWideWings(wideWingsNumber) {
     return /*html*/`
-    <h2>${wideWingsNumber}. Breite Gehflügel</h2>
+        <div class="collection-titel">
+            <h2>
+                ${wideWingsNumber}. Breite Gehflügel
+            </h2> 
+        </div>
         <div class="wide-wings-collection">
             <p style="width: 200px;">
                 Breite Gehflügel:

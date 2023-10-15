@@ -1,6 +1,10 @@
 function htmlColor() {
     return /*html*/`
-        <h2 id="h2-color-collection">2. Farbe der Pulverbeschichtung</h2>
+        <div class="collection-titel">
+            <h2 id="h2-color-collection">
+                2. Farbe der Pulverbeschichtung
+            </h2>
+        </div>
         <div id="change-color" class="color-collection">
         </div>
     `;

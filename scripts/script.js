@@ -11,7 +11,7 @@ window.addEventListener('scroll', function () {
     let divElement = document.getElementById('optional-notes-input'); // oder andere Methoden zur Auswahl
 
     // Die Y-Position in Pixeln ermitteln
-    let yPosition = divElement.getBoundingClientRect().top;
+    let yPosition = divElement.getBoundingClientRect().bottom;
     let ganzeZahlPosition = parseInt(yPosition);
 
 
@@ -22,14 +22,6 @@ window.addEventListener('scroll', function () {
         document.getElementById('summary').classList.add('position-fixed');
     } else {
         document.getElementById('summary').classList.remove('position-fixed');
-    }
-
-    if (ganzeZahlPosition < 400) {
-        //document.getElementById('summary').classList.remove('position-fixed');
-        document.getElementById('summary').classList.add('position-fixed-bottom');
-    } else if (ganzeZahlPosition > 800) {
-        document.getElementById('summary').classList.remove('position-fixed-bottom');
-        //document.getElementById('summary').classList.add('position-fixed');
     }
 });
 

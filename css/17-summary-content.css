@@ -1,10 +1,7 @@
 .summary-div {
     background-color: white;
-    width: 26.5%;
+    max-width: 26.5%;
     border: 1px solid;
-    position: absolute;
-    right: auto;
-    left: 72%;
 }
 
 .summary-content {
@@ -39,7 +36,6 @@
 
 .position-fixed {
     position: fixed;
-    top: 0%;
 }
 
 .position-fixed-bottom {

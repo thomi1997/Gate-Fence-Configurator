@@ -137,6 +137,7 @@ function pushColor(currentColorId, color) {
 
 function changeAllImgsColor() {
     renderOpeningDirection();
+    renderMountingTypePost();
 }
 
 

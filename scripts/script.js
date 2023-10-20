@@ -4,27 +4,6 @@ let allOffers = [];
 let currentTotalPrise = ['2300,00'];
 //let basePrise = '2300.00';
 
-// Event-Listener hinzufügen, um zu verfolgen, wenn der Benutzer scrollt
-window.addEventListener('scroll', function () {
-    // Den aktuellen Scroll-Abstand ermitteln
-    let scrollPosition = window.scrollY;
-    let divElement = document.getElementById('optional-notes-input'); // oder andere Methoden zur Auswahl
-
-    // Die Y-Position in Pixeln ermitteln
-    let yPosition = divElement.getBoundingClientRect().bottom;
-    let ganzeZahlPosition = parseInt(yPosition);
-
-
-
-    //console.log('scroll position', scrollPosition);
-    //console.log('optional notes pos', ganzeZahlPosition);
-    if (scrollPosition > 120) {
-        document.getElementById('summary').classList.add('position-fixed');
-    } else {
-        document.getElementById('summary').classList.remove('position-fixed');
-    }
-});
-
 
 async function init() {
     await downloadFromServer();

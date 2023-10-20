@@ -1,11 +1,14 @@
 .summary-div {
     background-color: white;
-    max-width: 26.5%;
     border: 1px solid;
 }
 
-.summary-content {
+.summary-width {
+    width: 22%;
+}
 
+.summary-content {
+    margin: 20px;
 }
 
 .base-price-div {
@@ -35,11 +38,6 @@
 }
 
 .position-fixed {
-    position: fixed;
-}
-
-.position-fixed-bottom {
-    position: relative;
-    left: 0%;
-    top: 0%;
+    position: sticky;
+    top: 0;
 }

@@ -1,7 +1,30 @@
+window.addEventListener('DOMContentLoaded', reziseSummaryWidth);
+window.addEventListener('resize', reziseSummaryWidth);
+
+
+window.addEventListener('scroll', function () {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 166) {
+        document.getElementById('summary').classList.add('position-fixed');
+    } else if (scrollPosition < 166) {
+        document.getElementById('summary').classList.remove('position-fixed');
+    } 
+});
+
+
 function renderSummary() {
     let summaryContainer = document.getElementById('summary');
     summaryContainer.innerHTML = htmlSummary();
     renderConfiguration();
+    reziseSummaryWidth();
+}
+
+
+function reziseSummaryWidth() {
+    window.addEventListener('resize', function () {
+        let containerWidth = document.querySelector('.summary-width').getBoundingClientRect().width;
+        document.querySelector('.summary-div').style.width = containerWidth + 'px';
+    });
 }
 
 

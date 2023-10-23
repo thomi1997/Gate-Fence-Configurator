@@ -5,7 +5,7 @@ function htmlExecutionBoxConfiguration() {
                 <p>
                     Ausführung
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentExecution[0]['prise-execution']} €
                 </p>
             </div>

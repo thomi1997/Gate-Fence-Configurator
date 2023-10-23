@@ -5,7 +5,7 @@ function htmlColorConfiguration() {
                 <p>
                     Farbe der Pulverbeschichtung
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentColor[0]['prise-color']} €
                 </p>
             </div>

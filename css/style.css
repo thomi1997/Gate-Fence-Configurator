@@ -7,13 +7,25 @@ body {
 @font-face {
     font-family: "Titillium-Web";
     src: url("/fonts/titillium-web/TitilliumWeb-Regular.ttf");
+    src: url("/fonts/titillium-web/TitilliumWeb-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Titillium-Web-SemiBold";
+    src: url("/fonts/titillium-web/TitilliumWeb-SemiBold.ttf");
+}
+
+hr {
+    height: 1px;
+    background-color: rgb(219, 87, 33);
 }
 
 .gate-fence-configurator-body {
+    font-family: "Titillium-Web-SemiBold";
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 2000px;
+    max-width: 1300px;
 }
 
 .background-configurator {
@@ -31,13 +43,10 @@ body {
 }
 
 .configurator-menu {
-    width: 70.5%;
+    width: 76%;
     padding: 20px;
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.4);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
 .box-coating {
@@ -103,6 +112,19 @@ body {
     height: 300px;
 }
 
+.align-item-baseline {
+    align-items: baseline;
+    line-height: 0px;
+}
+
+.box-shadow {
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    -moz-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
 .d-none {
     display: none;
 }
+
+/*768px*/

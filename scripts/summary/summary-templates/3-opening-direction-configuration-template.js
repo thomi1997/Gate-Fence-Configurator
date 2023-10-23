@@ -5,7 +5,7 @@ function htmlOpeningDirectionConfiguration() {
                 <p>
                     Öffnungsrichtung
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentOpeningDirection[0]['prise-opening-direction']} €
                 </p>
             </div>

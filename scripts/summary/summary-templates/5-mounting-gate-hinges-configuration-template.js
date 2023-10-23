@@ -5,7 +5,7 @@ function htmlMountingMethodHingesConfiguration() {
                 <p>
                     Montage der Torbänder
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentMountingGateHinges[0]['prise-mounting-gate-hinges']} €
                 </p>
             </div>

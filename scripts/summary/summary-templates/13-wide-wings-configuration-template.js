@@ -5,7 +5,7 @@ function htmlWideWingsBoxConfiguration() {
                 <p>
                     Breite Gehflügel
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentWideWings[0]['prise-wide-wings']} €
                 </p>
             </div>

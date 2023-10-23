@@ -8,7 +8,7 @@ function htmlSurface() {
         <div class="surface-collection">
             <div onclick="markTheSurfaceBox(this)" id="surface-1" class="box-coating">
                 <div class="box-content">
-                    <img class="collection-imgs" src="img/surface-img/0-surface-hot-dip-.png" alt="surface-img">
+                    <img class="collection-imgs" src="img/surface-img/0-surface-hot-dip.png" alt="surface-img">
                     <p>
                         Feuerverzinkt
                     </p>
@@ -32,7 +32,7 @@ function htmlSurface() {
             </div>
             <div onclick="markTheSurfaceBox(this)" id="surface-4" class="box-coating">
                 <div class="box-content">
-                    <img class="collection-imgs" src="img/surface-img/3-surface-hammer-blow-color-coated-.png" alt="surface-img">
+                    <img class="collection-imgs" src="img/surface-img/3-surface-hammer-blow-color-coated.png" alt="surface-img">
                     <p>
                         Feuerverzinkt + Hammerschlag Farbbeschichtet
                     </p>
@@ -40,7 +40,7 @@ function htmlSurface() {
             </div>
             <div onclick="markTheSurfaceBox(this)" id="surface-5" class="box-coating">
                 <div class="box-content">
-                    <img class="collection-imgs" src="img/surface-img/4-surface-db-color-coated-.png" alt="surface-img">
+                    <img class="collection-imgs" src="img/surface-img/4-surface-db-color-coated.png" alt="surface-img">
                     <p>
                         Feuerverzinkt + DB Farbbeschichtet
                     </p>

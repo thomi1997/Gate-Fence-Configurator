@@ -5,7 +5,7 @@ function htmlGripSetBoxConfiguration() {
                 <p>
                     Griffgarnitur
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentGripSet[0]['prise-grip-set']} €
                 </p>
             </div>

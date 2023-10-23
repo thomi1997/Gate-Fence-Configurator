@@ -5,7 +5,7 @@ function htmlVariantMountingPlatesBoxConfiguration() {
                 <p>
                     Variante der Montageplatte
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentVariantMountingPlates[0]['prise-variant-mounting-plates']} €
                 </p>
             </div>

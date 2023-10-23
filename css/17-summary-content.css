@@ -1,10 +1,12 @@
 .summary-div {
     background-color: white;
-    border: 1px solid;
+    border: 1px solid rgb(219, 87, 33);
+    border-radius: 10px;
 }
 
 .summary-width {
-    width: 22%;
+    width: 250px;
+    margin-left: 20px;
 }
 
 .summary-content {
@@ -15,21 +17,117 @@
     /*border-bottom: 2px solid;*/
 }
 
-.configuration-column {
-    
+.summary-configuration-box {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    height: 0;
+}
+
+.open-summary-configuration {
+    height: auto;
 }
 
 .collection-prise {
     display: flex;
     justify-content: space-between;
+    font-family: "Titillium-Web-SemiBold";
 }
 
 .summary-btn-open-configuration {
     width: 100%;
+    font-size: 1rem;
+    padding: 8px;
+    color: rgb(219, 87, 33);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(219, 87, 33);
+    cursor: pointer;
+    fill: rgb(219, 87, 33);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s, fill 0.3s;
 }
 
-.end-price-div {
+.summary-btn-open-configuration:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(219, 87, 33);
+    fill: rgb(255, 255, 255);
+}
 
+.summary-open-svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.summary-prise-color {
+    color: rgb(219, 87, 33);
+}
+
+.end-price-div {}
+
+.end-price-size {
+    font-size: 1.6rem;
+}
+
+.summary-quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-select {
+    font-size: 1rem;
+    padding: 6px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.summary-buttons-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-button-shopping-cart {
+    font-size: 1rem;
+    padding: 14px;
+    background-color: rgb(69, 219, 35);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(69, 219, 35);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, fill 0.3s;
+    fill: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary-button-shopping-cart:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(69, 219, 35);
+    fill: rgb(69, 219, 35);
+}
+
+.shopping-cart-svg {
+    width: 40px;
+    height: 20px;
+}
+
+.summary-button-save {
+    font-size: 1rem;
+    padding: 14px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(69, 219, 35);
+    border: 1px solid rgb(69, 219, 35);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.summary-button-save:hover {
+    background-color: rgb(69, 219, 35);
+    color: rgb(255, 255, 255);
 }
 
 .summary-color-box {
@@ -39,5 +137,6 @@
 
 .position-fixed {
     position: sticky;
-    top: 0;
+    top: 14px;
+    max-width: 250px;
 }

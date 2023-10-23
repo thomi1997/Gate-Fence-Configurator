@@ -5,7 +5,7 @@ function htmlMountingMethodConfiguration() {
                 <p>
                     Befästigungsart
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentMountingMethod[0]['prise-mounting-method']} €
                 </p>
             </div>

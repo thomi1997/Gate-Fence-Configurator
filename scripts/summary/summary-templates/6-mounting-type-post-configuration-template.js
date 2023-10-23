@@ -5,7 +5,7 @@ function htmlMountingTypePostBoxConfiguration() {
                 <p>
                     Befestigungsart der Pfosten
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentMountingTypePost[0]['prise-mounting-type-post']} €
                 </p>
             </div>

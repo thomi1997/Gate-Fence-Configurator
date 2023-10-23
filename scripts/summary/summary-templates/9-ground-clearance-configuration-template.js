@@ -5,7 +5,7 @@ function htmlGroundClearanceBoxConfiguration() {
                 <p>
                     Bodenabstand
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentGroundClearance[0]['prise-ground-clearance']} €
                 </p>
             </div>

@@ -1,3 +1,6 @@
+let summaryMenuIsOpen = false;
+
+
 window.addEventListener('DOMContentLoaded', reziseSummaryWidth);
 window.addEventListener('resize', reziseSummaryWidth);
 
@@ -8,7 +11,7 @@ window.addEventListener('scroll', function () {
         document.getElementById('summary').classList.add('position-fixed');
     } else if (scrollPosition < 166) {
         document.getElementById('summary').classList.remove('position-fixed');
-    } 
+    }
 });
 
 
@@ -17,6 +20,29 @@ function renderSummary() {
     summaryContainer.innerHTML = htmlSummary();
     renderConfiguration();
     reziseSummaryWidth();
+    renderSelectOptions();
+}
+
+
+function renderSelectOptions() {
+    let select = document.getElementById("quantity");
+    for (let i = 1; i <= 100; i++) {
+        let option = document.createElement("option");
+        option.value = i;
+        option.text = i + " Stück";
+        select.appendChild(option);
+    }
+    select.selectedIndex = 0;
+}
+
+
+function summaryConfigurationOpenAndClose() {
+    let summaryConfigurationId = document.getElementById('configuration');
+    summaryMenuIsOpen = true;
+    if (summaryMenuIsOpen) {
+        summaryConfigurationId.classList.toggle('open-summary-configuration');
+        summaryMenuIsOpen = false;
+    }
 }
 
 

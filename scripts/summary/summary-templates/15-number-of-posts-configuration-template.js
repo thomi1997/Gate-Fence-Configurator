@@ -5,7 +5,7 @@ function htmlNumberOfPostsBoxConfiguration() {
                 <p>
                     Anzahl der Pfosten
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     +0,00 €
                 </p>
             </div>

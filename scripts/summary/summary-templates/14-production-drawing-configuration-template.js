@@ -5,7 +5,7 @@ function htmlProductionDrawingBoxConfiguration() {
                 <p>
                     Produktionszeichnung
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentProductionDrawing[0]['prise-production-drawing']} €
                 </p>
             </div>

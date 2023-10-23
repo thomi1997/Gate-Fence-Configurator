@@ -5,7 +5,7 @@ function htmlWingLayoutBoxConfiguration() {
                 <p>
                     Flügelaufteilung
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentWingLayout[0]['prise-wing-layout']} €
                 </p>
             </div>

@@ -6,7 +6,7 @@ function htmlDimensionsBoxConfiguration(priseEuro) {
                 <p>
                     Maße
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${priseEuro} €
                 </p>
             </div>

@@ -5,7 +5,7 @@ function htmlSurfaceConfiguration() {
                 <p>
                     Oberfläche
                 </p>
-                <p>
+                <p class="summary-prise-color">
                     ${currentSurface[0]['prise-surface']} €
                 </p>
             </div>

@@ -1,4 +1,5 @@
 let currentOptionalNotes = [];
+let optionalNotesIsOpen = false;
 
 
 function renderOptionalNotes() {
@@ -27,5 +28,14 @@ function addOptionalNotes() {
             'optional-notes': optionalNotes,
         }
         currentOptionalNotes.push(offerOptionalNotes);
+    }
+}
+
+function openOptionalNotesCollectionMobil() {
+    let optionalNotesTitelDiv = document.getElementById('open-optional-notes');
+    optionalNotesIsOpen = true;
+    if (optionalNotesIsOpen) {
+        optionalNotesTitelDiv.classList.toggle('open-optional-notes-configuration');
+        optionalNotesIsOpen = false;
     }
 }

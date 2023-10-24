@@ -1,6 +1,7 @@
 let currentProductionDrawing = [];
 let previouProductionDrawingPrice = '0,00';
 let priseProductionDrawingPriceAlreadyExecuted = false;
+let productionDrawingIsOpen = false;
 
 
 function renderProductionDrawing() {
@@ -66,4 +67,14 @@ function queryProductionDrawingWhatCalculate(priceProductionDrawing, priseProduc
         calculateTheFirstBox(totalPrise, currentPreviouProductionDrawingPrice);
     }
     renderEndSum();
+}
+
+
+function openProductionDrawingCollectionMobil() {
+    let productionDrawingTitelDiv = document.getElementById('open-production-drawing');
+    productionDrawingIsOpen = true;
+    if (productionDrawingIsOpen) {
+        productionDrawingTitelDiv.classList.toggle('open-production-drawing-configuration');
+        productionDrawingIsOpen = false;
+    }
 }

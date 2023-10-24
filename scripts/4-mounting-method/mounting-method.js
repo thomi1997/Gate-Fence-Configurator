@@ -3,6 +3,7 @@ let previouMountingMethodId = 'mounting-method-1';
 let pillarsOnly = false;
 let previouMountingMethodPrice = '0,00';
 let priseMountingMethodAlreadyExecuted = false;
+let mountingMethodIsOpen = false;
 
 
 let mountingMethodImgPathsLeft = [
@@ -152,4 +153,14 @@ function queryMountingMethodWhatCalculate(priseMountingMethod, priseMountingMeth
         calculateTheFirstBox(totalPrise, currentPreviouMountingMethodPrice);
     }
     renderEndSum();
+}
+
+
+function openMountingMethodCollectionMobil() {
+    let mountingMethodTitelDiv = document.getElementById('open-mounting-method');
+    mountingMethodIsOpen = true;
+    if (mountingMethodIsOpen) {
+        mountingMethodTitelDiv.classList.toggle('open-mounting-method-configuration');
+        mountingMethodIsOpen = false;
+    }
 }

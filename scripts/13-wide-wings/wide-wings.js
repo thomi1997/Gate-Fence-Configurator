@@ -1,4 +1,5 @@
 let currentWideWings = [];
+let wideWingsIsOpen = false;
 
 
 function renderwideWings() {
@@ -40,5 +41,14 @@ function addWideWings() {
         }
         currentWideWings.push(offerWideWings);
         renderWideWingsConfiguration();
+    }
+}
+
+function openWideWingsCollectionMobil() {
+    let wideWingsTitelDiv = document.getElementById('open-wide-wings');
+    wideWingsIsOpen = true;
+    if (wideWingsIsOpen) {
+        wideWingsTitelDiv.classList.toggle('open-wide-wings-configuration');
+        wideWingsIsOpen = false;
     }
 }

@@ -1,4 +1,5 @@
 let currentGroundClearance = [];
+let groundClearanceIsOpen = false;
 
 
 function renderGroundClearance() {
@@ -32,5 +33,15 @@ function addGroundClearance() {
         }
         currentGroundClearance.push(offerGroundClearance);
         renderGroundClearanceConfiguration();
+    }
+}
+
+
+function openGroundClearanceCollectionMobil() {
+    let groundClearanceTitelDiv = document.getElementById('open-ground-clearance');
+    groundClearanceIsOpen = true;
+    if (groundClearanceIsOpen) {
+        groundClearanceTitelDiv.classList.toggle('open-ground-clearance-configuration');
+        groundClearanceIsOpen = false;
     }
 }

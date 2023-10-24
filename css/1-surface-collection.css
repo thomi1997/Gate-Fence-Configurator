@@ -3,3 +3,17 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+
+@media (max-width: 768px) {
+
+    .surface-collection {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 1000ms ease-in-out;
+    }
+
+    .open-surface-configuration {
+        max-height: 2000px;
+    }
+}

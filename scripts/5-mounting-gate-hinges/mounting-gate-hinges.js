@@ -1,5 +1,6 @@
 let currentMountingGateHinges = [];
 let previouMountingGateHingesId = 'mounting-gate-hinges-1';
+let mountingGateHingesIsOpen = false;
 
 
 function renderMountingGateHinges() {
@@ -143,4 +144,24 @@ function pushMountingGateHingesContent(currentMountingGateHingesId, priseMountin
     }
     currentMountingGateHinges.push(offerMountingGateHinges);
     renderMountingMethodHingesConfiguration();
+}
+
+
+function openMountingGateHingesCollectionMobil_1() {
+    let mountingGateHingesTitelDiv = document.getElementById('open-mounting-gate-hinges-1');
+    mountingGateHingesIsOpen = true;
+    if (mountingGateHingesIsOpen) {
+        mountingGateHingesTitelDiv.classList.toggle('open-mounting-gate-hinges-configuration');
+        mountingGateHingesIsOpen = false;
+    }
+}
+
+
+function openMountingGateHingesCollectionMobil_2() {
+    let mountingGateHingesTitelDiv = document.getElementById('open-mounting-gate-hinges-2');
+    mountingGateHingesIsOpen = true;
+    if (mountingGateHingesIsOpen) {
+        mountingGateHingesTitelDiv.classList.toggle('open-mounting-gate-hinges-configuration');
+        mountingGateHingesIsOpen = false;
+    }
 }

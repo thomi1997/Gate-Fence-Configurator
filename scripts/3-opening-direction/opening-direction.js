@@ -8,6 +8,7 @@ let insideLeft = false;
 let insideRight = false;
 let outsideLeft = false;
 let outsideRight = false;
+let openingDirectionIsOpen = false;
 
 
 function renderOpeningDirection() {
@@ -128,4 +129,14 @@ function pushOpeningDirectionContent(currentOpeningDirectionId, openingDirection
     }
     currentOpeningDirection.push(offerOpeningDirection);
     renderOpeningDirectionConfigurationen();
+}
+
+
+function openOpeningDirectionCollectionMobil() {
+    let openingDirectionTitelDiv = document.getElementById('open-opening-direction-collection');
+    openingDirectionIsOpen = true;
+    if (openingDirectionIsOpen) {
+        openingDirectionTitelDiv.classList.toggle('open-opening-direction-configuration');
+        openingDirectionIsOpen = false;
+    }
 }

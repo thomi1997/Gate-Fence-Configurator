@@ -2,6 +2,7 @@ let currentGripSet = [];
 let previouGripSetId = 'grip-set-1';
 let previouGripSetPrice = '49,99';
 let priseGripSetAlreadyExecuted = false;
+let gripSetIsOpen = false;
 
 
 let gripSetImgs = [
@@ -126,4 +127,14 @@ function queryGripSetWhatCalculate(priseGripSet, priseGripSetNotSame, totalPrise
         calculateTheFirstBox(totalPrise, currentPreviouGripSetPrice);
     }
     renderEndSum();
+}
+
+
+function openGripSetCollectionMobil() {
+    let gripSetTitelDiv = document.getElementById('open-grip-set');
+    gripSetIsOpen = true;
+    if (gripSetIsOpen) {
+        gripSetTitelDiv.classList.toggle('open-grip-set-configuration');
+        gripSetIsOpen = false;
+    }
 }

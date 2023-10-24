@@ -3,6 +3,7 @@ let previouWingLayoutId = 'wing-layout-1';
 let wingLayoutNumber = 10;
 let symmetrical = false;
 let asymmetric = false;
+let wingLayoutIsOpen = false;
 
 
 let wingLayoutImgsSymmetrical = [
@@ -127,4 +128,14 @@ function pushWingLayoutContent(currentWingLayoutId, wingLayout) {
     }
     currentWingLayout.push(offerWingLayout);
     renderWingLayoutConfiguration();
+}
+
+
+function openWingLayoutCollectionMobil() {
+    let wingLayoutTitelDiv = document.getElementById('open-wing-layout');
+    wingLayoutIsOpen = true;
+    if (wingLayoutIsOpen) {
+        wingLayoutTitelDiv.classList.toggle('open-wing-layout-configuration');
+        wingLayoutIsOpen = false;
+    }
 }

@@ -7,6 +7,7 @@ let changeColorDB = false;
 
 let colorOnLoad = false;
 let priseColorAlreadyExecuted = false;
+let colorIsOpen = false;
 
 
 function renderColor() {
@@ -158,4 +159,14 @@ function queryColorWhatCalculate(priseColor, priseColorNotSame, totalPrise, curr
         calculateTheFirstBox(totalPrise, currentPreviouColorPrice);
     }
     renderEndSum();
+}
+
+
+function openColorCollectionMobil() {
+    let colorTitelDiv = document.getElementById('change-color');
+    colorIsOpen = true;
+    if (colorIsOpen) {
+        colorTitelDiv.classList.toggle('open-color-configuration');
+        colorIsOpen = false;
+    }
 }

@@ -3,3 +3,16 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+@media (max-width: 768px) {
+
+    .mounting-type-post-collection {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 1000ms ease-in-out;
+    }
+
+    .open-mounting-type-post-configuration {
+        max-height: 800px;
+    }
+}

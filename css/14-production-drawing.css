@@ -1,4 +1,17 @@
-#production-drawing-select {
-    width: 200px;
-    margin-bottom: 20px;
+.production-drawing-collection {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+
+    .production-drawing-collection {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 1000ms ease-in-out;
+    }
+
+    .open-production-drawing-configuration {
+        max-height: 100px;
+    }
 }

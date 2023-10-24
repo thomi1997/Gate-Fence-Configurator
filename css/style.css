@@ -63,7 +63,9 @@ hr {
     cursor: pointer;
 }
 
-.collection-box-background-color {}
+.collection-box-background-color {
+    margin-bottom: 20px;
+}
 
 .collection-titel {
     border-radius: 6px;
@@ -72,6 +74,9 @@ hr {
     /*so wie der hintergrund*/
     padding: 2px 10px;
     line-height: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .collection-imgs {
@@ -127,4 +132,31 @@ hr {
     display: none;
 }
 
+.collection-mobile-open-svg {
+    width: 30px;
+    height: 30px;
+}
+
 /*768px*/
+
+@media (min-width: 768px) {
+
+    .collection-mobile-open-svg {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .gate-fence-configurator-body {
+        width: 100%;
+    }
+
+    .container-layout {
+        flex-direction: column;
+    }
+
+    .configurator-menu {
+        width: 94%;
+    }
+}

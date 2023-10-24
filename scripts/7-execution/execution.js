@@ -2,6 +2,7 @@ let currentExecution = [];
 let previouExecutionId = 'execution-1';
 let withMotor = false;
 let withoutMotor = false;
+let executionIsOpen = false;
 
 
 let executionImgs = [
@@ -109,4 +110,14 @@ function pushExecutionContent(currentExecutionId, priseExecution, execution) {
     }
     currentExecution.push(offerExecution);
     renderExecutionConfiguration();
+}
+
+
+function openExecutionCollectionMobil() {
+    let executionTitelDiv = document.getElementById('open-execution');
+    executionIsOpen = true;
+    if (executionIsOpen) {
+        executionTitelDiv.classList.toggle('open-execution-configuration');
+        executionIsOpen = false;
+    }
 }

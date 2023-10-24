@@ -3,6 +3,7 @@ let currentDimensionsHeight = [];
 let currentDimensionsWide = [];
 let pushHeight = false;
 let pushWide = false;
+let dimensionsIsOpen = false;
 
 function renderDimensions() {
     let dimensionsDiv = document.getElementById('dimensions-box');
@@ -145,5 +146,15 @@ function pushDimensions() {
         }
         currentDimensions.push(offerDimensions);
         renderDimensionsConfiguration();
+    }
+}
+
+
+function openDimensionsCollectionMobil() {
+    let dimensionsTitelDiv = document.getElementById('open-dimensions');
+    dimensionsIsOpen = true;
+    if (dimensionsIsOpen) {
+        dimensionsTitelDiv.classList.toggle('open-dimensions-configuration');
+        dimensionsIsOpen = false;
     }
 }

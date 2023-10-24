@@ -7,3 +7,16 @@
     min-height: 100px;
     resize: vertical;
 }
+
+@media (max-width: 768px) {
+
+    .optional-notes-collection {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 1000ms ease-in-out;
+    }
+
+    .open-optional-notes-configuration {
+        max-height: 1000px;
+    }
+}

@@ -1,3 +1,16 @@
 .number-of-posts-collection {
     display: flex;
 }
+
+@media (max-width: 768px) {
+
+    .number-of-posts-collection {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 1000ms ease-in-out;
+    }
+
+    .open-number-of-posts-configuration {
+        max-height: 50px;
+    }
+}

@@ -2,6 +2,7 @@ let currentSurface = [];
 let previouSurfaceId = 'surface-1';
 let previouSurfacePrice = '49,99';
 let priseSurfaceAlreadyExecuted = false;
+let surfaceIsOpen = false;
 
 
 function renderSurface() {
@@ -114,4 +115,14 @@ function querySurfaceWhatCalculate(priseSurface, priseSurfaceNotSame, totalPrise
         calculateTheFirstBox(totalPrise, currentPreviouSurfacePrice);
     }
     renderEndSum();
+}
+
+
+function openSurfaceCollectionMobil() {
+    let surfaceTitelDiv = document.getElementById('open-surface');
+    surfaceIsOpen = true;
+    if (surfaceIsOpen) {
+        surfaceTitelDiv.classList.toggle('open-surface-configuration');
+        surfaceIsOpen = false;
+    }
 }

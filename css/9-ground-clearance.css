@@ -1,4 +1,18 @@
 .ground-clearance-collection {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+
+    .ground-clearance-collection {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 1000ms ease-in-out;
+    }
+
+    .open-ground-clearance-configuration {
+        max-height: 80px;
+    }
 }

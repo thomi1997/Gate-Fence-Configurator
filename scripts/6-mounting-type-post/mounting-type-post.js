@@ -2,6 +2,7 @@ let currentMountingTypePost = [];
 let previouMountingTypePostId = 'mounting-type-post-1';
 let postConcrete = false;
 let postScrewOn = false;
+let mountingTypePostIsOpen = false;
 
 
 function renderMountingTypePost() {
@@ -90,5 +91,15 @@ function queryMountingTypePost(currentMountingTypePostId) {
         renderGroundClearance();
         renderExecution();
         renderDimensions();
+    }
+}
+
+
+function openMountingTypePostCollectionMobil() {
+    let mountingTypePostTitelDiv = document.getElementById('open-mounting-type-post');
+    mountingTypePostIsOpen = true;
+    if (mountingTypePostIsOpen) {
+        mountingTypePostTitelDiv.classList.toggle('open-mounting-type-post-configuration');
+        mountingTypePostIsOpen = false;
     }
 }

@@ -15,4 +15,8 @@
     .open-opening-direction-configuration {
         max-height: 1750px;
     }
+
+    .opening-direction-content-absolute {
+        align-self: flex-start;
+    }
 }

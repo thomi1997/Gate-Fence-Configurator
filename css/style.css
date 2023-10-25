@@ -33,8 +33,6 @@ hr {
     padding: 20px;
 }
 
-.head-titel {}
-
 .container-layout {
     width: 100%;
     display: flex;
@@ -55,7 +53,8 @@ hr {
     align-items: center;
     flex-direction: column;
     width: 300px;
-    height: 100%; /*300px*/
+    height: 100%;
+    /*300px*/
     border: 2px solid gray;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -98,7 +97,8 @@ hr {
 .mark-the-box::before {
     content: "";
     width: 284px;
-    height: 100%; /*284px*/
+    height: 100%;
+    /*284px*/
     position: absolute;
     border: 8px solid rgb(69, 219, 35);
     display: block;
@@ -137,7 +137,29 @@ hr {
     height: 30px;
 }
 
-/*768px*/
+@media (max-width: 974px) {
+
+    .container-layout {
+        justify-content: center;
+    }
+
+    .box-coating {
+        width: 150px;
+    }
+
+    .img-lower-level {
+        height: 150px;
+    }
+
+    .mark-the-box::before {
+        width: 138px;
+    }
+
+    .mark-the-box::after {
+        top: -13px;
+        left: -8px;
+    }
+}
 
 @media (min-width: 768px) {
 
@@ -158,5 +180,39 @@ hr {
 
     .configurator-menu {
         width: 94%;
+    }
+
+    .box-coating {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: space-between;
+    }
+
+    .img-lower-level {
+        width: 200px;
+        height: 200px;
+    }
+
+    .mark-the-box::before {
+        height: 92%;
+        width: 98%;
+        left: 0;
+    }
+
+    .mark-the-box::after {
+        top: -13px;
+        left: -8px;
+    }
+
+    .collection-imgs {
+        min-height: 200px;
+        width: 200px;
+    }
+
+    .box-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
     }
 }

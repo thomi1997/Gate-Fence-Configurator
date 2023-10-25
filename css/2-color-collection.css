@@ -76,6 +76,13 @@
 }
 
 
+@media (max-width: 974px) {
+    .color-in-the-box {
+        width: 150px;
+    }
+}
+
+
 @media (max-width: 768px) {
 
     .color-collection {

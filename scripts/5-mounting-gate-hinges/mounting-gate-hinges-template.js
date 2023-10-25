@@ -12,7 +12,7 @@ function htmlMountingGateHinges(imgPath, contentTop, contentBottom) {
         </div>
         <div id="open-mounting-gate-hinges-1" class="mounting-gate-hinges-collection">
             <div onclick="markTheMountingGateHingesBox(this)" id="mounting-gate-hinges-1" class="box-coating">
-                <p>
+                <p class="mounting-gate-hinges-content-absolute">
                     ${contentTop}
                 </p>
                 <div class="img-lower-level" style="background-color:${currentColor[0]['color']};">
@@ -41,7 +41,7 @@ function htmlMountingGateHingesDouble(contentTop1, imgPath1, contentBottom1, con
         </div>
         <div id="open-mounting-gate-hinges-2" class="mounting-gate-hinges-collection">
             <div onclick="markTheMountingGateHingesBox(this)" id="mounting-gate-hinges-1" class="box-coating">
-                <p>
+                <p class="mounting-gate-hinges-content-absolute">
                     ${contentTop1}
                 </p>
                 <div class="img-lower-level" style="background-color:${currentColor[0]['color']};">
@@ -52,7 +52,7 @@ function htmlMountingGateHingesDouble(contentTop1, imgPath1, contentBottom1, con
                 </p>               
             </div>
             <div onclick="markTheMountingGateHingesBox(this)" id="mounting-gate-hinges-2" class="box-coating">
-                <p>
+                <p class="mounting-gate-hinges-content-absolute">
                     ${contentTop2}
                 </p>
                 <div class="img-lower-level" style="background-color:${currentColor[0]['color']};">

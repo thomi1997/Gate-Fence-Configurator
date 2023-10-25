@@ -12,7 +12,7 @@ function htmlOpeningDirection() {
         </div>
         <div id="open-opening-direction-collection" class="opening-direction-collection">
             <div onclick="markTheOpeningDirectionBox(this)" id="opening-direction-1" class="box-coating">
-                <p>
+                <p class="opening-direction-content-absolute">
                     Grundstück (Innen)
                 </p>
                 <div class="img-lower-level" style="background-color:${currentColor[0]['color']};">
@@ -23,7 +23,7 @@ function htmlOpeningDirection() {
                 </p>
             </div>
             <div onclick="markTheOpeningDirectionBox(this)" id="opening-direction-2" class="box-coating">
-                <p>
+                <p class="opening-direction-content-absolute">
                     Grundstück (Innen)
                 </p>
                 <div class="img-lower-level" style="background-color:${currentColor[0]['color']};">
@@ -34,7 +34,7 @@ function htmlOpeningDirection() {
                 </p>
             </div>
             <div onclick="markTheOpeningDirectionBox(this)" id="opening-direction-3" class="box-coating">
-                <p>
+                <p class="opening-direction-content-absolute">
                     Grundstück (Innen)
                 </p>
                 <div class="img-lower-level" style="background-color:${currentColor[0]['color']};">
@@ -45,7 +45,7 @@ function htmlOpeningDirection() {
                 </p>
             </div>
             <div onclick="markTheOpeningDirectionBox(this)" id="opening-direction-4" class="box-coating">
-                <p>
+                <p class="opening-direction-content-absolute">
                     Grundstück (Innen)
                 </p>
                 <div class="img-lower-level" style="background-color:${currentColor[0]['color']};">

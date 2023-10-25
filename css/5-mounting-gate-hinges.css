@@ -15,4 +15,10 @@
     .open-mounting-gate-hinges-configuration {
         max-height: 900px;
     }
+
+    .mounting-gate-hinges-content-absolute {
+        position: relative;
+        align-self: flex-start;
+        margin-left: 70px;
+    }
 }

@@ -2,7 +2,7 @@ let currentMountingTypePost = [];
 let previouMountingTypePostId = 'mounting-type-post-1';
 let postConcrete = false;
 let postScrewOn = false;
-let mountingTypePostIsOpen = false;
+let mountingTypePostIsOpen = true;
 
 
 function renderMountingTypePost() {
@@ -97,9 +97,16 @@ function queryMountingTypePost(currentMountingTypePostId) {
 
 function openMountingTypePostCollectionMobil() {
     let mountingTypePostTitelDiv = document.getElementById('open-mounting-type-post');
-    mountingTypePostIsOpen = true;
+    let mountingTypePostSeries = document.getElementById('series-6');
     if (mountingTypePostIsOpen) {
-        mountingTypePostTitelDiv.classList.toggle('open-mounting-type-post-configuration');
+        mountingTypePostSeries.classList.remove('back-rotate-mobile-open-svg');
+        mountingTypePostTitelDiv.classList.add('open-mounting-type-post-configuration');
+        mountingTypePostSeries.classList.add('rotate-mobile-open-svg');
         mountingTypePostIsOpen = false;
+    } else {
+        mountingTypePostTitelDiv.classList.remove('open-mounting-type-post-configuration');
+        mountingTypePostSeries.classList.remove('rotate-mobile-open-svg');
+        mountingTypePostSeries.classList.add('back-rotate-mobile-open-svg');
+        mountingTypePostIsOpen = true;
     }
 }

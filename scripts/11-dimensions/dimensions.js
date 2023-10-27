@@ -3,7 +3,7 @@ let currentDimensionsHeight = [];
 let currentDimensionsWide = [];
 let pushHeight = false;
 let pushWide = false;
-let dimensionsIsOpen = false;
+let dimensionsIsOpen = true;
 
 function renderDimensions() {
     let dimensionsDiv = document.getElementById('dimensions-box');
@@ -152,9 +152,16 @@ function pushDimensions() {
 
 function openDimensionsCollectionMobil() {
     let dimensionsTitelDiv = document.getElementById('open-dimensions');
-    dimensionsIsOpen = true;
+    let dimensionsSeries = document.getElementById('series-11');
     if (dimensionsIsOpen) {
-        dimensionsTitelDiv.classList.toggle('open-dimensions-configuration');
+        dimensionsSeries.classList.remove('back-rotate-mobile-open-svg');
+        dimensionsTitelDiv.classList.add('open-dimensions-configuration');
+        dimensionsSeries.classList.add('rotate-mobile-open-svg');
         dimensionsIsOpen = false;
+    } else {
+        dimensionsTitelDiv.classList.remove('open-dimensions-configuration');
+        dimensionsSeries.classList.remove('rotate-mobile-open-svg');
+        dimensionsSeries.classList.add('back-rotate-mobile-open-svg');
+        dimensionsIsOpen = true;
     }
 }

@@ -21,11 +21,12 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
-    height: 0;
+    max-height: 0;
+    transition: max-height 1000ms ease-in-out;
 }
 
 .open-summary-configuration {
-    height: auto;
+    max-height: 1250px;
 }
 
 .collection-prise {

@@ -1,6 +1,6 @@
 let currentMountingGateHinges = [];
 let previouMountingGateHingesId = 'mounting-gate-hinges-1';
-let mountingGateHingesIsOpen = false;
+let mountingGateHingesIsOpen = true;
 
 
 function renderMountingGateHinges() {
@@ -149,19 +149,33 @@ function pushMountingGateHingesContent(currentMountingGateHingesId, priseMountin
 
 function openMountingGateHingesCollectionMobil_1() {
     let mountingGateHingesTitelDiv = document.getElementById('open-mounting-gate-hinges-1');
-    mountingGateHingesIsOpen = true;
+    let mountingGateHingesSeries = document.getElementById('series-5');
     if (mountingGateHingesIsOpen) {
-        mountingGateHingesTitelDiv.classList.toggle('open-mounting-gate-hinges-configuration');
+        mountingGateHingesSeries.classList.remove('back-rotate-mobile-open-svg');
+        mountingGateHingesTitelDiv.classList.add('open-mounting-gate-hinges-configuration');
+        mountingGateHingesSeries.classList.add('rotate-mobile-open-svg');
         mountingGateHingesIsOpen = false;
+    } else {
+        mountingGateHingesTitelDiv.classList.remove('open-mounting-gate-hinges-configuration');
+        mountingGateHingesSeries.classList.remove('rotate-mobile-open-svg');
+        mountingGateHingesSeries.classList.add('back-rotate-mobile-open-svg');
+        mountingGateHingesIsOpen = true;
     }
 }
 
 
 function openMountingGateHingesCollectionMobil_2() {
-    let mountingGateHingesTitelDiv = document.getElementById('open-mounting-gate-hinges-2');
-    mountingGateHingesIsOpen = true;
+    let mountingGateHingesTitelDiv2 = document.getElementById('open-mounting-gate-hinges-2');
+    let mountingGateHingesSeries = document.getElementById('series-5');
     if (mountingGateHingesIsOpen) {
-        mountingGateHingesTitelDiv.classList.toggle('open-mounting-gate-hinges-configuration');
+        mountingGateHingesSeries.classList.remove('back-rotate-mobile-open-svg');
+        mountingGateHingesTitelDiv2.classList.add('open-mounting-gate-hinges-configuration');
+        mountingGateHingesSeries.classList.add('rotate-mobile-open-svg');
         mountingGateHingesIsOpen = false;
+    } else {
+        mountingGateHingesTitelDiv2.classList.remove('open-mounting-gate-hinges-configuration');
+        mountingGateHingesSeries.classList.remove('rotate-mobile-open-svg');
+        mountingGateHingesSeries.classList.add('back-rotate-mobile-open-svg');
+        mountingGateHingesIsOpen = true;
     }
 }

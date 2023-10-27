@@ -2,7 +2,7 @@ let currentExecution = [];
 let previouExecutionId = 'execution-1';
 let withMotor = false;
 let withoutMotor = false;
-let executionIsOpen = false;
+let executionIsOpen = true;
 
 
 let executionImgs = [
@@ -115,9 +115,16 @@ function pushExecutionContent(currentExecutionId, priseExecution, execution) {
 
 function openExecutionCollectionMobil() {
     let executionTitelDiv = document.getElementById('open-execution');
-    executionIsOpen = true;
+    let executionSeries = document.getElementById('series-7');
     if (executionIsOpen) {
-        executionTitelDiv.classList.toggle('open-execution-configuration');
+        executionSeries.classList.remove('back-rotate-mobile-open-svg');
+        executionTitelDiv.classList.add('open-execution-configuration');
+        executionSeries.classList.add('rotate-mobile-open-svg');
         executionIsOpen = false;
+    } else {
+        executionTitelDiv.classList.remove('open-execution-configuration');
+        executionSeries.classList.remove('rotate-mobile-open-svg');
+        executionSeries.classList.add('back-rotate-mobile-open-svg');
+        executionIsOpen = true;
     }
 }

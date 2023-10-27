@@ -1,7 +1,7 @@
 let currentProductionDrawing = [];
 let previouProductionDrawingPrice = '0,00';
 let priseProductionDrawingPriceAlreadyExecuted = false;
-let productionDrawingIsOpen = false;
+let productionDrawingIsOpen = true;
 
 
 function renderProductionDrawing() {
@@ -72,9 +72,16 @@ function queryProductionDrawingWhatCalculate(priceProductionDrawing, priseProduc
 
 function openProductionDrawingCollectionMobil() {
     let productionDrawingTitelDiv = document.getElementById('open-production-drawing');
-    productionDrawingIsOpen = true;
+    let productionDrawingSeries = document.getElementById('series-14');
     if (productionDrawingIsOpen) {
-        productionDrawingTitelDiv.classList.toggle('open-production-drawing-configuration');
+        productionDrawingSeries.classList.remove('back-rotate-mobile-open-svg');
+        productionDrawingTitelDiv.classList.add('open-production-drawing-configuration');
+        productionDrawingSeries.classList.add('rotate-mobile-open-svg');
         productionDrawingIsOpen = false;
+    } else {
+        productionDrawingTitelDiv.classList.remove('open-production-drawing-configuration');
+        productionDrawingSeries.classList.remove('rotate-mobile-open-svg');
+        productionDrawingSeries.classList.add('back-rotate-mobile-open-svg');
+        productionDrawingIsOpen = true;
     }
 }

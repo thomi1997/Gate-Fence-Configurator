@@ -1,4 +1,4 @@
-let numberOfPostsIsOpen = false;
+let numberOfPostsIsOpen = true;
 
 
 function renderNumberOfPosts() {
@@ -15,9 +15,16 @@ function renderNumberOfPosts() {
 
 function openNumberOfPostsCollectionMobil() {
     let numberOfPostsTitelDiv = document.getElementById('open-number-of-posts');
-    numberOfPostsIsOpen = true;
+    let numberOfPostsSeries = document.getElementById('series-15');
     if (numberOfPostsIsOpen) {
-        numberOfPostsTitelDiv.classList.toggle('open-number-of-posts-configuration');
+        numberOfPostsSeries.classList.remove('back-rotate-mobile-open-svg');
+        numberOfPostsTitelDiv.classList.add('open-number-of-posts-configuration');
+        numberOfPostsSeries.classList.add('rotate-mobile-open-svg');
         numberOfPostsIsOpen = false;
+    } else {
+        numberOfPostsTitelDiv.classList.remove('open-number-of-posts-configuration');
+        numberOfPostsSeries.classList.remove('rotate-mobile-open-svg');
+        numberOfPostsSeries.classList.add('back-rotate-mobile-open-svg');
+        numberOfPostsIsOpen = true;
     }
 }

@@ -1,5 +1,5 @@
 let currentWideWings = [];
-let wideWingsIsOpen = false;
+let wideWingsIsOpen = true;
 
 
 function renderwideWings() {
@@ -46,9 +46,16 @@ function addWideWings() {
 
 function openWideWingsCollectionMobil() {
     let wideWingsTitelDiv = document.getElementById('open-wide-wings');
-    wideWingsIsOpen = true;
+    let wideWingsSeries = document.getElementById('series-13');
     if (wideWingsIsOpen) {
-        wideWingsTitelDiv.classList.toggle('open-wide-wings-configuration');
+        wideWingsSeries.classList.remove('back-rotate-mobile-open-svg');
+        wideWingsTitelDiv.classList.add('open-wide-wings-configuration');
+        wideWingsSeries.classList.add('rotate-mobile-open-svg');
         wideWingsIsOpen = false;
+    } else {
+        wideWingsTitelDiv.classList.remove('open-wide-wings-configuration');
+        wideWingsSeries.classList.remove('rotate-mobile-open-svg');
+        wideWingsSeries.classList.add('back-rotate-mobile-open-svg');
+        wideWingsIsOpen = true;
     }
 }

@@ -3,7 +3,7 @@ let previouWingLayoutId = 'wing-layout-1';
 let wingLayoutNumber = 10;
 let symmetrical = false;
 let asymmetric = false;
-let wingLayoutIsOpen = false;
+let wingLayoutIsOpen = true;
 
 
 let wingLayoutImgsSymmetrical = [
@@ -133,9 +133,16 @@ function pushWingLayoutContent(currentWingLayoutId, wingLayout) {
 
 function openWingLayoutCollectionMobil() {
     let wingLayoutTitelDiv = document.getElementById('open-wing-layout');
-    wingLayoutIsOpen = true;
+    let wingLayoutSeries = document.getElementById('series-12');
     if (wingLayoutIsOpen) {
-        wingLayoutTitelDiv.classList.toggle('open-wing-layout-configuration');
+        wingLayoutSeries.classList.remove('back-rotate-mobile-open-svg');
+        wingLayoutTitelDiv.classList.add('open-wing-layout-configuration');
+        wingLayoutSeries.classList.add('rotate-mobile-open-svg');
         wingLayoutIsOpen = false;
+    } else {
+        wingLayoutTitelDiv.classList.remove('open-wing-layout-configuration');
+        wingLayoutSeries.classList.remove('rotate-mobile-open-svg');
+        wingLayoutSeries.classList.add('back-rotate-mobile-open-svg');
+        wingLayoutIsOpen = true;
     }
 }

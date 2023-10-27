@@ -2,7 +2,7 @@ let currentVariantMountingPlates = [];
 let previouVariantMountingPlatesId = 'variant-mounting-plates-1';
 let previouVariantMountingPlatesPrice = '49,99';
 let priseVariantMountingPlatesAlreadyExecuted = false;
-let variantMountingPlatesIsOpen = false;
+let variantMountingPlatesIsOpen = true;
 
 
 let variantMountingPlatesImgs = [
@@ -117,9 +117,16 @@ function queryVariantMountingPlatesWhatCalculate(priseVariantMountingPlates, pri
 
 function openVariantMountingPlatesCollectionMobil() {
     let variantMountingPlatesTitelDiv = document.getElementById('open-variant-mounting-plates');
-    variantMountingPlatesIsOpen = true;
+    let variantMountingPlatesSeries = document.getElementById('series-8');
     if (variantMountingPlatesIsOpen) {
-        variantMountingPlatesTitelDiv.classList.toggle('open-variant-mounting-plates-configuration');
+        variantMountingPlatesSeries.classList.remove('back-rotate-mobile-open-svg');
+        variantMountingPlatesTitelDiv.classList.add('open-variant-mounting-plates-configuration');
+        variantMountingPlatesSeries.classList.add('rotate-mobile-open-svg');
         variantMountingPlatesIsOpen = false;
+    } else {
+        variantMountingPlatesTitelDiv.classList.remove('open-variant-mounting-plates-configuration');
+        variantMountingPlatesSeries.classList.remove('rotate-mobile-open-svg');
+        variantMountingPlatesSeries.classList.add('back-rotate-mobile-open-svg');
+        variantMountingPlatesIsOpen = true;
     }
 }

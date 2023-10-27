@@ -17,6 +17,8 @@
     }
 
     .opening-direction-content-absolute {
+        position: absolute;
         align-self: flex-start;
+        margin-left: 40px;
     }
 }

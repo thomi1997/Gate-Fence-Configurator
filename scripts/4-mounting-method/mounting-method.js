@@ -3,7 +3,7 @@ let previouMountingMethodId = 'mounting-method-1';
 let pillarsOnly = false;
 let previouMountingMethodPrice = '0,00';
 let priseMountingMethodAlreadyExecuted = false;
-let mountingMethodIsOpen = false;
+let mountingMethodIsOpen = true;
 
 
 let mountingMethodImgPathsLeft = [
@@ -158,9 +158,16 @@ function queryMountingMethodWhatCalculate(priseMountingMethod, priseMountingMeth
 
 function openMountingMethodCollectionMobil() {
     let mountingMethodTitelDiv = document.getElementById('open-mounting-method');
-    mountingMethodIsOpen = true;
+    let mountingMethodSeries = document.getElementById('series-4');
     if (mountingMethodIsOpen) {
-        mountingMethodTitelDiv.classList.toggle('open-mounting-method-configuration');
+        mountingMethodSeries.classList.remove('back-rotate-mobile-open-svg');
+        mountingMethodTitelDiv.classList.add('open-mounting-method-configuration');
+        mountingMethodSeries.classList.add('rotate-mobile-open-svg');
         mountingMethodIsOpen = false;
+    } else {
+        mountingMethodTitelDiv.classList.remove('open-mounting-method-configuration');
+        mountingMethodSeries.classList.remove('rotate-mobile-open-svg');
+        mountingMethodSeries.classList.add('back-rotate-mobile-open-svg');
+        mountingMethodIsOpen = true;
     }
 }

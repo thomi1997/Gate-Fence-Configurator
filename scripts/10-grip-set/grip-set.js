@@ -2,7 +2,7 @@ let currentGripSet = [];
 let previouGripSetId = 'grip-set-1';
 let previouGripSetPrice = '49,99';
 let priseGripSetAlreadyExecuted = false;
-let gripSetIsOpen = false;
+let gripSetIsOpen = true;
 
 
 let gripSetImgs = [
@@ -132,9 +132,16 @@ function queryGripSetWhatCalculate(priseGripSet, priseGripSetNotSame, totalPrise
 
 function openGripSetCollectionMobil() {
     let gripSetTitelDiv = document.getElementById('open-grip-set');
-    gripSetIsOpen = true;
+    let gripSetSeries = document.getElementById('series-10');
     if (gripSetIsOpen) {
-        gripSetTitelDiv.classList.toggle('open-grip-set-configuration');
+        gripSetSeries.classList.remove('back-rotate-mobile-open-svg');
+        gripSetTitelDiv.classList.add('open-grip-set-configuration');
+        gripSetSeries.classList.add('rotate-mobile-open-svg');
         gripSetIsOpen = false;
+    } else {
+        gripSetTitelDiv.classList.remove('open-grip-set-configuration');
+        gripSetSeries.classList.remove('rotate-mobile-open-svg');
+        gripSetSeries.classList.add('back-rotate-mobile-open-svg');
+        gripSetIsOpen = true;
     }
 }

@@ -1,5 +1,5 @@
 let currentOptionalNotes = [];
-let optionalNotesIsOpen = false;
+let optionalNotesIsOpen = true;
 
 
 function renderOptionalNotes() {
@@ -33,9 +33,16 @@ function addOptionalNotes() {
 
 function openOptionalNotesCollectionMobil() {
     let optionalNotesTitelDiv = document.getElementById('open-optional-notes');
-    optionalNotesIsOpen = true;
+    let optionalNotesSeries = document.getElementById('series-16');
     if (optionalNotesIsOpen) {
-        optionalNotesTitelDiv.classList.toggle('open-optional-notes-configuration');
+        optionalNotesSeries.classList.remove('back-rotate-mobile-open-svg');
+        optionalNotesTitelDiv.classList.add('open-optional-notes-configuration');
+        optionalNotesSeries.classList.add('rotate-mobile-open-svg');
         optionalNotesIsOpen = false;
+    } else {
+        optionalNotesTitelDiv.classList.remove('open-optional-notes-configuration');
+        optionalNotesSeries.classList.remove('rotate-mobile-open-svg');
+        optionalNotesSeries.classList.add('back-rotate-mobile-open-svg');
+        optionalNotesIsOpen = true;
     }
 }

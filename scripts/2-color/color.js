@@ -7,7 +7,7 @@ let changeColorDB = false;
 
 let colorOnLoad = false;
 let priseColorAlreadyExecuted = false;
-let colorIsOpen = false;
+let colorIsOpen = true;
 
 
 function renderColor() {
@@ -164,9 +164,16 @@ function queryColorWhatCalculate(priseColor, priseColorNotSame, totalPrise, curr
 
 function openColorCollectionMobil() {
     let colorTitelDiv = document.getElementById('change-color');
-    colorIsOpen = true;
+    let colorSeries = document.getElementById('series-2');
     if (colorIsOpen) {
-        colorTitelDiv.classList.toggle('open-color-configuration');
+        colorSeries.classList.remove('back-rotate-mobile-open-svg');
+        colorTitelDiv.classList.add('open-color-configuration');
+        colorSeries.classList.add('rotate-mobile-open-svg');
         colorIsOpen = false;
+    } else {
+        colorTitelDiv.classList.remove('open-color-configuration');
+        colorSeries.classList.remove('rotate-mobile-open-svg');
+        colorSeries.classList.add('back-rotate-mobile-open-svg');
+        colorIsOpen = true;
     }
 }

@@ -17,7 +17,7 @@
     }
 
     .mounting-gate-hinges-content-absolute {
-        position: relative;
+        position: absolute;
         align-self: flex-start;
         margin-left: 70px;
     }

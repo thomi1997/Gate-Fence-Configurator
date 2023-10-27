@@ -8,7 +8,7 @@ let insideLeft = false;
 let insideRight = false;
 let outsideLeft = false;
 let outsideRight = false;
-let openingDirectionIsOpen = false;
+let openingDirectionIsOpen = true;
 
 
 function renderOpeningDirection() {
@@ -134,9 +134,16 @@ function pushOpeningDirectionContent(currentOpeningDirectionId, openingDirection
 
 function openOpeningDirectionCollectionMobil() {
     let openingDirectionTitelDiv = document.getElementById('open-opening-direction-collection');
-    openingDirectionIsOpen = true;
+    let openingDirectionSeries = document.getElementById('series-3');
     if (openingDirectionIsOpen) {
-        openingDirectionTitelDiv.classList.toggle('open-opening-direction-configuration');
+        openingDirectionSeries.classList.remove('back-rotate-mobile-open-svg');
+        openingDirectionTitelDiv.classList.add('open-opening-direction-configuration');
+        openingDirectionSeries.classList.add('rotate-mobile-open-svg');
         openingDirectionIsOpen = false;
+    } else {
+        openingDirectionTitelDiv.classList.remove('open-opening-direction-configuration');
+        openingDirectionSeries.classList.remove('rotate-mobile-open-svg');
+        openingDirectionSeries.classList.add('back-rotate-mobile-open-svg');
+        openingDirectionIsOpen = true;
     }
 }

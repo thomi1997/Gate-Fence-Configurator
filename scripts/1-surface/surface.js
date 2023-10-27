@@ -2,7 +2,7 @@ let currentSurface = [];
 let previouSurfaceId = 'surface-1';
 let previouSurfacePrice = '49,99';
 let priseSurfaceAlreadyExecuted = false;
-let surfaceIsOpen = false;
+let surfaceIsOpen = true;
 
 
 function renderSurface() {
@@ -120,9 +120,16 @@ function querySurfaceWhatCalculate(priseSurface, priseSurfaceNotSame, totalPrise
 
 function openSurfaceCollectionMobil() {
     let surfaceTitelDiv = document.getElementById('open-surface');
-    surfaceIsOpen = true;
+    let surfaceSeries = document.getElementById('series-1');
     if (surfaceIsOpen) {
-        surfaceTitelDiv.classList.toggle('open-surface-configuration');
+        surfaceSeries.classList.remove('back-rotate-mobile-open-svg');
+        surfaceTitelDiv.classList.add('open-surface-configuration');
+        surfaceSeries.classList.add('rotate-mobile-open-svg');
         surfaceIsOpen = false;
+    } else {
+        surfaceTitelDiv.classList.remove('open-surface-configuration');
+        surfaceSeries.classList.remove('rotate-mobile-open-svg');
+        surfaceSeries.classList.add('back-rotate-mobile-open-svg');
+        surfaceIsOpen = true;
     }
 }

@@ -54,12 +54,12 @@ hr {
     flex-direction: column;
     width: 300px;
     height: 100%;
-    /*300px*/
     border: 2px solid gray;
     margin-bottom: 10px;
     margin-top: 10px;
     text-align: center;
     cursor: pointer;
+    position: relative;
 }
 
 .collection-box-background-color {
@@ -135,6 +135,7 @@ hr {
 .collection-mobile-open-svg {
     width: 30px;
     height: 30px;
+    fill: rgb(255, 255, 255);
 }
 
 @media (max-width: 974px) {
@@ -170,6 +171,16 @@ hr {
 
 @media (max-width: 768px) {
 
+    .rotate-mobile-open-svg {
+        transition: rotate 800ms ease-in-out;
+        rotate: 180deg;
+    }
+
+    .back-rotate-mobile-open-svg {
+        transition: rotate 800ms ease-in-out;
+        rotate: 0deg;
+    }
+
     .gate-fence-configurator-body {
         width: 100%;
     }
@@ -201,8 +212,8 @@ hr {
     }
 
     .mark-the-box::after {
-        top: -13px;
-        left: -8px;
+        top: 150px;
+        left: 92%;
     }
 
     .collection-imgs {

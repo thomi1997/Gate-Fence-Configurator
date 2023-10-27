@@ -1,5 +1,5 @@
 let currentGroundClearance = [];
-let groundClearanceIsOpen = false;
+let groundClearanceIsOpen = true;
 
 
 function renderGroundClearance() {
@@ -39,9 +39,16 @@ function addGroundClearance() {
 
 function openGroundClearanceCollectionMobil() {
     let groundClearanceTitelDiv = document.getElementById('open-ground-clearance');
-    groundClearanceIsOpen = true;
+    let groundClearanceSeries = document.getElementById('series-9');
     if (groundClearanceIsOpen) {
-        groundClearanceTitelDiv.classList.toggle('open-ground-clearance-configuration');
+        groundClearanceSeries.classList.remove('back-rotate-mobile-open-svg');
+        groundClearanceTitelDiv.classList.add('open-ground-clearance-configuration');
+        groundClearanceSeries.classList.add('rotate-mobile-open-svg');
         groundClearanceIsOpen = false;
+    } else {
+        groundClearanceTitelDiv.classList.remove('open-ground-clearance-configuration');
+        groundClearanceSeries.classList.remove('rotate-mobile-open-svg');
+        groundClearanceSeries.classList.add('back-rotate-mobile-open-svg');
+        groundClearanceIsOpen = true;
     }
 }

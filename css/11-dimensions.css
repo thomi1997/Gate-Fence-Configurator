@@ -18,8 +18,12 @@
         max-height: 0;
         transition: max-height 1000ms ease-in-out;
     }
+    
+    .dimensions-section {
+        flex-direction: column;
+    }
 
     .open-dimensions-configuration {
-        max-height: 190px;
+        max-height: 400px;
     }
 }

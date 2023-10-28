@@ -16,4 +16,8 @@
     .open-surface-configuration {
         max-height: 2000px;
     }
+
+    .surface-img-div {
+        height: 150px;
+    }
 }

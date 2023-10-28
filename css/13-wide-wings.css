@@ -13,6 +13,10 @@
     }
 
     .open-wide-wings-configuration {
-        max-height: 100px;
+        max-height: 200px;
+    }
+
+    .wide-wings-collection {
+        flex-direction: column;
     }
 }

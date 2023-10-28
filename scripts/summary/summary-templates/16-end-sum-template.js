@@ -9,7 +9,7 @@ function htmlEndSum() {
                     ${currentTotalPrise} €
                 </p>
             </div>
-            <p style="line-height: 0px;">inkl. MwSt., zzgl. Versandkosten</p>
+            <p style="line-height: 26px;">inkl. MwSt., zzgl. Versandkosten</p>
         </div>
     `;
 }

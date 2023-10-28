@@ -15,6 +15,10 @@ body {
     src: url("/fonts/titillium-web/TitilliumWeb-SemiBold.ttf");
 }
 
+p {
+    font-size: 1.2rem;
+}
+
 hr {
     height: 1px;
     background-color: rgb(219, 87, 33);
@@ -78,6 +82,13 @@ hr {
     align-items: center;
 }
 
+.info-svg {
+    height: 30px;
+    width: 30px;
+    fill: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
 .collection-imgs {
     width: 100%;
     height: 100%;
@@ -113,7 +124,7 @@ hr {
 }
 
 .img-lower-level {
-    width: 100%;
+    /*width: 100%;*/
     height: 300px;
 }
 
@@ -162,7 +173,7 @@ hr {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 
     .collection-mobile-open-svg {
         display: none;
@@ -170,6 +181,16 @@ hr {
 }
 
 @media (max-width: 768px) {
+
+    .background-configurator {
+        padding: 0px;
+    }
+
+    .configurator-menu {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0;
+    }
 
     .rotate-mobile-open-svg {
         transition: rotate 800ms ease-in-out;
@@ -187,10 +208,7 @@ hr {
 
     .container-layout {
         flex-direction: column;
-    }
-
-    .configurator-menu {
-        width: 94%;
+        align-items: center;
     }
 
     .box-coating {
@@ -200,30 +218,60 @@ hr {
         align-content: space-between;
     }
 
-    .img-lower-level {
-        width: 200px;
-        height: 200px;
-    }
-
     .mark-the-box::before {
-        height: 92%;
         width: 98%;
-        left: 0;
+        right: 0;
     }
 
     .mark-the-box::after {
-        top: 150px;
-        left: 92%;
-    }
-
-    .collection-imgs {
-        min-height: 200px;
-        width: 200px;
+        top: 104px;
+        left: 90%;
     }
 
     .box-content {
         display: flex;
         justify-content: flex-start;
         align-items: start;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container-layout {
+        font-size: 0.8rem;
+    }
+
+    .collection-titel {
+        line-height: 26px;
+    }
+
+    .box-coating {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .img-lower-level {
+        align-self: center;
+    }
+
+    .mark-the-box::before {
+        left: 0;
+        width: 96%;
+    }
+
+    .mark-the-box::after {
+        top: 6px;
+        left: 6px;
+    }
+}
+
+@media (max-width: 300px) {
+    .collection-titel {
+        flex-direction: column;
     }
 }

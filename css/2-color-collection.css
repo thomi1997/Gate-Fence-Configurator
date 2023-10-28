@@ -7,7 +7,7 @@
 .color-in-the-box {
     min-height: 120px;
     width: 180px;
-    margin: 10px; 
+    margin: 10px;
 }
 
 /*overview*/
@@ -70,7 +70,7 @@
     height: 152px;
     position: relative;
     display: flex;
-    
+
     content: "";
     border: 4px solid rgb(56, 54, 54);
 }
@@ -92,6 +92,13 @@
     }
 
     .open-color-configuration {
-        max-height: 200px;
+        max-height: 280px;
     }
+
+    .color-in-the-box {
+        min-height: 200px;
+        width: 200px;
+    }
+
+
 }

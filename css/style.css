@@ -6,13 +6,12 @@ body {
 
 @font-face {
     font-family: "Titillium-Web";
-    src: url("/fonts/titillium-web/TitilliumWeb-Regular.ttf");
-    src: url("/fonts/titillium-web/TitilliumWeb-Regular.ttf");
+    src: url("../fonts/titillium-web/TitilliumWeb-Regular.ttf");
 }
 
 @font-face {
     font-family: "Titillium-Web-SemiBold";
-    src: url("/fonts/titillium-web/TitilliumWeb-SemiBold.ttf");
+    src: url("../fonts/titillium-web/TitilliumWeb-SemiBold.ttf");
 }
 
 p {
@@ -116,7 +115,7 @@ hr {
 }
 
 .mark-the-box::after {
-    content: url('/img/icons/hook.png');
+    content: url('../img/icons/hook.png');
     object-fit: contain;
     position: absolute;
     top: 8px;

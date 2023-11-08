@@ -1,0 +1,19 @@
+.header-include-html {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.floppy-disk-svg-header {
+    height: 50px;
+    width: 50px;
+}
+
+.shopping-cart-svg-header {
+    height: 50px;
+    width: 50px;
+}

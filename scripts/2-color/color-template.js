@@ -65,7 +65,7 @@ function htmlAllColorsList(color, i) {
 
 function htmlHammerBlowColor(colorHammerBlow, i) {
     return /*html*/`
-        <div onclick="markTheRGBColorBox(this, '${colorHammerBlow}')" id="${i}" class="box-coating">
+        <div onclick="markTheRGBColorBox(this, '${colorHammerBlow}')" id="${1+i}" class="box-coating">
             <div class="color-in-the-box" style="background-color: ${colorHammerBlow};">
             </div>
         </div>
@@ -75,7 +75,7 @@ function htmlHammerBlowColor(colorHammerBlow, i) {
 
 function htmlDBColor(colorDB, i) {
     return /*html*/`
-        <div onclick="markTheRGBColorBox(this, '${colorDB}')" id="${i}" class="box-coating">
+        <div onclick="markTheRGBColorBox(this, '${colorDB}')" id="${1+i}" class="box-coating">
             <div class="color-in-the-box" style="background-color: ${colorDB};">
             </div>
         </div>

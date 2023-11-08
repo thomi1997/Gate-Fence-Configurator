@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/1-surface-collection.css">
     <link rel="stylesheet" href="css/2-color-collection.css">
     <link rel="stylesheet" href="css/3-opening-direction-collection.css">
@@ -24,6 +25,7 @@
     <link rel="stylesheet" href="css/17-summary-content.css">
     <script src="scripts/mini_backend.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/includeHTML.js"></script>
 
     <script src="scripts/1-surface/surface.js"></script>
     <script src="scripts/1-surface/surface-template.js"></script>
@@ -100,9 +102,10 @@
     <title>Gate-Fence-Configurator</title>
 </head>
 
-<body onload="init()">
+<body onload="initConfigurator(), loadDataBase()">
     <div class="gate-fence-configurator-body">
-        <h1>Gate Fence Configurator</h1>
+        <div class="header-include-html" include-html="header.html">
+        </div>
         <div class="background-configurator">
             <div class="head-titel">
                 <h2>Konfigurieren Sie Ihr Produkt</h2>

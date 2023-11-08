@@ -1,0 +1,6 @@
+.memory-location-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1300px;
+}

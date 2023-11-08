@@ -5,9 +5,15 @@ let currentTotalPrise = ['2300,00'];
 //let basePrise = '2300.00';
 
 
-async function init() {
+async function loadDataBase() {
     await downloadFromServer();
     allOffers = JSON.parse(backend.getItem('allOffers')) || [];
+    includeHTML();
+}
+
+
+async function initConfigurator() {
+    
     renderSummary();
     renderSurface();
     renderColor();

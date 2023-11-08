@@ -62,17 +62,28 @@
 }
 
 .mark-the-color-box {
-    border: 2px solid rgb(56, 54, 54);
+    border: 2px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .mark-the-color-box::before {
-    width: 152px;
-    height: 152px;
-    position: relative;
-    display: flex;
-
     content: "";
-    border: 4px solid rgb(56, 54, 54);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 8px solid rgb(69, 219, 35);
+    display: block;
+}
+
+.mark-the-color-box::after {
+    content: url('../img/icons/hook.png');
+    object-fit: contain;
+    position: absolute;
+    top: 8px;
+    left: 8px;
 }
 
 

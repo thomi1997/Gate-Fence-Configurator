@@ -22,7 +22,7 @@ function formSumToString(changeTotalSum) {
     let changeTotalSumWithPoint = (changeTotalSum / 100).toFixed(2);
     let priseNotSame = changeTotalSumWithPoint.replace(".", ",");
     let resultNotSame = priseNotSame.toString();
-    console.log('form to string', resultNotSame);
+    //console.log('form to string', resultNotSame);
     blankCurrentTotalPrise();
     currentTotalPrise.push(resultNotSame);
 }

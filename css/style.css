@@ -23,6 +23,10 @@ hr {
     background-color: rgb(219, 87, 33);
 }
 
+table, th, td {
+    border: 1px solid black;
+}
+
 .gate-fence-configurator-body {
     font-family: "Titillium-Web-SemiBold";
     display: flex;
@@ -253,7 +257,7 @@ hr {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .img-lower-level {
         align-self: center;
     }

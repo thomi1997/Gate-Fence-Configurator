@@ -2,7 +2,6 @@ setURL('https://thomas-ketler.de/gate-fence-configurator/smallest_backend_ever-m
 
 let allOffers = [];
 let currentTotalPrise = ['2300,00'];
-//let basePrise = '2300.00';
 
 
 async function loadDataBase() {
@@ -12,7 +11,7 @@ async function loadDataBase() {
 }
 
 
-async function initConfigurator() {
+function initConfigurator() {
     
     renderSummary();
     renderSurface();
@@ -60,36 +59,4 @@ function changeFontColorConfigMenu() {
     collectionTitles.forEach(function(element) {
         element.style.color = 'red'; // Ändern Sie die Schriftfarbe auf Rot
     });
-}
-
-
-function addOffer() {
-    const completeOffer = {
-        'selected-surface': currentSurface,
-        'selected-color': currentColor,
-        'selected-opening-direction': currentOpeningDirection,
-        'selected-mounting-method': currentMountingMethod,
-        'selected-mounting-gates-hinges': currentMountingGateHinges,
-        'selected-mounting-type-post': currentMountingTypePost,
-        'selected-execution': currentExecution,
-        'selected-variant-mounting-plates': currentVariantMountingPlates,
-        'selected-ground-clearance': currentGroundClearance,
-        'selected-grip-set': currentGripSet,
-        'selected-dimensions-height': currentDimensionsHeight,
-        'selected-dimensions-wide': currentDimensionsWide,
-        'selected-wing-layout': currentWingLayout,
-        'selected-wide-wings': currentWideWings,
-        'selected-production-drawing': currentProductionDrawing,
-        //number of posts
-        'selected-optional-notes': currentOptionalNotes
-    };
-    console.log(completeOffer);
-
-    //allOffers.push(fruit);
-    //backend.setItem('allOffers', JSON.stringify(allOffers));
-}
-
-
-async function saveConfigurations() {
-    backend.setItem('allOffers', JSON.stringify(allOffers));
 }

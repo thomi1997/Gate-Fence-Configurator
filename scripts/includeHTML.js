@@ -11,9 +11,3 @@ async function includeHTML() {
         }
     }
 }
-
-
-function openFloppyDisk() {
-    window.location.href = "memory-location.html"; //https://thomas-ketler.developerakademie.net/Gruppenarbeit-Join/backlog.html
-    console.log('open floppy disk');
-}

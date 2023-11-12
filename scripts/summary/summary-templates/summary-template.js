@@ -46,7 +46,7 @@ function htmlSummary() {
                     </svg>
                     IN DEN WARENKORB
                 </button>
-                <button onclick="" class="summary-button-save">
+                <button onclick="addOffer()" class="summary-button-save">
                     KONFIGURATION SPEICHERN
                 </button>
             </div>
